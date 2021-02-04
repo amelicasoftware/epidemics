@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "epidemics"
+    }
+  },
+  "defaultProject": "epidemics",
+  "cli": {
+    "analytics": "c47606eb-bfcb-4fc5-9b7b-7beddcbf5fa4"
+  }
 }
