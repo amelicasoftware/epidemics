@@ -1,14 +1,17 @@
 <section id="general">
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffffff" type="pacman" [fullScreen]="true">
+        <p class="loading">Loading Articles...</p>
+    </ngx-spinner>
+
     <section id="header">
         <span>header</span>
     </section>
 
     <section id="banner">
         <span>banner</span>
-        <button (click)="showSpinner()">Ver Spinner</button>
     </section>
 
-    <section id="sections">
+    <section id="sections" *ngIf="results">
 
         <div class="filters">
             <div class="text-filters">
@@ -43,17 +46,25 @@
                 </div>
 
                 <div class="views-components">
-                    <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
-                        <p class="loading">Loading Awesomeness...</p>
-                    </ngx-spinner>
                     <app-target [articles]="articles" *ngIf="view"></app-target>
                     <app-table [articles]="articles" *ngIf="!view"></app-table>
                 </div>
 
                 <div class="pagination-component">
-                    <app-pagination></app-pagination>
+                    <app-pagination (click)="goUp()"></app-pagination>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="no-results" *ngIf="!results">
+        <div class="message-no-results">
+            <span class="color-blue">No se encontraron resultados</span>
+            <br/><br/>
+            <span class="color-gray">Sugerencias:</span>
+            <ul class="color-gray">
+                <li>Prueba con una b&uacute;squeda nueva </li>
+            </ul>
         </div>
     </section>
 

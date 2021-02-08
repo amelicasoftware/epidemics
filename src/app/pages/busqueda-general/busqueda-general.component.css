@@ -10,6 +10,7 @@
     display: grid;
     grid-template-areas: "filters content-general";
     grid-template-columns: 20% 80%;
+    min-height: 100vh;
 }
 
 .filters {
@@ -88,4 +89,30 @@
 }
 
 
-/* Terminan Estilos Spinner*/
+/* Terminan estilos Spinner*/
+
+
+/* Estilos cuando no hay resultados de articulos */
+
+#no-results {
+    width: 100vw;
+    height: 50vh;
+    display: inline-block;
+    margin: 30px auto;
+}
+
+.message-no-results {
+    width: 26%;
+    margin: 0px auto;
+}
+
+.color-gray {
+    color: #b3b3b3;
+}
+
+.color-blue {
+    color: #1252b2;
+}
+
+
+/* Terminan estilos cuando no hay resultados de articulos */

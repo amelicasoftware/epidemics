@@ -1,5 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
+import { Component, OnInit, OnDestroy, DoCheck, AfterViewInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Article } from '../../models/Article.model';
 import { ArticleResult } from '../../models/ArticleResult.model';
@@ -13,7 +12,7 @@ import { PaginationService } from '../../services/pagination.service';
   templateUrl: './busqueda-general.component.html',
   styleUrls: ['./busqueda-general.component.css']
 })
-export class BusquedaGeneralComponent implements OnInit, OnDestroy {
+export class BusquedaGeneralComponent implements OnInit, OnDestroy{
   finalPositionSubscription: Subscription;
   positionSubscription: Subscription;
   searchSubscription: Subscription;
@@ -33,12 +32,12 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy {
   view = true;
   imgTable = 'assets/img/shared/table.png';
   imgList = 'assets/img/shared/list-act.png';
+  results = true;
 
   constructor(
     private articleService: ArticleService,
     private paginationService: PaginationService,
     private filterService: FilterService,
-    private spinner: NgxSpinnerService,
   ) { }
 
   ngOnDestroy(): void {
@@ -81,6 +80,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy {
         this.articleService.getArticles(search, 1, this.filtersChain).subscribe(
           (articles: ArticleResult) => {
             this.articles = articles.resultados;
+            this.results = this.articleService.articlesExists(articles.resultados.length);
             this.filterService.changeFilters(articles.filtros);
             this.paginationService.changeInitialPosition();
             this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
@@ -111,6 +111,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy {
     this.articleService.getArticles('ciencia', 1, this.filtersChain).subscribe(
       (articles: ArticleResult) => {
         this.articles = articles.resultados;
+        this.results = this.articleService.articlesExists(articles.resultados.length);
         this.filterService.changeFilters(articles.filtros);
         this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
       }
@@ -128,10 +129,11 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy {
     }
   }
 
-  showSpinner() {
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 2000);
+  goUp(){
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 }

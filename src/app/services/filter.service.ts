@@ -16,7 +16,7 @@ export class FilterService {
   constructor() { }
 
   public changeFilters(filters: Array<Filter>){
-    console.log('change filters');
+    console.log('change filters', filters);
     this.filters$.emit(filters);
   }
 
