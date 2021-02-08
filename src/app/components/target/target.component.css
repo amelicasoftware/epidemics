@@ -1,0 +1,47 @@
+.container-target-articles {
+    display: flex;
+    flex-direction: column;
+}
+
+.article {
+    border: 1px;
+    padding: 10px;
+    box-shadow: 0px 1px 2px 1px #bfbfbf;
+    font-family: 'Barlow-Regular';
+    font-size: 10pt;
+    width: 90%;
+    margin: 10px;
+    line-height: 15px;
+}
+
+.title {
+    font-family: 'Barlow-Bold';
+    text-decoration: none;
+    color: #4762b2;
+}
+
+.visualizations {
+    display: inline;
+}
+
+.text-complete {
+    display: inline;
+}
+
+.button-visualizations {
+    background-color: white;
+    color: #4762b2;
+    font-family: Barlow-Regular;
+    margin: 3px;
+    margin-left: 10px;
+    padding: 3px 20px;
+}
+
+.type-format {
+    text-decoration: none;
+}
+
+.social-networks {
+    display: inline;
+    float: right;
+}

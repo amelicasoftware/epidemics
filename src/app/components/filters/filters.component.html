@@ -1,0 +1,23 @@
+<div class="font-filters">
+    <div>
+        <span class="btn-filters" (click)="applyFilters()">Aplicar Filtros</span>
+    </div>
+    <div *ngFor="let filter of filters; let indexOfelementF=index;">
+        <div class="tittle-filter"> {{filter.nombre}} :</div>
+        <div id="{{'filtro' + filter.nombre}}" class="container-filter">
+            <div class="{{ indexOfelement>4 ? 'hidden-filter' : 'filtroVisible'}} animated fast" [ngClass]="{'show-more': filter.state}" *ngFor="let element of filter.elementos; let indexOfelement=index;">
+                <input class="checkbox-filter" type="checkbox" name="isOk" [checked]="activateFilters(element)" id="{{'customCheck' + element.clave + filter.nombre}}" (click)="addFilter(element, filter.nombre)">
+                <label for="{{ 'customCheck' + element.clave + filter.nombre}}">{{element.nombre}} ({{element.total}})</label>
+            </div>
+        </div>
+        <div class="btn-show-more" (click)="showElements(filter)" [ngClass]="{'show-btn': showButton(filter)}">
+            <span *ngIf="!filter.state">Ver más</span>
+            <span *ngIf="filter.state">Ver menos</span>
+        </div>
+
+        <br>
+    </div>
+    <div id="container-btn-filter">
+        <button class="btn-filters" (click)="applyFilters()">Aplicar Filtros</button>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+#pager {
+    text-align: center;
+}
+
+.actual-position {
+    border: solid #4762b2 1px;
+    background-color: rgb(71, 98, 178, 0.3);
+}
+
+button {
+    font-family: Barlow-Regular;
+    border: none;
+    background-color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4762b2;
+    color: black;
+}

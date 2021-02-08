@@ -1,0 +1,96 @@
+<div class="container-target-articles">
+
+    <div class="article" *ngFor="let article of articles">
+        <div *ngIf="article.origen === 'PDF'">
+            <a class="title" href="https://www.redalyc.org/articulo.oa?id={{article.cveArticulo}}" target="_blank">
+                {{ article.tituloArticulo }}
+            </a>
+        </div>
+
+        <div *ngIf="article.origen === 'XML'">
+            <a class="title" href="https://www.redalyc.org/jatsRepo/{{article.cveRevista}}/{{article.cveArticulo}}/index.html" target="_blank">
+                {{ article.tituloArticulo }}
+            </a>
+        </div>
+
+        <p>{{ article.autores | authors}}</p>
+
+        <p>{{ article.nombreRevista }}, {{ article.anio }}, {{ article.volumen }} ({{ article.numero }}) </p>
+
+        <p>Fuente: {{ article.fuente}} </p>
+
+        <p [innerHTML]='article.contenido'>{{ article.contenido }}</p>
+
+        <br>
+
+        <div *ngIf="article.dominio === 'https://www.redalyc.org'">
+            <div *ngIf="article.origen === 'PDF'">
+                <div class="visualizations">
+                    <p class="text-complete">Texto Completo: </p>
+                    <button class="button-visualizations">
+                        <a class="type-format" href="https://www.redalyc.org/articulo.oa?id={{article.cveArticulo}}" target="_blank">
+                            Visor
+                        </a>
+                    </button>
+                    <button class="button-visualizations">
+                        <a class="type-format" href="https://redalyc.org/articulo.oa?id={{article.cveArticulo}}" target="_blank">
+                            PDF
+                        </a>
+                    </button>
+                </div>
+
+                <div class="social-networks">
+                    <a href="http://www.facebook.com/sharer.php?u=https://www.redalyc.org/articulo.oa?id={{article.cveArticulo}} | safeUrl" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
+                        <img target="_blank" src="assets/img/tar-face.png" alt="">
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?original_referer=https://www.redalyc.org/articulo.oa?id={{article.cveArticulo}} &amp;text={{ article.tituloArticulo }} https://www.redalyc.org/articulo.oa?id={{article.cveArticulo}} vía @Redalyc" target="_blank"
+                        OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
+                        <img src="assets/img/tar-twit.png" alt="">
+                    </a>
+                </div>
+
+            </div>
+
+            <div *ngIf="article.origen === 'XML'">
+                <div class="visualizations">
+                    <p class="text-complete">Texto Completo: </p>
+                    <button class="button-visualizations">
+                        <a class="type-format" href="https://www.redalyc.org/jatsRepo/{{article.cveRevista}}/{{article.cveArticulo}}/index.html" target="_blank">
+                            Visor
+                        </a>
+                    </button>
+                    <button class="button-visualizations">
+                        <a class="type-format" href="https://redalyc.org/jatsRepo/{{article.cveRevista}}/{{article.cveArticulo}}/html/index.html" target="_blank">
+                            HTML-R
+                        </a>
+                    </button>
+                    <button class="button-visualizations">
+                        <a class="type-format" href="https://redalyc.org/jatsRepo/{{article.cveRevista}}/{{article.cveArticulo}}/{{article.cveArticulo}}.epub" target="_blank">
+                            ePUB
+                        </a>
+                    </button>
+                    <button class="button-visualizations">
+                        <a class="type-format" href="https://redalyc.org/jatsRepo/{{article.cveRevista}}/{{article.cveArticulo}}/movil/index.html" target="_blank">
+                            MÓVIL-R
+                        </a>
+                    </button>
+                    <button class="button-visualizations">
+                        <a class="type-format" href="https://redalyc.org/articulo.oa?id={{article.cveArticulo}}"  target="_blank">
+                            PDF
+                        </a>
+                    </button>
+                </div>
+
+                <div class="social-networks">
+                    <a href="http://www.facebook.com/sharer.php?u=https://www.redalyc.org/articulo.oa?id={{article.cveArticulo}}" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
+                        <img target="_blank" src="assets/img/tar-face.png" alt="">
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?original_referer=https://www.redalyc.org/articulo.oa?id={{article.cveArticulo}} &amp;text={{ article.tituloArticulo }} https://www.redalyc.org/articulo.oa?id={{article.cveArticulo}} vía @Redalyc" target="_blank"
+                        OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
+                        <img src="assets/img/tar-twit.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

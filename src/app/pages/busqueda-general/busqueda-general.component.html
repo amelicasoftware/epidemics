@@ -1,3 +1,60 @@
 <section id="general">
-    <section></section>
+    <section id="header">
+        <span>header</span>
+    </section>
+
+    <section id="banner">
+        <span>banner</span>
+    </section>
+
+    <section id="sections">
+
+        <div class="filters">
+            <div class="text-filters">
+                <img src="assets/img/shared/filtro.png" />
+                <span>Filtros de Búsqueda</span>
+            </div>
+
+            <app-filters></app-filters>
+
+        </div>
+
+        <div class="content-general">
+            <div class="container-sections">
+                <div class="selected sections-aling">
+                    <img src="assets/img/shared/articulos-act.png" />
+                    <span>Articulos de revista</span>
+                </div>
+                <div class="view-results">
+                    <span>Modo de visualizar resultados</span>
+                </div>
+                <div class="sections-aling" (click)="changeView(false)" [ngClass]="{'activate': !view, 'selected': !view, 'select': view}">
+                    <img [src]="imgTable" />
+                    <span class="view-table">Tabla</span>
+                </div>
+                <div class="sections-aling" (click)="changeView(true)" [ngClass]="{'activate': view, 'selected': view, 'select': !view}">
+                    <img [src]="imgList" />
+                    <span>Lista</span>
+                </div>
+            </div>
+            <div>
+                <div class="balloons-component">
+                    <app-balloons></app-balloons>
+                </div>
+
+                <div class="views-components">
+                    <app-target [articles]="articles" *ngIf="view"></app-target>
+                    <app-table [articles]="articles" *ngIf="!view"></app-table>
+                </div>
+
+                <div class="pagination-component">
+                    <app-pagination></app-pagination>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <span>footer</span>
+    </section>
 </section>

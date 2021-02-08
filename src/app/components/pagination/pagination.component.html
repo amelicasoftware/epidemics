@@ -1,0 +1,21 @@
+<div id="pager">
+
+    <button *ngIf="actualPage > 1" (click)="initialPage()"><< </button>
+
+    <button *ngIf="actualPage > 1" (click)="leftArrow()"><</button>
+
+    <button *ngIf="actualPage > 2" (click)="nextOrpreviousPage(actualPage - 2)">{{actualPage - 2}}</button>
+
+    <button *ngIf="actualPage > 1" (click)="nextOrpreviousPage(actualPage - 1)">{{actualPage - 1}}</button>
+
+    <button *ngIf="final > 1" class="actual-position"><span>{{actualPage}}</span></button>
+
+    <button *ngIf="actualPage <= final-1" (click)="nextOrpreviousPage(actualPage + 1)">{{actualPage + 1}}</button>
+
+    <button *ngIf="actualPage <= final-2" (click)="nextOrpreviousPage(actualPage + 2)">{{actualPage + 2}}</button>
+
+    <button *ngIf="actualPage < final && actualPage >= 1" (click)="rightArrowPage()">></button>
+
+    <button *ngIf="actualPage < final && actualPage >= 1" (click)="finalPage()">>></button>
+
+</div>

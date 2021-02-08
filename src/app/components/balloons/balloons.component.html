@@ -1,0 +1,5 @@
+<div class="balloons">
+    <div class="balloons-filters" *ngFor="let ballon of balloonFilters" class="{{ ballon.state ? 'show' : 'hide'}}">
+        <div>{{ballon.nombre}} <span (click)="deleteBalloonFilter(ballon)">x</span></div>
+    </div>
+</div>

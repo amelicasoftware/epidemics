@@ -1,0 +1,60 @@
+.font-filters {
+    font-family: Barlow-Regular;
+}
+
+.font-filters>div {
+    margin-top: 10px;
+}
+
+.tittle-filter {
+    margin: 5px 25px;
+}
+
+.container-filter {
+    margin: 0px 20px;
+}
+
+.hidden-filter {
+    display: none;
+}
+
+.show-more {
+    display: block;
+    transition-property: opacity, left, top, height;
+    transition-duration: 3s, 5s, 3s, 5s;
+}
+
+.btn-show-more {
+    font-size: 12pt;
+    cursor: pointer;
+    margin: 5px 20px;
+}
+
+.show-btn {
+    display: none;
+}
+
+#container-btn-filter {
+    width: 100%;
+    text-align: center;
+}
+
+.btn-filters {
+    font-size: 10pt;
+    background-color: #1252b2;
+    color: white;
+    text-align: center;
+    padding: 5px 0px;
+    cursor: pointer;
+    display: inline-block;
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+
+#btn-filters :hover {
+    box-shadow: 0px 1px 2px 1px #bfbfbf;
+}
+
+.checkbox-filter {
+    width: 20px;
+}

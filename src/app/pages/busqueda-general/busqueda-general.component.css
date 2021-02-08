@@ -1,5 +1,80 @@
-#general {
-    padding: 0px;
-    border: 0px;
-    margin: 0px;
+#header {
+    background-color: aqua;
+}
+
+#banner {
+    background-color: blue;
+}
+
+#sections {
+    display: grid;
+    grid-template-areas: "filters content-general";
+    grid-template-columns: 20% 80%;
+}
+
+.filters {
+    grid-area: filters;
+    border-right: 1px solid #f1f1f1;
+}
+
+.content-general {
+    grid-area: content-general;
+}
+
+#sections img {
+    margin: 10px;
+}
+
+.container-sections {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    height: 47px;
+}
+
+.selected {
+    color: #4762b2;
+    cursor: default;
+}
+
+.activate {
+    color: #4762b2;
+}
+
+.select {
+    cursor: pointer;
+}
+
+.sections-aling {
+    display: contents;
+}
+
+.view-results {
+    margin: 0% 5% 0% 30%;
+}
+
+.view-table {
+    margin-right: 10px;
+}
+
+.text-filters {
+    background-color: #4762b2 !important;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    place-content: center;
+}
+
+.balloons-component {
+    margin-top: 15px
+}
+
+.pagination-component {
+    margin-bottom: 15px;
+}
+
+#footer {
+    background-color: chartreuse;
 }

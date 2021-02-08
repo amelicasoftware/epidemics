@@ -1,0 +1,98 @@
+#table {
+    padding: 15px;
+}
+
+table {
+    border: #e5e5e5 2px solid;
+    font: 400 calc(14px * 0.83)/20px Roboto, "Helvetica Neue", sans-serif;
+    width: 96%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+thead tr th {
+    color: #4762B2;
+}
+
+tbody tr td {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+td,
+th {
+    text-align: center;
+    width: 20%;
+    height: 35px;
+    margin: 15px;
+    padding: 15px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid #e5e5e5;
+    border-left: 0px;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody tr:hover td {
+    background-color: transparent;
+}
+
+img {
+    width: 17px;
+    height: 17px;
+}
+
+.img+.tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: rgb(241, 241, 241, 0.5);
+    color: black;
+    font-weight: normal;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    margin-left: 40px;
+    margin-top: -42px;
+}
+
+.img:hover+.tooltip-text {
+    visibility: visible;
+}
+
+.journal {
+    left: 59%;
+}
+
+.number {
+    left: 67%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.type-format {
+    text-decoration: none;
+    padding: 10px 20px;
+    font: 400 calc(14px * 0.83)/20px Roboto, "Helvetica Neue", sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #e5e5e5;
+}
+
+.pdf {
+    padding: 10px 30px;
+}
+
+.tittle {
+    text-decoration: none;
+}

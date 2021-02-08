@@ -1,15 +1,129 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Article } from '../../models/Article.model';
+import { ArticleResult } from '../../models/ArticleResult.model';
+import { ArticleService } from '../../services/article.service';
+import { FilterService } from '../../services/filter.service';
+import { PaginationService } from '../../services/pagination.service';
+import { FilterChain } from '../../models/FilterChain.model';
 
 @Component({
   selector: 'app-busqueda-general',
   templateUrl: './busqueda-general.component.html',
   styleUrls: ['./busqueda-general.component.css']
 })
-export class BusquedaGeneralComponent implements OnInit {
+export class BusquedaGeneralComponent implements OnInit, OnDestroy {
+  finalPositionSubscription: Subscription;
+  positionSubscription: Subscription;
+  searchSubscription: Subscription;
+  filtersChainSubscription: Subscription;
 
-  constructor() { }
+  articles: Array<Article> = new Array<Article>();
+  filtersChain: FilterChain = {
+    yearChain: '',
+    disciplineChain: '',
+    countryChain: '',
+    languageChain: '',
+    fontChain: ''
+  };
+  finalPositionPage: number;
+  search: string;
+  positionPage = 1;
+  view = true;
+  imgTable = 'assets/img/shared/table.png';
+  imgList = 'assets/img/shared/list-act.png';
+
+  constructor(
+    private articleService: ArticleService,
+    private paginationService: PaginationService,
+    private filterService: FilterService,
+  ) { }
+
+  ngOnDestroy(): void {
+    this.finalPositionSubscription.unsubscribe();
+    this.positionSubscription.unsubscribe();
+    this.searchSubscription.unsubscribe();
+    this.filtersChainSubscription.unsubscribe();
+  }
 
   ngOnInit(): void {
+    this.finalPositionSubscription = this.paginationService.finalPosition$.subscribe(
+      (finalPosition: number) => this.finalPositionPage = finalPosition
+    );
+
+    this.positionSubscription = this.paginationService.position$.subscribe(
+      (position: number) => {
+        this.positionPage = position;
+
+        this.articleService.getArticles('ciencia', position, this.filtersChain).subscribe(
+          (articles: ArticleResult) => {
+            this.articles = articles.resultados;
+            this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
+          }
+        );
+      }
+    );
+
+    this.searchSubscription = this.articleService.search$.subscribe(
+      (search: string) => {
+        this.positionPage = 1;
+        this.search = search;
+        this.filtersChain = {
+          yearChain: '',
+          disciplineChain: '',
+          countryChain: '',
+          languageChain: '',
+          fontChain: ''
+        };
+
+        this.articleService.getArticles(search, 1, this.filtersChain).subscribe(
+          (articles: ArticleResult) => {
+            this.articles = articles.resultados;
+            this.filterService.changeFilters(articles.filtros);
+            this.paginationService.changeInitialPosition();
+            this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
+          }
+        );
+      }
+    );
+
+    this.filtersChainSubscription = this.filterService.filtersChain$.subscribe(
+      (filtersChain: FilterChain) => {
+        this.filtersChain = filtersChain;
+        this.articleService.getArticles(
+          'ciencia',
+          1,
+          this.filtersChain
+        ).subscribe(
+          (articles: ArticleResult) => {
+            this.positionPage = 1;
+            this.articles = articles.resultados;
+            this.filterService.changeFilters(articles.filtros);
+            this.paginationService.changeInitialPosition();
+            this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
+          }
+        );
+      }
+    );
+
+    this.articleService.getArticles('ciencia', 1, this.filtersChain).subscribe(
+      (articles: ArticleResult) => {
+        this.articles = articles.resultados;
+        this.filterService.changeFilters(articles.filtros);
+        this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
+      }
+    );
+  }
+
+  public changeView(state: boolean){
+    this.view = state;
+    if (state) {
+      this.imgTable = 'assets/img/shared/table.png';
+      this.imgList = 'assets/img/shared/list-act.png';
+    } else {
+      this.imgTable = 'assets/img/shared/table-act.png';
+      this.imgList = 'assets/img/shared/list.png';
+    }
   }
 
 }
