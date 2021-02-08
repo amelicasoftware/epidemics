@@ -5,6 +5,7 @@
 
     <section id="banner">
         <span>banner</span>
+        <button (click)="showSpinner()">Ver Spinner</button>
     </section>
 
     <section id="sections">
@@ -14,7 +15,6 @@
                 <img src="assets/img/shared/filtro.png" />
                 <span>Filtros de Búsqueda</span>
             </div>
-
             <app-filters></app-filters>
 
         </div>
@@ -43,6 +43,9 @@
                 </div>
 
                 <div class="views-components">
+                    <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+                        <p class="loading">Loading Awesomeness...</p>
+                    </ngx-spinner>
                     <app-target [articles]="articles" *ngIf="view"></app-target>
                     <app-table [articles]="articles" *ngIf="!view"></app-table>
                 </div>

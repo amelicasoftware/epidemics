@@ -78,3 +78,14 @@
 #footer {
     background-color: chartreuse;
 }
+
+
+/* Estilos Spinner*/
+
+.loading {
+    color: white;
+    padding-top: 50px;
+}
+
+
+/* Terminan Estilos Spinner*/

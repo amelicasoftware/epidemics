@@ -1,11 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
 import { Article } from '../../models/Article.model';
 import { ArticleResult } from '../../models/ArticleResult.model';
 import { ArticleService } from '../../services/article.service';
+import { FilterChain } from '../../models/FilterChain.model';
 import { FilterService } from '../../services/filter.service';
 import { PaginationService } from '../../services/pagination.service';
-import { FilterChain } from '../../models/FilterChain.model';
 
 @Component({
   selector: 'app-busqueda-general',
@@ -37,6 +38,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy {
     private articleService: ArticleService,
     private paginationService: PaginationService,
     private filterService: FilterService,
+    private spinner: NgxSpinnerService,
   ) { }
 
   ngOnDestroy(): void {
@@ -115,7 +117,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy {
     );
   }
 
-  public changeView(state: boolean){
+  changeView(state: boolean){
     this.view = state;
     if (state) {
       this.imgTable = 'assets/img/shared/table.png';
@@ -126,4 +128,10 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy {
     }
   }
 
+  showSpinner() {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000);
+  }
 }
