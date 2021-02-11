@@ -71,16 +71,17 @@
 }
 
 .selected {
-    color: #4762b2;
+    color: #004E80;
     cursor: default;
 }
 
 .activate {
-    color: #4762b2;
+    color: #004E80;
 }
 
 .select {
     cursor: pointer;
+    color: #6666;
 }
 
 .sections-aling {
@@ -89,6 +90,7 @@
 
 .view-results {
     margin: 0% 5% 0% 30%;
+    color: #666666;
 }
 
 .view-table {

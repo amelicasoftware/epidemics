@@ -1,5 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+    font-family: Barlow-Bold;
+    src: url('./assets/font/Barlow-Bold.ttf');
+}
+
+@font-face {
+    font-family: Barlow-Regular;
+    src: url('./assets/font/Barlow-Regular.ttf');
+}
+
+@font-face {
+    font-family: Barlow-Light;
+    src: url('./assets/font/Barlow-Light.ttf');
+}
+
 body {
     margin: 0px;
+    font-family: Barlow-Regular;
 }
