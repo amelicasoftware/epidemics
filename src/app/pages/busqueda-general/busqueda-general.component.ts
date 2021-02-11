@@ -7,6 +7,7 @@ import { ErrorService } from '../../services/error.service';
 import { FilterChain } from '../../models/FilterChain.model';
 import { FilterService } from '../../services/filter.service';
 import { PaginationService } from '../../services/pagination.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-busqueda-general',
@@ -39,8 +40,11 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
     private articleService: ArticleService,
     private errorService: ErrorService,
     private paginationService: PaginationService,
+    private routeService: ActivatedRoute,
     private filterService: FilterService,
-  ) { }
+  ) {
+    this.search = this.routeService.snapshot.paramMap.get('search');
+  }
 
   ngOnDestroy(): void {
     this.finalPositionSubscription.unsubscribe();
@@ -58,7 +62,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
       (position: number) => {
         this.positionPage = position;
 
-        this.articleService.getArticles('ciencia', position, this.filtersChain).subscribe(
+        this.articleService.getArticles(this.search, position, this.filtersChain).subscribe(
           (articles: ArticleResult) => {
             this.articles = articles.resultados;
             this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
@@ -95,7 +99,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
       (filtersChain: FilterChain) => {
         this.filtersChain = filtersChain;
         this.articleService.getArticles(
-          'ciencia',
+          this.search,
           1,
           this.filtersChain
         ).subscribe(
@@ -108,14 +112,14 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
               this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
             } else {
               this.errorService.showError('No exiten resultados para la combinación de filtros');
-              this.searchArticles('ciencia');
+              this.searchArticles(this.search);
             }
           }
         );
       }
     );
 
-    this.articleService.getArticles('ciencia', 1, this.filtersChain).subscribe(
+    this.articleService.getArticles(this.search, 1, this.filtersChain).subscribe(
       (articles: ArticleResult) => {
         this.articles = articles.resultados;
         this.results = this.articleService.articlesExists(articles.resultados.length);

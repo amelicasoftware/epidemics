@@ -14,7 +14,7 @@
 
 .searcher-title {
     align-items: center;
-    width: 30%;
+    width: 25%;
 }
 
 .searcher {
@@ -45,7 +45,7 @@
 #sections {
     display: grid;
     grid-template-areas: "filters content-general";
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 25% 75%;
     min-height: 100vh;
 }
 
