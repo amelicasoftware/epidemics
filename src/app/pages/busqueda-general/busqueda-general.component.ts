@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy, DoCheck, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Article } from '../../models/Article.model';
 import { ArticleResult } from '../../models/ArticleResult.model';
 import { ArticleService } from '../../services/article.service';
+import { ErrorService } from '../../services/error.service';
 import { FilterChain } from '../../models/FilterChain.model';
 import { FilterService } from '../../services/filter.service';
 import { PaginationService } from '../../services/pagination.service';
@@ -36,6 +37,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
 
   constructor(
     private articleService: ArticleService,
+    private errorService: ErrorService,
     private paginationService: PaginationService,
     private filterService: FilterService,
   ) { }
@@ -98,11 +100,16 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
           this.filtersChain
         ).subscribe(
           (articles: ArticleResult) => {
-            this.positionPage = 1;
-            this.articles = articles.resultados;
-            this.filterService.changeFilters(articles.filtros);
-            this.paginationService.changeInitialPosition();
-            this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
+            if (this.articleService.articlesExists(articles.resultados.length)){
+              this.positionPage = 1;
+              this.articles = articles.resultados;
+              this.filterService.changeFilters(articles.filtros);
+              this.paginationService.changeInitialPosition();
+              this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
+            } else {
+              this.errorService.showError('No exiten resultados para la combinación de filtros');
+              this.searchArticles('ciencia');
+            }
           }
         );
       }
@@ -116,6 +123,12 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
         this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
       }
     );
+  }
+
+  searchArticles(search: string){
+    this.filterService.filtersSelected = [];
+    this.filterService.filtersSelected$.emit([]);
+    this.articleService.changeSearch(search);
   }
 
   changeView(state: boolean){
