@@ -23,6 +23,7 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { TableComponent } from './components/table/table.component';
 import { TargetComponent } from './components/target/target.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     TableComponent,
     TargetComponent,
     PaginationComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
