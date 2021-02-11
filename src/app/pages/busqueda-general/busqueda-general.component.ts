@@ -126,9 +126,14 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
   }
 
   searchArticles(search: string){
-    this.filterService.filtersSelected = [];
-    this.filterService.filtersSelected$.emit([]);
-    this.articleService.changeSearch(search);
+    console.log(search);
+    if (search){
+      this.filterService.filtersSelected = [];
+      this.filterService.filtersSelected$.emit([]);
+      this.articleService.changeSearch(search);
+    }else{
+      this.errorService.showError('Ingresé una palabra');
+    }
   }
 
   changeView(state: boolean){

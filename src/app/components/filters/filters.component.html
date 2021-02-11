@@ -1,7 +1,4 @@
 <div class="font-filters">
-    <div>
-        <span class="btn-filters" (click)="applyFilters()">Aplicar Filtros</span>
-    </div>
     <div *ngFor="let filter of filters; let indexOfelementF=index;">
         <div class="tittle-filter"> {{filter.nombre}} :</div>
         <div id="{{'filtro' + filter.nombre}}" class="container-filter">

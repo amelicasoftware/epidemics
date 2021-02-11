@@ -1,5 +1,7 @@
 .font-filters {
     font-family: Barlow-Regular;
+    margin: 0px 50px;
+    padding-top: 10px;
 }
 
 .font-filters>div {
@@ -40,15 +42,16 @@
 }
 
 .btn-filters {
+    border-radius: 7px;
+    float: left;
     font-size: 10pt;
-    background-color: #1252b2;
+    background-color: #003B60;
     color: white;
     text-align: center;
-    padding: 5px 0px;
+    padding: 6px 0px;
     cursor: pointer;
-    display: inline-block;
-    width: 100% !important;
-    margin-bottom: 10px;
+    width: 50% !important;
+    margin: 5px 20px;
 }
 
 #btn-filters :hover {

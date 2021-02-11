@@ -7,8 +7,16 @@
         <span>header</span>
     </section>
 
-    <section id="banner">
-        <span>banner</span>
+    <section id="banner" class="flex">
+        <div class="flex searcher-title">
+            <img src="assets/img/shared/buscador-institucionmdpi.png" />
+            <p>Búsqueda General</p>
+        </div>
+
+        <div class="searcher">
+            <input class="searcher-text" #search (keyup.enter)="searchArticles(search.value)" type="text" placeholder="Buscar" required />
+            <input class="searcher-icon" type="image" src="assets/img/shared/buscador-institucionmdpi.png" (click)="searchArticles(search.value)" name="boton-buscar-articulo" alt="Buscar" required />
+        </div>
     </section>
 
     <section id="sections" *ngIf="results">

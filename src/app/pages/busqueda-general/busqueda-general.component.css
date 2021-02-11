@@ -3,13 +3,49 @@
 }
 
 #banner {
-    background-color: blue;
+    align-self: center;
+    align-items: center;
+    font-family: Barlow-Regular;
+}
+
+#banner img {
+    margin: 40px 40px 40px 80px;
+}
+
+.searcher-title {
+    align-items: center;
+    width: 30%;
+}
+
+.searcher {
+    width: 70%
+}
+
+.searcher-text {
+    width: 45%;
+    margin-left: 30px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-family: Barlow-Regular;
+    font-size: 16px;
+    padding: 2px 20px 3px 5px;
+}
+
+.searcher-icon {
+    position: relative;
+    height: 15px;
+    left: -21px;
+    top: 3px;
+}
+
+.flex {
+    display: flex;
 }
 
 #sections {
     display: grid;
     grid-template-areas: "filters content-general";
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 30% 70%;
     min-height: 100vh;
 }
 
@@ -27,7 +63,7 @@
 }
 
 .container-sections {
-    padding: 10px;
+    padding: 5px;
     display: flex;
     align-items: center;
     background-color: #f1f1f1;
@@ -60,12 +96,12 @@
 }
 
 .text-filters {
-    background-color: #4762b2 !important;
+    background-color: #003B60;
     color: white;
     display: flex;
     align-items: center;
-    padding: 10px;
-    place-content: center;
+    padding: 5px;
+    padding-left: 71px;
 }
 
 .balloons-component {
