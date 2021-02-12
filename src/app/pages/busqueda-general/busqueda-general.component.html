@@ -7,6 +7,39 @@
         <app-header></app-header>
     </section>
 
+    <section id="searches">
+        <div class="title-virus">
+            <img target="_blank" src="assets/img/icons/icono-virus.png" alt="">
+            <span>
+                Base de conocimiento en epidemias y COVID-19
+            </span>
+            <span class="pipe-title-virus">
+                | 
+            </span>
+            <span>Más de 13,000 artículos</span>
+        </div>
+        <div class="navigation-searches">
+            <a [routerLink]="['/busqueda-general', 'ciencia']" class="selected-searcher">
+                <img target="_blank" src="assets/img/icons/buscador.png" alt=""> Buscador
+            </a>
+            <a [routerLink]="['/busqueda-general', 'clave']">
+                <img target="_blank" src="assets/img/icons/palabra-clave.png" alt=""> Artículos por palabra clave
+            </a>
+            <a [routerLink]="['/busqueda-general', 'conocimiento']">
+                <img target="_blank" src="assets/img/icons/red.png" alt=""> Representación del conocimiento
+            </a>
+            <a [routerLink]="['/busqueda-general', 'país']">
+                <img target="_blank" src="assets/img/icons/por-pais.png" alt=""> Artículos por país
+            </a>
+            <a [routerLink]="['/busqueda-general', 'base-conocimiento']">
+                <img target="_blank" src="assets/img/icons/sparcql.png" alt=""> Base de conocimiento en SPARQL
+            </a>
+            <a [routerLink]="['/busqueda-general', 'acerca-de']">
+                <img target="_blank" src="assets/img/icons/acerca-de.png" alt=""> Acerca de
+            </a>
+        </div>
+    </section>
+
     <section id="banner" class="flex">
         <div class="flex searcher-title">
             <img src="assets/img/icons/buscador-institucionmdpi.png" />

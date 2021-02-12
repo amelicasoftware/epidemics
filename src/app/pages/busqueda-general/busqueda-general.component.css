@@ -1,3 +1,40 @@
+#searches {
+    background-image: url(../../../assets/img/shared/fondo-covid.jpg);
+    height: 115px;
+}
+
+.title-virus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    padding: 20px;
+}
+
+.pipe-title-virus {
+    margin: 0px 20px;
+}
+
+.navigation-searches {
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-searches a {
+    align-items: center;
+    display: inline-flex;
+    font-size: 12px;
+    padding: 6px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.selected-searcher {
+    background-color: #003B60;
+}
+
 #banner {
     align-self: center;
     align-items: center;
@@ -5,7 +42,7 @@
 }
 
 #banner img {
-    margin: 40px 40px 40px 80px;
+    margin: 25px 40px 25px 80px;
 }
 
 .searcher-title {
