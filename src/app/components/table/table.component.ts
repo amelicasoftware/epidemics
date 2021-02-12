@@ -9,8 +9,8 @@ import { Article } from '../../models/Article.model';
 export class TableComponent implements OnInit {
   @Input() articles: Array<Article> = new Array<Article>();
 
-  imagenR = 'assets/img/shared/des.png';
-  imagenN = 'assets/img/shared/des.png';
+  imagenR = 'assets/img/icons/des.png';
+  imagenN = 'assets/img/icons/des.png';
   reverseR = true;
   reverseN = true;
 
@@ -29,18 +29,18 @@ export class TableComponent implements OnInit {
 
   changeIcon(field: string, reverse: boolean){
     if (reverse && field === 'nombreRevista'){
-      this.imagenR = 'assets/img/shared/as.png';
+      this.imagenR = 'assets/img/icons/as.png';
       this.reverseR = false;
     } else {
-      this.imagenR = 'assets/img/shared/des.png';
+      this.imagenR = 'assets/img/icons/des.png';
       this.reverseR = true;
     }
 
     if (reverse && field === 'anio'){
-      this.imagenN = 'assets/img/shared/as.png';
+      this.imagenN = 'assets/img/icons/as.png';
       this.reverseN = false;
     } else {
-      this.imagenN = 'assets/img/shared/des.png';
+      this.imagenN = 'assets/img/icons/des.png';
       this.reverseN = true;
     }
   }

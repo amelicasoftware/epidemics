@@ -32,8 +32,8 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
   search: string;
   positionPage = 1;
   view = true;
-  imgTable = 'assets/img/shared/table.png';
-  imgList = 'assets/img/shared/list-act.png';
+  imgTable = 'assets/img/icons/table.png';
+  imgList = 'assets/img/icons/list-act.png';
   results = true;
 
   constructor(
@@ -143,11 +143,11 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
   changeView(state: boolean){
     this.view = state;
     if (state) {
-      this.imgTable = 'assets/img/shared/table.png';
-      this.imgList = 'assets/img/shared/list-act.png';
+      this.imgTable = 'assets/img/icons/table.png';
+      this.imgList = 'assets/img/icons/list-act.png';
     } else {
-      this.imgTable = 'assets/img/shared/table-act.png';
-      this.imgList = 'assets/img/shared/list.png';
+      this.imgTable = 'assets/img/icons/table-act.png';
+      this.imgList = 'assets/img/icons/list.png';
     }
   }
 
