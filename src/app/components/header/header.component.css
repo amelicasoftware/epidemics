@@ -1,6 +1,9 @@
 .header {
-    display: flex;
     background-color: #37464E;
+}
+
+.navigation {
+    display: flex;
     color: white;
     align-items: center;
     height: 90px;
@@ -35,4 +38,10 @@ a {
 .languages-social-netwoks a img {
     width: 20px;
     height: 20px;
+}
+
+.current-section {
+    color: #6C858E;
+    font-size: 12px;
+    padding: 0px 40px 20px 80px;
 }
