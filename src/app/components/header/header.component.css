@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    background-color: #37464E;
+    color: white;
+    align-items: center;
+    height: 90px;
+}
+
+.to-home {
+    width: 200px;
+    cursor: pointer;
+    margin: 10px 40px 10px 80px;
+}
+
+.links-home {
+    font-size: 12px;
+}
+
+.links-home span {
+    margin: 0px 10px;
+}
+
+.languages-social-netwoks {
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.languages-social-netwoks span,
+a {
+    padding: 0px 5px;
+}
+
+.languages-social-netwoks a img {
+    width: 20px;
+    height: 20px;
+}

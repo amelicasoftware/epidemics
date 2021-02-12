@@ -24,6 +24,7 @@ import { TableComponent } from './components/table/table.component';
 import { TargetComponent } from './components/target/target.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FooterComponent } from './components/footer/footer.component';
     TargetComponent,
     PaginationComponent,
     FooterComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
