@@ -19,9 +19,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let articulo of articles">
-                <td colspan="3" *ngIf="articulo.origen === 'PDF'"><a class="tittle" href="https://www.redalyc.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank">{{articulo.tituloArticulo }}</a></td>
-                <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="tittle" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{articulo.tituloArticulo }}</a></td>
-                <td colspan="3" *ngIf="articulo.origen === 'ameli'"><a class="tittle" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{articulo.tituloArticulo }}</a></td>
+                <td colspan="3" *ngIf="articulo.origen === 'PDF'"><a class="tittle" href="https://www.redalyc.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank">{{articulo.tituloArticulo | titleArticle }}</a></td>
+                <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="tittle" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{articulo.tituloArticulo | titleArticle }}</a></td>
+                <td colspan="3" *ngIf="articulo.origen === 'ameli'"><a class="tittle" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{articulo.tituloArticulo | titleArticle }}</a></td>
                 <td colspan="2">{{ articulo.autores | authors }}</td>
                 <td colspan="2">{{ articulo.nombreRevista }}</td>
                 <td>{{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }})</td>

@@ -10,6 +10,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
 // PIPES
 import { AuthorsPipe } from './pipes/authors.pipe';
+import { TitleArticlePipe } from './pipes/title-article.pipe';
 
 // Interceptors
 import { HttpErrorInterceptor } from './interceptors/httpError.interceptor';
@@ -36,6 +37,7 @@ import { HeaderComponent } from './components/header/header.component';
     FiltersComponent,
     TableComponent,
     TargetComponent,
+    TitleArticlePipe,
     PaginationComponent,
     FooterComponent,
     HeaderComponent,

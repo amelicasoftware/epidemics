@@ -3,13 +3,13 @@
     <div class="article" *ngFor="let article of articles">
         <div *ngIf="article.origen === 'PDF'">
             <a class="title" href="https://www.redalyc.org/articulo.oa?id={{article.cveArticulo}}" target="_blank">
-                {{ article.tituloArticulo }}
+                {{ article.tituloArticulo | titleArticle }}
             </a>
         </div>
 
         <div *ngIf="article.origen === 'XML'">
             <a class="title" href="https://www.redalyc.org/jatsRepo/{{article.cveRevista}}/{{article.cveArticulo}}/index.html" target="_blank">
-                {{ article.tituloArticulo }}
+                {{ article.tituloArticulo | titleArticle }}
             </a>
         </div>
 
