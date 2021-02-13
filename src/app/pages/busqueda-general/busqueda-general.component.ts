@@ -48,6 +48,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy(): void {
+    console.log('Destroy page busqueda general');
     this.finalPositionSubscription.unsubscribe();
     this.positionSubscription.unsubscribe();
     this.searchSubscription.unsubscribe();
@@ -87,10 +88,11 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
         this.articleService.getArticles(search, 1, this.filtersChain).subscribe(
           (articles: ArticleResult) => {
             this.articles = articles.resultados;
-            this.results = this.articleService.articlesExists(articles.resultados.length);
+            this.totalResults = articles.totalResultados;
             this.filterService.changeFilters(articles.filtros);
             this.paginationService.changeInitialPosition();
             this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
+            this.results = this.articleService.articlesExists(articles.resultados.length);
           }
         );
       }
@@ -108,6 +110,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
             if (this.articleService.articlesExists(articles.resultados.length)){
               this.positionPage = 1;
               this.articles = articles.resultados;
+              this.totalResults = articles.totalResultados;
               this.filterService.changeFilters(articles.filtros);
               this.paginationService.changeInitialPosition();
               this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');

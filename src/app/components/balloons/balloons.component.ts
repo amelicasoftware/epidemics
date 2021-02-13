@@ -20,7 +20,7 @@ export class BalloonsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('Componente nuevos globitos');
+    console.log('Componente globitos');
     this.filtersSelected = this.filterService.filtersSelected$.subscribe(
       (filtersSelected: Array<FilterElement>) => this.balloonFilters = this.filterService.changeStatefiltersSelected(filtersSelected)
     );

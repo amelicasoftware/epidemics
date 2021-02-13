@@ -16,10 +16,12 @@ export class FiltersComponent implements OnInit, OnDestroy {
   constructor( private filterService: FilterService ) { }
 
   ngOnDestroy(): void {
+    console.log('Destroy component Filters');
     this.filtersSubscription.unsubscribe();
   }
 
   ngOnInit(): void {
+    console.log('componente filtros');
     this.filtersSubscription = this.filterService.filters$.subscribe(
       (filters: Array<Filter>) => this.filters = filters
     );

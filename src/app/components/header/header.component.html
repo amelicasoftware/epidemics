@@ -6,7 +6,11 @@
             </a>
         </div>
         <div class="links-home">
-            <ejs-menu [items]='menuItems'></ejs-menu>
+            <ejs-menu [items]='menuItems'>
+                <ng-template #template let-menuItems="">
+                    <a target='_blank' href="{{menuItems.url}}" class="item-search">{{menuItems.text}}</a>
+                </ng-template>
+            </ejs-menu>
         </div>
         <div class="languages-social-netwoks">
             <!-- <span>ESP</span>
