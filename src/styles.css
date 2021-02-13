@@ -25,13 +25,18 @@ body {
 
 /* Estilos modificados de la libreria ej2-angular-navigations con respecto al diseño enviado por la empresa */
 
+.e-menu-wrapper ul .e-menu-item {
+    padding: 0 5px;
+}
+
 .e-menu-wrapper ul .e-menu-item.e-selected {
     background-color: #37464E;
     color: white;
 }
 
 .e-menu-wrapper ul .e-menu-item .e-caret,
-.e-menu-wrapper ul .e-menu-item.e-selected .e-caret {
+.e-menu-wrapper ul .e-menu-item.e-selected .e-caret,
+.e-menu-wrapper ul .e-menu-item .e-menu-url {
     color: white;
 }
 

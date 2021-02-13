@@ -12,32 +12,75 @@ export class HeaderComponent implements OnInit {
     {
       text: 'Acerca de Redalyc',
       items: [
-          { text: 'Misión' },
-          { text: 'Consejo asesor' },
-          { text: 'Directorio' },
-          { text: 'Cronología' },
-          { text: 'Reconocimientos internacionales' },
-          { text: 'OAI-PMH' },
-          { text: 'Redalyc en tu sitio web' },
-          { text: 'Uso legal' },
-          { text: 'Publicaciones' },
+          {
+            text: 'Misión',
+            url: 'https://www.redalyc.org/redalyc/acerca-de/mision.html'
+          },
+          {
+            text: 'Consejo asesor',
+            url: 'https://www.redalyc.org/redalyc/acerca-de/comite.html'
+          },
+          {
+            text: 'Directorio',
+            url: 'https://www.redalyc.org/redalyc/acerca-de/directorio.html'
+          },
+          {
+            text: 'Cronología',
+            url: 'https://www.redalyc.org/redalyc/acerca-de/noticias.html'
+          },
+          {
+            text: 'Reconocimientos internacionales',
+            url: 'https://www.redalyc.org/redalyc/acerca-de/reconocimientos.html'
+          },
+          {
+            text: 'OAI-PMH',
+            url: 'https://www.redalyc.org/redalyc/acerca-de/oai-pmh.html'
+          },
+          {
+            text: 'Redalyc en tu sitio web',
+            url: 'https://www.redalyc.org/redalyc/acerca-de/buscador.html'
+          },
+          {
+            text: 'Uso legal',
+            url: 'https://www.redalyc.org/redalyc/acerca-de/usolegal.html'
+          },
+          {
+            text: 'Publicaciones',
+            url: 'https://www.redalyc.org/redalyc/acerca-de/productos.html'
+          },
       ]
     },
     {
-      text: 'Accesso Abierto Diamante'
+      text: 'Accesso Abierto Diamante',
+      url: 'https://www.redalyc.org/home.oa?id=accesso'
     },
     {
-      text: 'Principios y Valores'
+      text: 'Principios y Valores',
+      url: 'https://www.redalyc.org/home.oa?id=principios'
     },
     {
       text: 'Tecnología de Publicación Digital (XML JATS)',
       items: [
-        { text: 'Marcalyc Sistema de Marcación (XML JATS)' },
-        { text: 'Integración OJS' },
-        { text: 'Capacitación XML JATS' },
-        { text: 'Generación Automática de ePUB, PDF HTML' },
-        { text: 'Visor de artículos' },
-        { text: 'Visor móvil de articulos' }
+        {
+          text: 'Marcalyc Sistema de Marcación (XML JATS)',
+          url: 'http://marcalyc.redalyc.org/'
+        },
+        {
+          text: 'Integración OJS'
+        },
+        {
+          text: 'Capacitación XML JATS',
+          url: 'http://marcalyc.redalyc.org/ayuda/'
+        },
+        {
+          text: 'Generación Automática de ePUB, PDF HTML'
+        },
+        {
+          text: 'Visor de artículos'
+        },
+        {
+          text: 'Visor móvil de articulos'
+        }
       ]
     },
     {
@@ -46,20 +89,37 @@ export class HeaderComponent implements OnInit {
         {
           text: 'Índice de Revistas Consolidadas Redalyc',
           items: [
-            { text: 'Criterios de evaluación'},
-            { text: 'Proceso de postulación'}
-          ]
+            {
+              text: 'Criterios de evaluación',
+              url: 'https://www.redalyc.org/postulacion.oa?q=criterios'
+            },
+            {
+              text: 'Proceso de postulación',
+              url: 'https://www.redalyc.org/postulacion.oa?q=proceso'
+            }
+          ],
+          url: 'https://www.redalyc.org/'
         },
         {
           text: 'Índice de Revistas en consolidación AmeliCA',
           items: [
-            { text: 'Criterios de evaluación'},
-            { text: 'Proceso de postulación'}
-          ]
+            {
+              text: 'Criterios de evaluación',
+              url: 'http://portal.amelica.org/microPortal.oa?opcion=postula'
+            },
+            {
+              text: 'Proceso de postulación',
+              url: 'http://portal.amelica.org/microPortal.oa?opcion=postula'
+            }
+          ],
+          url: 'http://portal.amelica.org/'
         }
       ]
     },
-    { text: 'Servicios' }
+    {
+      text: 'Servicios',
+      url: 'https://www.redalyc.org/home.oa?id=servicios'
+    }
   ];
 
   constructor() { }

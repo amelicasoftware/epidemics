@@ -12,7 +12,7 @@
 .to-home {
     width: 200px;
     cursor: pointer;
-    margin: 10px 0px 10px 20px;
+    margin: 10px 12px 10px 20px;
 }
 
 .links-home ul {
@@ -48,4 +48,9 @@ a {
     color: #6C858E;
     font-size: 12px;
     padding: 0px 40px 20px 80px;
+}
+
+.current-section a {
+    text-decoration: none;
+    color: #6C858E;
 }
