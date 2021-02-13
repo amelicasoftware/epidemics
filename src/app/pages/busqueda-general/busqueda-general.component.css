@@ -3,38 +3,6 @@
     height: 115px;
 }
 
-.title-virus {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: white;
-    padding: 20px;
-}
-
-.pipe-title-virus {
-    margin: 0px 20px;
-}
-
-.navigation-searches {
-    display: flex;
-    justify-content: center;
-}
-
-.navigation-searches a {
-    align-items: center;
-    display: inline-flex;
-    font-size: 12px;
-    padding: 6px 10px;
-    /* cursor: pointer; */
-    text-decoration: none;
-    color: white;
-}
-
-.selected-searcher {
-    background-color: #003B60;
-}
-
 #banner {
     align-self: center;
     align-items: center;
@@ -124,6 +92,16 @@
 .view-results {
     margin: 0% 5% 0% 30%;
     color: #666666;
+}
+
+.results {
+    margin: 15px 20px;
+    font-size: 13px;
+}
+
+.total-results {
+    float: right;
+    margin-right: 25px;
 }
 
 .view-table {

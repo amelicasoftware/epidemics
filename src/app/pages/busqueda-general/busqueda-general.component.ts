@@ -35,6 +35,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
   imgTable = 'assets/img/icons/table.png';
   imgList = 'assets/img/icons/list-act.png';
   results = true;
+  totalResults: number;
 
   constructor(
     private articleService: ArticleService,
@@ -122,6 +123,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
     this.articleService.getArticles(this.search, 1, this.filtersChain).subscribe(
       (articles: ArticleResult) => {
         this.articles = articles.resultados;
+        this.totalResults = articles.totalResultados;
         this.results = this.articleService.articlesExists(articles.resultados.length);
         this.filterService.changeFilters(articles.filtros);
         this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');

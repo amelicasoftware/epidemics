@@ -8,42 +8,7 @@
     </section>
 
     <section id="searches">
-        <div class="title-virus">
-            <img target="_blank" src="assets/img/icons/icono-virus.png" alt="">
-            <span>
-                Base de conocimiento en epidemias y COVID-19
-            </span>
-            <span class="pipe-title-virus">
-                | 
-            </span>
-            <span>Más de 13,000 artículos</span>
-        </div>
-        <div class="navigation-searches">
-            <!-- <a [routerLink]="['/busqueda-general', 'ciencia']" class="selected-searcher"> -->
-            <a>
-                <img target="_blank" src="assets/img/icons/buscador.png" alt=""> Buscador
-            </a>
-            <!-- <a [routerLink]="['/busqueda-general', 'clave']"> -->
-            <a>
-                <img target="_blank" src="assets/img/icons/palabra-clave.png" alt=""> Artículos por palabra clave
-            </a>
-            <!-- <a [routerLink]="['/busqueda-general', 'conocimiento']"> -->
-            <a>
-                <img target="_blank" src="assets/img/icons/red.png" alt=""> Representación del conocimiento
-            </a>
-            <!-- <a [routerLink]="['/busqueda-general', 'país']"> -->
-            <a>
-                <img target="_blank" src="assets/img/icons/por-pais.png" alt=""> Artículos por país
-            </a>
-            <!-- <a [routerLink]="['/busqueda-general', 'base-conocimiento']"> -->
-            <a>
-                <img target="_blank" src="assets/img/icons/sparcql.png" alt=""> Base de conocimiento en SPARQL
-            </a>
-            <!-- <a [routerLink]="['/busqueda-general', 'acerca-de']"> -->
-            <a>
-                <img target="_blank" src="assets/img/icons/acerca-de.png" alt=""> Acerca de
-            </a>
-        </div>
+        <app-banner-searches></app-banner-searches>
     </section>
 
     <section id="banner" class="flex">
@@ -53,8 +18,8 @@
         </div>
 
         <div class="searcher">
-            <input class="searcher-text" #search (keyup.enter)="searchArticles(search.value)" type="text" placeholder="Buscar" required />
-            <input class="searcher-icon" type="image" src="assets/img/icons/buscador-institucionmdpi.png" (click)="searchArticles(search.value)" name="boton-buscar-articulo" alt="Buscar" required />
+            <input class="searcher-text" #predefined (keyup.enter)="searchArticles(predefined.value)" type="text" placeholder="Buscar" required />
+            <input class="searcher-icon" type="image" src="assets/img/icons/buscador-institucionmdpi.png" (click)="searchArticles(predefined.value)" name="boton-buscar-articulo" alt="Buscar" required />
         </div>
     </section>
 
@@ -88,6 +53,11 @@
                 </div>
             </div>
             <div>
+                <div class="results">
+                    <span>Resultados para: {{ search }} en artículos de revista</span>
+                    <span class="total-results" *ngIf="positionPage !== finalPositionPage">{{positionPage * 10 - 9}} a {{positionPage * 10}} de {{totalResults}} artículos </span>
+                    <span class="total-results" *ngIf="positionPage === finalPositionPage"> {{positionPage * 10 - 9}} a {{totalResults}} de {{totalResults}} artículos </span>
+                </div>
                 <div class="balloons-component">
                     <app-balloons></app-balloons>
                 </div>
