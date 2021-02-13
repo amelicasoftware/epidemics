@@ -19,6 +19,7 @@ export class PaginationComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     console.log('Destroy component New Pagination');
     this.finalPageSubscription.unsubscribe();
+    this.initialPageSubscription.unsubscribe();
   }
 
   ngOnInit(): void {

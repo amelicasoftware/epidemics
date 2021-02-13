@@ -58,4 +58,12 @@ a {
 .item-search {
     color: white;
     text-decoration: none;
+    display: inline-block;
+    width: 100%;
+}
+
+#menuitem_1 a,
+#menuitem_4 a,
+#menuitem_5 a {
+    pointer-events: none;
 }
