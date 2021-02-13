@@ -12,15 +12,19 @@
 .to-home {
     width: 200px;
     cursor: pointer;
-    margin: 10px 40px 10px 80px;
+    margin: 10px 0px 10px 20px;
 }
 
-.links-home {
+.links-home ul {
     font-size: 12px;
+    background-color: #37464E;
+    color: white;
+    white-space: normal;
 }
 
-.links-home span {
-    margin: 0px 10px;
+.links-home li:hover {
+    background-color: #37464E;
+    color: white;
 }
 
 .languages-social-netwoks {
@@ -32,7 +36,7 @@
 
 .languages-social-netwoks span,
 a {
-    padding: 0px 5px;
+    padding: 0px 3px;
 }
 
 .languages-social-netwoks a img {

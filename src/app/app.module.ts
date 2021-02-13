@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 // Librerias
+import { MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 // PIPES
@@ -43,6 +44,7 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MenuModule,
     RouterModule.forRoot(ROUTES, { useHash: true}),
     NgxSpinnerModule,
   ],

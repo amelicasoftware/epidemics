@@ -4,12 +4,7 @@
             <img class="to-home" id="to-home" src="assets/img/shared/logo-redalyc-fondo-oscuro.png">
         </div>
         <div class="links-home">
-            <span class="menu-visible boton-menu-about ng-binding">Acerca de Redalyc</span>
-            <span class="menu-visible ng-binding" id="diamont-access">Accesso Abierto Diamante</span>
-            <span class="menu-visible ng-binding" id="principios-valores">Principios y Valores</span>
-            <span class="menu-visible boton-menu-tecn ng-binding">Tecnología de Publicación Digital (XML JATS)</span>
-            <span class="menu-visible jornals-indexation boton-menu-index ng-binding">Indexación de Revistas</span>
-            <span class="menu-visible ng-binding" id="services">Servicios</span>
+            <ejs-menu [items]='menuItems'></ejs-menu>
 
             <!--  <div id="menu-indexation">
                 <a class="consolidated-option" href="http://wwww.redalyc.org"><span class="ng-binding">Índice de Revistas Consolidadas Redalyc</span><i class="fa fa-caret-down" aria-hidden="true"></i></a>
