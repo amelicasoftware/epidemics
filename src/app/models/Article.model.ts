@@ -1,4 +1,4 @@
-export interface Article{
+export interface Article {
     cveArticulo: number;
     tituloArticulo: string;
     organismos: string;

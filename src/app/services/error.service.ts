@@ -8,7 +8,7 @@ export class ErrorService {
 
   constructor() { }
 
-  showError(errorMessage: string){
+  showError(errorMessage: string): void {
     console.log(errorMessage);
     Swal.fire(
       'A ocurrido un error!',

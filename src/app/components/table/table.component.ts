@@ -19,7 +19,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  reverse(field: string, reverse: boolean){
+  reverse(field: string, reverse: boolean): void {
     /* const fieldSort: FiledSort = new FiledSort();
     fieldSort.field = field;
     fieldSort.reverse = reverse; */
@@ -27,7 +27,7 @@ export class TableComponent implements OnInit {
     this.changeIcon(field, reverse); */
   }
 
-  changeIcon(field: string, reverse: boolean){
+  changeIcon(field: string, reverse: boolean): void {
     if (reverse && field === 'nombreRevista'){
       this.imagenR = 'assets/img/icons/as.png';
       this.reverseR = false;

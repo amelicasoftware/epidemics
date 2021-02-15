@@ -9,24 +9,25 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./balloons.component.css']
 })
 export class BalloonsComponent implements OnInit, OnDestroy {
-  filtersSelected: Subscription;
+  private filtersSelected$: Subscription;
 
   balloonFilters: Array<FilterElement> = new Array<FilterElement>();
 
   constructor( private filterService: FilterService ) { }
 
-  ngOnDestroy(): void {
-    this.filtersSelected.unsubscribe();
-  }
-
   ngOnInit(): void {
     console.log('Componente globitos');
-    this.filtersSelected = this.filterService.filtersSelected$.subscribe(
+    this.filtersSelected$ = this.filterService.filtersSelected$.subscribe(
       (filtersSelected: Array<FilterElement>) => this.balloonFilters = this.filterService.changeStatefiltersSelected(filtersSelected)
     );
   }
 
-  public deleteBalloonFilter(ballon: FilterElement){
+  ngOnDestroy(): void {
+    console.log('Destroy component ballons');
+    this.filtersSelected$.unsubscribe();
+  }
+
+  public deleteBalloonFilter(ballon: FilterElement): void {
     this.filterService.findFilterActive(ballon.nombre, ballon.clave);
   }
 

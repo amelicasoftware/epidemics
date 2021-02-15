@@ -1,25 +1,39 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaginationService {
-  position$: EventEmitter<number> = new EventEmitter<number>();
-  initialPosition$: EventEmitter<number> = new EventEmitter<number>();
-  finalPosition$: EventEmitter<number> = new EventEmitter<number>();
+  private _position$: Subject<number> = new Subject<number>();
+  private _initialPosition$: Subject<number> = new Subject<number>();
+  private _finalPosition$: Subject<number> = new Subject<number>();
 
   constructor() { }
 
-  changePosition(page: number) {
+  get position$(): Observable<number> {
+    return this._position$;
+  }
+
+  get initialPosition$(): Observable<number> {
+    return this._initialPosition$;
+  }
+
+  get finalPosition$(): Observable<number> {
+    return this._finalPosition$;
+  }
+
+  changePosition(page: number): void {
     console.log('change position');
-    this.position$.emit(page);
+    this._position$.next(page);
   }
 
-  changeInitialPosition(){
-    this.initialPosition$.emit(1);
+  changeInitialPosition(): void {
+    console.log('change initial position');
+    this._initialPosition$.next(1);
   }
 
-  changeFinalPosition(totalPages: number, typeSearch: string) {
+  changeFinalPosition(totalPages: number, typeSearch: string): void {
     console.log('change final position');
     console.log(totalPages);
     let finalPage: number;
@@ -32,6 +46,6 @@ export class PaginationService {
         ? (finalPage = totalPages / 12)
         : (finalPage = Math.floor(totalPages / 12) + 1);
 
-    this.finalPosition$.emit(finalPage);
+    this._finalPosition$.next(finalPage);
   }
 }

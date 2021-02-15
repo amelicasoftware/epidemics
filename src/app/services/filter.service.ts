@@ -1,26 +1,40 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Filter } from '../models/Filter.model';
 import { FilterElement } from '../models/FilterElement.model';
 import { FilterChain } from '../models/FilterChain.model';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilterService {
-  filters$: EventEmitter<Array<Filter>> = new EventEmitter<Array<Filter>>();
-  filtersChain$: EventEmitter<FilterChain> = new EventEmitter<FilterChain>();
-  filtersSelected$: EventEmitter<Array<FilterElement>> = new EventEmitter<Array<FilterElement>>();
+  private _filters$: Subject<Array<Filter>> = new Subject<Array<Filter>>();
+  private _filtersChain$: Subject<FilterChain> = new Subject<FilterChain>();
+  private _filtersSelected$: Subject<Array<FilterElement>> = new Subject<Array<FilterElement>>();
+
   filtersSelected: Array<FilterElement> = [];
   filtersChain: FilterChain = new FilterChain();
 
   constructor() { }
 
-  public changeFilters(filters: Array<Filter>){
-    console.log('change filters', filters);
-    this.filters$.emit(filters);
+  get filters$(): Observable<Array<Filter>>{
+    return this._filters$;
   }
 
-  public applyFilters(){
+  get filtersChain$(): Observable<FilterChain>{
+    return this._filtersChain$;
+  }
+
+  get filtersSelected$(): Observable<Array<FilterElement>>{
+    return this._filtersSelected$;
+  }
+
+  public changeFilters(filters: Array<Filter>): void {
+    console.log('change filters', filters);
+    this._filters$.next(filters);
+  }
+
+  public applyFilters(): void {
     this.filtersChain.yearChain = this.buildChain('Año');
     this.filtersChain.disciplineChain = this.buildChain('Disciplina');
     this.filtersChain.countryChain = this.buildChain('País');
@@ -39,11 +53,11 @@ export class FilterService {
       this.filtersChain$.emit(this.filtersChain);
       this.filtersSelected$.emit(this.filtersSelected);
     } */
-    this.filtersChain$.emit(this.filtersChain);
-    this.filtersSelected$.emit(this.filtersSelected);
+    this._filtersChain$.next(this.filtersChain);
+    this._filtersSelected$.next(this.filtersSelected);
   }
 
-  public buildChain(filter: string): string{
+  public buildChain(filter: string): string {
     const filters: string[] = [];
     let filtersChain = '';
 
@@ -58,7 +72,7 @@ export class FilterService {
     return filtersChain;
   }
 
-  public showElements(filter: Filter){
+  public showElements(filter: Filter): void {
     if (!filter.hasOwnProperty('state')) {
       Object.defineProperty(filter, 'state', {
         value: false,
@@ -71,7 +85,7 @@ export class FilterService {
     : Object.defineProperty(filter, 'state', { value: true });
   }
 
-  public activateFilters(element: FilterElement): boolean{
+  public activateFilters(element: FilterElement): boolean {
     if (this.filtersSelected.find((filterSelected: FilterElement) => filterSelected.nombre === element.nombre)) {
       return true;
     }else{
@@ -79,7 +93,7 @@ export class FilterService {
     }
   }
 
-  public addFilter(filterElement: FilterElement, filterName: string){
+  public addFilter(filterElement: FilterElement, filterName: string): void {
     const deleteFilterActive: boolean = this.findFilterActive(filterElement.nombre, filterElement.clave);
     console.log(deleteFilterActive);
     const element: FilterElement = {
@@ -102,7 +116,7 @@ export class FilterService {
     console.log(this.filtersSelected);
   }
 
-  public showButton(filter: Filter): boolean{
+  public showButton(filter: Filter): boolean {
     if (filter.elementos.length > 5){
       return false;
     }else{
@@ -110,7 +124,7 @@ export class FilterService {
     }
   }
 
-  public findFilterActive(filterName: string, key: string): boolean{
+  public findFilterActive(filterName: string, key: string): boolean {
     if (this.findFilterSelected(filterName, true)){
       const index: number = this.getIndexFilterSelected(key);
       this.filtersSelected.splice(index, 1);
@@ -121,7 +135,7 @@ export class FilterService {
     }
   }
 
-  public findFilterSelected(filterName: string, state: boolean): boolean{
+  public findFilterSelected(filterName: string, state: boolean): boolean {
     return this.filtersSelected.find(
         (filterSelected: FilterElement) => filterSelected.nombre === filterName && filterSelected.state === state
       )
@@ -129,16 +143,21 @@ export class FilterService {
       : false;
   }
 
-  public getIndexFilterSelected(key: string): number{
+  public getIndexFilterSelected(key: string): number {
     return this.filtersSelected.findIndex((filterIndexSelected: FilterElement) => filterIndexSelected.clave === key);
   }
 
-  public changeStatefiltersSelected(filtersSelected: Array<FilterElement>): Array<FilterElement>{
+  public changeStatefiltersSelected(filtersSelected: Array<FilterElement>): Array<FilterElement> {
     filtersSelected.forEach(
       (filterSelected: FilterElement) => {
         filterSelected.state = true;
       }
     );
     return filtersSelected;
+  }
+
+  public cleanFiltersSelected(): void {
+    this.filtersSelected = [];
+    this._filtersSelected$.next(this.filtersSelected);
   }
 }

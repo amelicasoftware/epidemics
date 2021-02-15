@@ -69,6 +69,7 @@
     align-items: center;
     background-color: #f1f1f1;
     height: 47px;
+    font-size: 14px;
 }
 
 .selected {
@@ -90,7 +91,7 @@
 }
 
 .view-results {
-    margin: 0% 5% 0% 30%;
+    margin: 0% 5% 0% 38%;
     color: #666666;
 }
 

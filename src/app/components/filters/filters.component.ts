@@ -9,42 +9,42 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./filters.component.css']
 })
 export class FiltersComponent implements OnInit, OnDestroy {
-  filtersSubscription: Subscription;
+  private filtersSubscription$: Subscription;
 
   filters: Array<Filter> = new Array<Filter>();
 
   constructor( private filterService: FilterService ) { }
 
-  ngOnDestroy(): void {
-    console.log('Destroy component Filters');
-    this.filtersSubscription.unsubscribe();
-  }
-
   ngOnInit(): void {
     console.log('componente filtros');
-    this.filtersSubscription = this.filterService.filters$.subscribe(
+    this.filtersSubscription$ = this.filterService.filters$.subscribe(
       (filters: Array<Filter>) => this.filters = filters
     );
   }
 
-  public applyFilters(){
+  ngOnDestroy(): void {
+    console.log('Destroy component Filters');
+    this.filtersSubscription$.unsubscribe();
+  }
+
+  public applyFilters(): void {
     this.filterService.applyFilters();
   }
 
-  public showElements(filter: any){
+  public showElements(filter: any): void {
     this.filterService.showElements(filter);
   }
 
-  public activateFilters(element: any): boolean{
+  public activateFilters(element: any): boolean {
     const activate: boolean = this.filterService.activateFilters(element);
     return activate;
   }
 
-  public addFilter(filterElement: any, filterName: string){
+  public addFilter(filterElement: any, filterName: string): void {
     this.filterService.addFilter(filterElement, filterName);
   }
 
-  public showButton(filter: Filter): boolean{
+  public showButton(filter: Filter): boolean {
     const show: boolean = this.filterService.showButton(filter);
     return show;
   }

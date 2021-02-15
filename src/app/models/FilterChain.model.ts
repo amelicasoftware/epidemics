@@ -1,4 +1,4 @@
-export class FilterChain{
+export class FilterChain {
     yearChain?: string;
     disciplineChain?: string;
     countryChain?: string;

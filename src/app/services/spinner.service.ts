@@ -8,11 +8,11 @@ export class SpinnerService {
 
   constructor( private spinnerService: NgxSpinnerService ) { }
 
-  showSpinner(){
+  showSpinner(): void {
     this.spinnerService.show();
   }
 
-  hideSpinner(){
+  hideSpinner(): void {
     this.spinnerService.hide();
   }
 }

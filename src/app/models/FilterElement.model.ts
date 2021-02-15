@@ -1,4 +1,4 @@
-export interface FilterElement{
+export interface FilterElement {
     clave: string;
     nombre: string;
     filtro?: string;
