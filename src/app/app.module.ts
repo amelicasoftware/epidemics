@@ -21,6 +21,7 @@ import { AppComponent } from './app.component';
 import { BalloonsComponent } from './components/balloons/balloons.component';
 import { BannerSearchesComponent } from './components/banner-searches/banner-searches.component';
 import { BusquedaGeneralComponent } from './pages/busqueda-general/busqueda-general.component';
+import { BusquedaPaisComponent } from './pages/busqueda-pais/busqueda-pais.component';
 import { ROUTES } from './routes/app.routes';
 import { FiltersComponent } from './components/filters/filters.component';
 import { TableComponent } from './components/table/table.component';
@@ -36,6 +37,7 @@ import { HeaderComponent } from './components/header/header.component';
     BalloonsComponent,
     BannerSearchesComponent,
     BusquedaGeneralComponent,
+    BusquedaPaisComponent,
     FiltersComponent,
     TableComponent,
     TargetComponent,

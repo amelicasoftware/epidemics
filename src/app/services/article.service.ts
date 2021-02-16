@@ -58,6 +58,14 @@ export class ArticleService {
     return this.http.get<ArticleResult>(`${this.url}articulos/epidemics/${search}/${page}/10/relevancia/0/{"anios":"${filters.yearChain}","idiomas":"${filters.languageChain}", "paises":"${filters.countryChain}","areas":"","disciplinas":"${filters.disciplineChain}","autores":"","instituciones":"","origen":"","funete":"","fb":1}'`);
   }
 
+  getArticlesByCountry(
+    countryId: string,
+    page: number,
+    filters: FilterChain
+  ): Observable<ArticleResult>{
+    return this.http.get<ArticleResult>(`${this.url}articulos/epidemics/pais/${countryId}/${page}/10/relevancia/0/{"anios":"${filters.yearChain}","idiomas":"${filters.languageChain}", "paises":"${filters.countryChain}","areas":"","disciplinas":"${filters.disciplineChain}","autores":"","instituciones":"","origen":"","funete":"","fb":1}'`);
+  }
+
   articlesExists(articlesLength: number): boolean {
     let articlesExists: boolean;
     articlesLength ? articlesExists = true : articlesExists = false;

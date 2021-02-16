@@ -15,7 +15,12 @@
 
         <p>{{ article.autores | authors}}</p>
 
-        <p>{{ article.nombreRevista }}, {{ article.anio }}, {{ article.volumen }} ({{ article.numero }}) </p>
+        <p>
+            <!-- <a class="titleJournal" href="https://redalyc.org/revista.oa?id={{article.cveRevista}}" target="_blank">{{ article.nombreRevista }}, </a> <a class="titleJournal" href="https://redalyc.org/toc.oa?id={{article.cveRevista}}&numero={{article.cveNumero}}"
+                target="_blank">{{ article.anio }}, {{ article.volumen }} ({{ article.numero }})</a> -->
+            {{ article.nombreRevista }}, {{ article.anio }}, {{ article.volumen }} ({{ article.numero }})
+        </p>
+
 
         <p [innerHTML]='article.contenido'>{{ article.contenido }}</p>
 

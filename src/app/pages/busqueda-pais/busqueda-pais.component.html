@@ -14,16 +14,16 @@
     <section id="banner" class="flex">
         <div class="flex searcher-title">
             <img src="assets/img/icons/buscador-institucionmdpi.png" />
-            <p>Búsqueda General</p>
+            <p>Búsqueda Por País</p>
         </div>
 
         <div class="searcher">
-            <input class="searcher-text" #predefined (keyup.enter)="searchArticles(predefined.value)" type="text" placeholder="Buscar" required />
-            <input class="searcher-icon" type="image" src="assets/img/icons/buscador-institucionmdpi.png" (click)="searchArticles(predefined.value)" name="boton-buscar-articulo" alt="Buscar" required />
+            <input class="searcher-text" #predefined (keyup.enter)="searchArticlesByCountry(predefined.value)" type="text" placeholder="Buscar" required />
+            <input class="searcher-icon" type="image" src="assets/img/icons/buscador-institucionmdpi.png" (click)="searchArticlesByCountry(predefined.value)" name="boton-buscar-articulo" alt="Buscar" required />
         </div>
     </section>
 
-    <section id="sections" *ngIf="results">
+    <section id="sections">
 
         <div class="filters">
             <div class="text-filters">
@@ -54,7 +54,7 @@
             </div>
             <div>
                 <div class="results">
-                    <span>Resultados para: <b>{{ search }}</b> en artículos de revista</span>
+                    <span>Resultados para: <b>{{ country }}</b> en artículos de revista</span>
                     <span class="total-results" *ngIf="positionPage !== finalPositionPage">{{positionPage * 10 - 9}} a {{positionPage * 10}} de {{totalResults}} artículos </span>
                     <span class="total-results" *ngIf="positionPage === finalPositionPage"> {{positionPage * 10 - 9}} a {{totalResults}} de {{totalResults}} artículos </span>
                 </div>
@@ -71,17 +71,6 @@
                     <app-pagination (click)="goUp()"></app-pagination>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="no-results" *ngIf="!results">
-        <div class="message-no-results">
-            <span class="color-blue">No se encontraron resultados</span>
-            <br/><br/>
-            <span class="color-gray">Sugerencias:</span>
-            <ul class="color-gray">
-                <li>Prueba con una b&uacute;squeda nueva </li>
-            </ul>
         </div>
     </section>
 

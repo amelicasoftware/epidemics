@@ -66,20 +66,24 @@ export class HeaderComponent implements OnInit {
           url: 'http://marcalyc.redalyc.org/'
         },
         {
-          text: 'Integración OJS'
+          text: 'Integración OJS',
+          url: 'https://www.redalyc.org/'
         },
         {
           text: 'Capacitación XML JATS',
           url: 'http://marcalyc.redalyc.org/ayuda/'
         },
         {
-          text: 'Generación Automática de ePUB, PDF HTML'
+          text: 'Generación Automática de ePUB, PDF HTML',
+          url: 'https://www.redalyc.org/'
         },
         {
-          text: 'Visor de artículos'
+          text: 'Visor de artículos',
+          url: 'https://www.redalyc.org/'
         },
         {
-          text: 'Visor móvil de articulos'
+          text: 'Visor móvil de articulos',
+          url: 'https://www.redalyc.org/'
         }
       ]
     },

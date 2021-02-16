@@ -20,6 +20,17 @@
     color: #003B60;
 }
 
+.titleJournal {
+    text-decoration: none;
+    color: black;
+}
+
+.titleJournal:hover {
+    font-family: 'Barlow-Bold';
+    text-decoration: none;
+    color: #003B60;
+}
+
 .visualizations {
     display: inline;
 }
