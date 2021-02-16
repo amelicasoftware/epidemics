@@ -4,6 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { ArticleResult } from '../models/ArticleResult.model';
 import { FilterChain } from '../models/FilterChain.model';
 import { environment } from '../../environments/environment';
+import { Country } from '../models/Country.model';
 
 @Injectable({
   providedIn: 'root'
@@ -62,8 +63,12 @@ export class ArticleService {
     countryId: string,
     page: number,
     filters: FilterChain
-  ): Observable<ArticleResult>{
+  ): Observable<ArticleResult> {
     return this.http.get<ArticleResult>(`${this.url}articulos/epidemics/pais/${countryId}/${page}/10/relevancia/0/{"anios":"${filters.yearChain}","idiomas":"${filters.languageChain}", "paises":"${filters.countryChain}","areas":"","disciplinas":"${filters.disciplineChain}","autores":"","instituciones":"","origen":"","funete":"","fb":1}'`);
+  }
+
+  getCountries(): Observable<Country[]> {
+    return this.http.get<Country[]>(`http://localhost:4200/assets/json/paises.json`);
   }
 
   articlesExists(articlesLength: number): boolean {

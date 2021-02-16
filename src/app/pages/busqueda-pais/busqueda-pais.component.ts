@@ -8,6 +8,8 @@ import { FilterChain } from '../../models/FilterChain.model';
 import { FilterService } from '../../services/filter.service';
 import { PaginationService } from '../../services/pagination.service';
 import { Subscription } from 'rxjs';
+import { Country } from '../../models/Country.model';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-busqueda-pais',
@@ -22,6 +24,7 @@ export class BusquedaPaisComponent implements OnInit, OnDestroy {
   private subscriptionArray: Array<Subscription> = [];
 
   articles: Array<Article> = new Array<Article>();
+  listCountries: Array<Country> = new Array<Country>();
   filtersChain: FilterChain = {
     yearChain: '',
     disciplineChain: '',
@@ -36,6 +39,7 @@ export class BusquedaPaisComponent implements OnInit, OnDestroy {
   finalPositionPage: number;
   totalResults: number;
   country: string;
+  countryError: string;
   imgTable = 'assets/img/icons/table.png';
   imgList = 'assets/img/icons/list-act.png';
 
@@ -44,12 +48,13 @@ export class BusquedaPaisComponent implements OnInit, OnDestroy {
     private errorService: ErrorService,
     private filterService: FilterService,
     private paginationService: PaginationService,
-    private routeService: ActivatedRoute,
+    private routeService: ActivatedRoute
   ) {
     this.countryId = this.routeService.snapshot.paramMap.get('countryId');
   }
 
   ngOnInit(): void {
+
     this.finalPositionSubscription$ = this.paginationService.finalPosition$.subscribe(
       (finalPosition: number) => this.finalPositionPage = finalPosition
     );
@@ -85,11 +90,12 @@ export class BusquedaPaisComponent implements OnInit, OnDestroy {
             if (this.articleService.articlesExists(articles.resultados.length)){
               this.articles = articles.resultados;
               this.totalResults = articles.totalResultados;
+              this.country = articles.resultados[0].nombrePais;
               this.filterService.changeFilters(articles.filtros);
               this.paginationService.changeInitialPosition();
               this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
             } else {
-              this.errorService.showError(`No existen resultados para ${search} Sugerencias: Prueba con una búsqueda nueva`);
+              this.errorService.showError(`No existen resultados para ${this.countryError} Sugerencias: Prueba con una búsqueda nueva`);
               this.countryId = this.countryIdCopy;
             }
           }
@@ -97,7 +103,38 @@ export class BusquedaPaisComponent implements OnInit, OnDestroy {
       }
     );
 
-    this.articleService.getArticlesByCountry(this.countryId, 1, this.filtersChain).subscribe(
+    this.filtersChainSubscription$ = this.filterService.filtersChain$.subscribe(
+      (filtersChain: FilterChain) => {
+        this.filtersChain = filtersChain;
+        this.articleService.getArticlesByCountry(
+          this.countryId,
+          1,
+          this.filtersChain
+        ).subscribe(
+          (articles: ArticleResult) => {
+            if (this.articleService.articlesExists(articles.resultados.length)){
+              this.positionPage = 1;
+              this.articles = articles.resultados;
+              this.totalResults = articles.totalResultados;
+              this.filterService.changeFilters(articles.filtros);
+              this.paginationService.changeInitialPosition();
+              this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
+            } else {
+              this.errorService.showError('No exiten resultados para la combinación de filtros');
+              this.searchArticlesByCountry(this.countryId);
+            }
+          }
+        );
+      }
+    );
+
+    this.articleService.getArticlesByCountry(this.countryId, 1, this.filtersChain).pipe(
+      finalize(
+        () => this.articleService.getCountries().subscribe(
+          (countries: Array<Country>) => this.listCountries = countries
+        )
+      )
+    ).subscribe(
       (articles: ArticleResult) => {
         this.articles = articles.resultados;
         this.country = articles.resultados[0].nombrePais;
@@ -118,13 +155,10 @@ export class BusquedaPaisComponent implements OnInit, OnDestroy {
     this.subscriptionArray.forEach((subscription: Subscription) => subscription.unsubscribe());
   }
 
-  searchArticlesByCountry(search: string): void {
-    if (search){
-      this.filterService.cleanFiltersSelected();
-      this.articleService.changeSearch(search);
-    }else{
-      this.errorService.showError('Ingresé una palabra');
-    }
+  searchArticlesByCountry(countrySelected: string): void {
+    this.countryError = this.listCountries.find((country: Country) => country.clave === countrySelected).name;
+    this.filterService.cleanFiltersSelected();
+    this.articleService.changeSearch(countrySelected);
   }
 
   changeView(state: boolean): void {

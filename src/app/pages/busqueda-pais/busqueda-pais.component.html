@@ -13,13 +13,17 @@
 
     <section id="banner" class="flex">
         <div class="flex searcher-title">
-            <img src="assets/img/icons/buscador-institucionmdpi.png" />
-            <p>Búsqueda Por País</p>
+            <img src="assets/img/icons/pais-a.png" />
+            <p>{{country}}</p>
         </div>
 
         <div class="searcher">
-            <input class="searcher-text" #predefined (keyup.enter)="searchArticlesByCountry(predefined.value)" type="text" placeholder="Buscar" required />
-            <input class="searcher-icon" type="image" src="assets/img/icons/buscador-institucionmdpi.png" (click)="searchArticlesByCountry(predefined.value)" name="boton-buscar-articulo" alt="Buscar" required />
+            <span>Seleccionar el país:</span>
+            <select id="list-countries" #predefined (change)="searchArticlesByCountry(predefined.value)" placeholder="Buscar">
+                <option *ngFor="let country of listCountries" value="{{country.clave}}" #country.name>{{country.name}}</option> 
+            </select>
+            <!-- <input class="searcher-text" #predefined (keyup.enter)="searchArticlesByCountry(predefined.value)" type="text" placeholder="Buscar" required />
+            <input class="searcher-icon" type="image" src="assets/img/icons/buscador-institucionmdpi.png" (click)="searchArticlesByCountry(predefined.value)" name="boton-buscar-articulo" alt="Buscar" required /> -->
         </div>
     </section>
 

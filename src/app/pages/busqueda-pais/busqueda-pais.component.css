@@ -19,24 +19,25 @@
 }
 
 .searcher {
-    width: 70%
-}
-
-.searcher-text {
-    width: 45%;
-    margin-left: 30px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-family: Barlow-Regular;
+    width: 70%;
+    padding-left: 40px;
     font-size: 16px;
-    padding: 2px 20px 3px 5px;
 }
 
-.searcher-icon {
-    position: relative;
-    height: 15px;
-    left: -21px;
-    top: 3px;
+.sel-country {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12pt;
+    font-family: 'Barlow-Regular';
+}
+
+#list-countries {
+    width: 30%;
+    margin: auto auto auto 5px;
+    height: 30px;
+    background: #003B60;
+    color: white;
+    border-radius: 5px;
 }
 
 .flex {

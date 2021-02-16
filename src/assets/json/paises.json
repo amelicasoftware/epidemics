@@ -1,0 +1,23 @@
+[
+{ "id": "AO","name":"Angola", "value":"1","color":"#fd9322","clave":"4" ,"latitude":-8.8159, "longitude":13.2306},
+{ "id": "AR","name":"Argentina", "value":"53","color":"#fd9322","clave":"9" ,"latitude":-34.6118, "longitude":-63.4173},
+{ "id": "BO","name":"Bolivia", "value":"1","color":"#fd9322","clave":"19" ,"latitude":-19.0421, "longitude":-65.2559},
+{ "id": "BR","name":"Brasil", "value":"151","color":"#fd9322","clave":"21" ,"latitude":-15.7801, "longitude":-47.9292},
+{ "id": "CL","name":"Chile", "value":"20","color":"#fd9322","clave":"26" ,"latitude":-33.4691, "longitude":-70.642},
+{ "id": "CO","name":"Colombia", "value":"167","color":"#fd9322","clave":"30" ,"latitude":4.6473, "longitude":-74.0962},
+{ "id": "CR","name":"Costa Rica", "value":"28","color":"#fd9322","clave":"33" ,"latitude":9.9402, "longitude":-84.1002},
+{ "id": "CU","name":"Cuba", "value":"25","color":"#fd9322","clave":"35" ,"latitude":23.1333, "longitude":-82.3667},
+{ "id": "DE","name":"Alemania", "value":"1","color":"#fd9322","clave":"2" ,"latitude":51.0834196, "longitude":10.4234469},
+{ "id": "DO","name":"República Dominicana", "value":"1","color":"#fd9322","clave":"85" ,"latitude":18.479, "longitude":-69.8908},
+{ "id": "EC","name":"Ecuador", "value":"12","color":"#fd9322","clave":"37" ,"latitude":-0.2295, "longitude":-78.5243},
+{ "id": "ES","name":"España", "value":"47","color":"#fd9322","clave":"42" ,"latitude":40.4167, "longitude":-3.7033},
+{ "id": "IN","name":"India", "value":"1","color":"#fd9322","clave":"60" ,"latitude":28.6353, "longitude":77.225},
+{ "id": "MX","name":"México", "value":"138","color":"#fd9322","clave":"73" ,"latitude":19.4326009, "longitude":-99.1333416},
+{ "id": "PA","name":"Panamá", "value":"1","color":"#fd9322","clave":"79" ,"latitude":8.9943, "longitude":-79.5188},
+{ "id": "PE","name":"Perú", "value":"19","color":"#fd9322","clave":"81" ,"latitude":-12.0931, "longitude":-74.0465},
+{ "id": "PL","name":"Polonia", "value":"1","color":"#fd9322","clave":"82" ,"latitude":52.2297, "longitude":21.0122},
+{ "id": "PR","name":"Puerto Rico", "value":"1","color":"#fd9322","clave":"97" ,"latitude":18.45, "longitude":-66.0667},
+{ "id": "PT","name":"Portugal", "value":"4","color":"#fd9322","clave":"83" ,"latitude":40.0332629, "longitude":-7.8896263},
+{ "id": "UY","name":"Uruguay", "value":"7","color":"#fd9322","clave":"93" ,"latitude":-32.8941, "longitude":-56.0675},
+{ "id": "VE","name":"Venezuela", "value":"33","color":"#fd9322","clave":"94" ,"latitude":7.4961, "longitude":-63.8983}
+]
