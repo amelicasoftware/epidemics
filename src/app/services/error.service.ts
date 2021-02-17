@@ -25,4 +25,24 @@ export class ErrorService {
       'warning'
     );
   }
+
+  async showErrorNullArticles(): Promise<string> {
+    const result_1 = await Swal.fire({
+      title: 'Ingresé palabra de búsqueda',
+      input: 'text',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: false,
+      confirmButtonText: 'enviar',
+      showLoaderOnConfirm: true,
+      preConfirm: (search_1: string) => {
+        return search_1;
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    });
+    if (result_1.isConfirmed) {
+      return result_1.value;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuItemModel } from '@syncfusion/ej2-angular-navigations';
 
 @Component({
@@ -7,6 +7,7 @@ import { MenuItemModel } from '@syncfusion/ej2-angular-navigations';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @Input() currentSection: string;
 
   public menuItems: MenuItemModel[] = [
     {

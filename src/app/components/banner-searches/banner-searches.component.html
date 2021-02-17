@@ -10,11 +10,11 @@
 </div>
 <div class="navigation-searches">
     <!-- <a [routerLink]="['/busqueda-general', 'ciencia']" class="selected-searcher"> -->
-    <a class="selected-searcher">
+    <a [routerLink]="['/busqueda-general', 'covid-19']" [ngClass]="{'selected-searcher': sectionGeneral}">
         <img target="_blank" src="assets/img/icons/buscador.png" alt=""> Buscador
     </a>
     <!-- <a [routerLink]="['/busqueda-general', 'clave']"> -->
-    <a>
+    <a [ngClass]="{'selected-searcher': sectionKey}">
         <img target="_blank" src="assets/img/icons/palabra-clave.png" alt=""> Artículos por palabra clave
     </a>
     <!-- <a [routerLink]="['/busqueda-general', 'conocimiento']"> -->
@@ -22,7 +22,7 @@
         <img target="_blank" src="assets/img/icons/red.png" alt=""> Representación del conocimiento
     </a>
     <!-- <a [routerLink]="['/busqueda-general', 'país']"> -->
-    <a>
+    <a [routerLink]="['/busqueda-pais', '73']" [ngClass]="{'selected-searcher': sectionCountry}">
         <img target="_blank" src="assets/img/icons/por-pais.png" alt=""> Artículos por país
     </a>
     <!-- <a [routerLink]="['/busqueda-general', 'base-conocimiento']"> -->
@@ -30,7 +30,7 @@
         <img target="_blank" src="assets/img/icons/sparcql.png" alt=""> Base de conocimiento en SPARQL
     </a>
     <!-- <a [routerLink]="['/busqueda-general', 'acerca-de']"> -->
-    <a>
+    <a [ngClass]="{'selected-searcher': sectionAbout}">
         <img target="_blank" src="assets/img/icons/acerca-de.png" alt=""> Acerca de
     </a>
 </div>

@@ -4,11 +4,11 @@
     </ngx-spinner>
 
     <section id="header">
-        <app-header></app-header>
+        <app-header [currentSection]="'Búsqueda General'"></app-header>
     </section>
 
     <section id="searches">
-        <app-banner-searches></app-banner-searches>
+        <app-banner-searches [sectionGeneral]=true></app-banner-searches>
     </section>
 
     <section id="banner" class="flex">

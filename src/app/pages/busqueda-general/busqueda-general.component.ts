@@ -123,6 +123,25 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
       }
     );
 
+    if (!this.search){
+      this.errorService.showErrorNullArticles().then(
+        (value: string) => this.search = value
+      ).finally(
+        () => {
+          this.searchArticles(this.search);
+        }
+      );
+    } else {
+      this.getArticles();
+    }
+
+    this.subscriptionArray.push(this.finalPositionSubscription$);
+    this.subscriptionArray.push(this.positionSubscription$);
+    this.subscriptionArray.push(this.searchSubscription$);
+    this.subscriptionArray.push(this.filtersChainSubscription$);
+  }
+
+  getArticles(): void{
     this.articleService.getArticles(this.search, 1, this.filtersChain).subscribe(
       (articles: ArticleResult) => {
         this.articles = articles.resultados;
@@ -132,11 +151,6 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
         this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
       }
     );
-
-    this.subscriptionArray.push(this.finalPositionSubscription$);
-    this.subscriptionArray.push(this.positionSubscription$);
-    this.subscriptionArray.push(this.searchSubscription$);
-    this.subscriptionArray.push(this.filtersChainSubscription$);
   }
 
   searchArticles(search: string): void {
