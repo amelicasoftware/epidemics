@@ -11,7 +11,16 @@ export class ErrorService {
   showError(errorMessage: string): void {
     console.log(errorMessage);
     Swal.fire(
-      'A ocurrido un error!',
+      'Ha ocurrido un error!',
+      errorMessage,
+      'warning'
+    );
+  }
+
+  showErrorSearchs(errorMessage: string): void {
+    console.log(errorMessage);
+    Swal.fire(
+      'Lo sentimos',
       errorMessage,
       'warning'
     );
