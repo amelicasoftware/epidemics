@@ -40,12 +40,11 @@ body {
     color: white;
 }
 
-#menuitem_7 span,
-#menuitem_8 span {
-    color: black !important;
-}
-
 .e-menu-wrapper .e-ul .e-menu-item a,
 .e-menu-wrapper .e-ul .e-menu-item span {
+    color: black;
+}
+
+.e-menu-wrapper .e-ul .e-menu-item.e-selected span {
     color: black;
 }
