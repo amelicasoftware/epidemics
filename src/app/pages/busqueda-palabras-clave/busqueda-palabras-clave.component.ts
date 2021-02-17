@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Article } from '../../models/Article.model';
@@ -7,14 +8,13 @@ import { ErrorService } from '../../services/error.service';
 import { FilterChain } from '../../models/FilterChain.model';
 import { FilterService } from '../../services/filter.service';
 import { PaginationService } from '../../services/pagination.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-busqueda-general',
-  templateUrl: './busqueda-general.component.html',
-  styleUrls: ['./busqueda-general.component.css']
+  selector: 'app-busqueda-palabras-clave',
+  templateUrl: './busqueda-palabras-clave.component.html',
+  styleUrls: ['./busqueda-palabras-clave.component.css']
 })
-export class BusquedaGeneralComponent implements OnInit, OnDestroy{
+export class BusquedaPalabrasClaveComponent implements OnInit, OnDestroy {
   private finalPositionSubscription$: Subscription;
   private positionSubscription$: Subscription;
   private searchSubscription$: Subscription;
@@ -29,14 +29,14 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
     languageChain: '',
     fontChain: ''
   };
+
   finalPositionPage: number;
-  search: string;
-  searchCopy: string;
+  key: string;
+  keyCopy: string;
   positionPage = 1;
   view = true;
   imgTable = 'assets/img/icons/table.png';
   imgList = 'assets/img/icons/list-act.png';
-  results = true;
   totalResults: number;
 
   constructor(
@@ -46,7 +46,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
     private routeService: ActivatedRoute,
     private filterService: FilterService,
   ) {
-    this.search = this.routeService.snapshot.paramMap.get('search');
+    this.key = this.routeService.snapshot.paramMap.get('key');
   }
 
   ngOnInit(): void {
@@ -58,7 +58,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
       (position: number) => {
         this.positionPage = position;
 
-        this.articleService.getArticles(this.search, position, this.filtersChain).subscribe(
+        this.articleService.getArticlesByKey(this.key, position, this.filtersChain).subscribe(
           (articles: ArticleResult) => {
             this.articles = articles.resultados;
             this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
@@ -70,8 +70,8 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
     this.searchSubscription$ = this.articleService.search$.subscribe(
       (search: string) => {
         this.positionPage = 1;
-        this.searchCopy = this.search;
-        this.search = search;
+        this.keyCopy = this.key;
+        this.key = search;
         this.filtersChain = {
           yearChain: '',
           disciplineChain: '',
@@ -80,18 +80,17 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
           fontChain: ''
         };
 
-        this.articleService.getArticles(search, 1, this.filtersChain).subscribe(
+        this.articleService.getArticlesByKey(search, 1, this.filtersChain).subscribe(
           (articles: ArticleResult) => {
             if (this.articleService.articlesExists(articles.resultados.length)){
               this.articles = articles.resultados;
               this.totalResults = articles.totalResultados;
-              this.results = this.articleService.articlesExists(articles.resultados.length);
               this.filterService.changeFilters(articles.filtros);
               this.paginationService.changeInitialPosition();
               this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
             } else {
               this.errorService.showErrorSearchs(`No existen resultados para ${search} Sugerencias: Prueba con una búsqueda nueva`);
-              this.search = this.searchCopy;
+              this.key = this.keyCopy;
             }
           }
         );
@@ -101,8 +100,8 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
     this.filtersChainSubscription$ = this.filterService.filtersChain$.subscribe(
       (filtersChain: FilterChain) => {
         this.filtersChain = filtersChain;
-        this.articleService.getArticles(
-          this.search,
+        this.articleService.getArticlesByKey(
+          this.key,
           1,
           this.filtersChain
         ).subscribe(
@@ -116,24 +115,14 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
               this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
             } else {
               this.errorService.showErrorSearchs('No existen resultados para la combinación de filtros');
-              this.searchArticles(this.search);
+              this.searchArticlesByKey(this.key);
             }
           }
         );
       }
     );
 
-    if (!this.search){
-      this.errorService.showErrorNullArticles().then(
-        (value: string) => this.search = value
-      ).finally(
-        () => {
-          this.searchArticles(this.search);
-        }
-      );
-    } else {
-      this.getArticles();
-    }
+    this.geyArticlesByKey();
 
     this.subscriptionArray.push(this.finalPositionSubscription$);
     this.subscriptionArray.push(this.positionSubscription$);
@@ -146,22 +135,21 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
     this.subscriptionArray.forEach((subscription: Subscription) => subscription.unsubscribe());
   }
 
-  getArticles(): void{
-    this.articleService.getArticles(this.search, 1, this.filtersChain).subscribe(
+  geyArticlesByKey(): void{
+    this.articleService.getArticlesByKey(this.key, 1, this.filtersChain).subscribe(
       (articles: ArticleResult) => {
         this.articles = articles.resultados;
         this.totalResults = articles.totalResultados;
-        this.results = this.articleService.articlesExists(articles.resultados.length);
         this.filterService.changeFilters(articles.filtros);
         this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
       }
     );
   }
 
-  searchArticles(search: string): void {
-    if (search){
+  searchArticlesByKey(key: string): void {
+    if (key){
       this.filterService.cleanFiltersSelected();
-      this.articleService.changeSearch(search);
+      this.articleService.changeSearch(key);
     }else{
       this.errorService.showErrorSearchs('Ingresé una palabra');
     }
@@ -185,4 +173,5 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
       behavior: 'smooth',
     });
   }
+
 }

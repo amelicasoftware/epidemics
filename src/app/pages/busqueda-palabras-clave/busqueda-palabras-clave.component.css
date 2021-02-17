@@ -1,0 +1,163 @@
+#searches {
+    background-image: url(../../../assets/img/shared/fondo-covid.jpg);
+    height: 115px;
+}
+
+#banner {
+    align-self: center;
+    align-items: center;
+    font-family: Barlow-Regular;
+}
+
+#banner img {
+    margin: 25px 40px 25px 80px;
+}
+
+.searcher-title {
+    align-items: center;
+    width: 25%;
+}
+
+.searcher {
+    width: 70%
+}
+
+.searcher-text {
+    width: 45%;
+    margin-left: 30px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-family: Barlow-Regular;
+    font-size: 16px;
+    padding: 2px 20px 3px 5px;
+}
+
+.searcher-icon {
+    position: relative;
+    height: 15px;
+    left: -21px;
+    top: 3px;
+}
+
+.flex {
+    display: flex;
+}
+
+#sections {
+    display: grid;
+    grid-template-areas: "filters content-general";
+    grid-template-columns: 25% 75%;
+    min-height: 100vh;
+}
+
+.filters {
+    grid-area: filters;
+    border-right: 1px solid #f1f1f1;
+}
+
+.content-general {
+    grid-area: content-general;
+}
+
+#sections img {
+    margin: 10px;
+}
+
+.container-sections {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    height: 47px;
+    font-size: 14px;
+}
+
+.selected {
+    color: #004E80;
+    cursor: default;
+}
+
+.activate {
+    color: #004E80;
+}
+
+.select {
+    cursor: pointer;
+    color: #6666;
+}
+
+.sections-aling {
+    display: contents;
+}
+
+.view-results {
+    margin: 0% 5% 0% 38%;
+    color: #666666;
+}
+
+.results {
+    margin: 15px 20px;
+    font-size: 13px;
+}
+
+.total-results {
+    float: right;
+    margin-right: 25px;
+}
+
+.view-table {
+    margin-right: 10px;
+}
+
+.text-filters {
+    background-color: #003B60;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    padding-left: 71px;
+}
+
+.balloons-component {
+    margin-top: 15px
+}
+
+.pagination-component {
+    margin-bottom: 15px;
+}
+
+
+/* Estilos Spinner*/
+
+.loading {
+    color: white;
+    padding-top: 50px;
+}
+
+
+/* Terminan estilos Spinner*/
+
+
+/* Estilos cuando no hay resultados de articulos */
+
+#no-results {
+    width: 100%;
+    height: 50vh;
+    display: inline-block;
+}
+
+.message-no-results {
+    width: 26%;
+    margin: 60px auto;
+}
+
+.color-gray {
+    color: #b3b3b3;
+}
+
+.color-blue {
+    color: #1252b2;
+}
+
+
+/* Terminan estilos cuando no hay resultados de articulos */

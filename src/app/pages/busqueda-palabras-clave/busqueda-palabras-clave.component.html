@@ -1,0 +1,80 @@
+<section id="general">
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffffff" type="square-loader" [fullScreen]="true">
+        <p class="loading">Cargando resultados de búsqueda...</p>
+    </ngx-spinner>
+
+    <section id="header">
+        <app-header [currentSection]="'Búsqueda Palabras Clave'"></app-header>
+    </section>
+
+    <section id="searches">
+        <app-banner-searches [sectionKey]=true></app-banner-searches>
+    </section>
+
+    <section id="banner" class="flex">
+        <div class="flex searcher-title">
+            <img src="assets/img/icons/buscador-institucionmdpi.png" />
+            <p>Búsqueda Instituciones</p>
+        </div>
+
+        <div class="searcher">
+            <input class="searcher-text" #predefined (keyup.enter)="searchArticlesByKey(predefined.value)" type="text" placeholder="Buscar" required />
+            <input class="searcher-icon" type="image" src="assets/img/icons/buscador-institucionmdpi.png" (click)="searchArticlesByKey(predefined.value)" name="boton-buscar-articulo" alt="Buscar" required />
+        </div>
+    </section>
+
+    <section id="sections">
+
+        <div class="filters">
+            <div class="text-filters">
+                <img src="assets/img/icons/filtro.png" />
+                <span>Filtros de Búsqueda</span>
+            </div>
+            <app-filters></app-filters>
+
+        </div>
+
+        <div class="content-general">
+            <div class="container-sections">
+                <div class="selected sections-aling">
+                    <img src="assets/img/icons/articulos-act.png" />
+                    <span>Artículos de revista</span>
+                </div>
+                <div class="view-results">
+                    <span>Modo de visualizar resultados</span>
+                </div>
+                <div class="sections-aling" (click)="changeView(false)" [ngClass]="{'activate': !view, 'selected': !view, 'select': view}">
+                    <img [src]="imgTable" />
+                    <span class="view-table">Tabla</span>
+                </div>
+                <div class="sections-aling" (click)="changeView(true)" [ngClass]="{'activate': view, 'selected': view, 'select': !view}">
+                    <img [src]="imgList" />
+                    <span>Lista</span>
+                </div>
+            </div>
+            <div>
+                <div class="results">
+                    <span>Resultados para: <b>{{ key }}</b> en artículos de revista</span>
+                    <span class="total-results" *ngIf="positionPage !== finalPositionPage">{{positionPage * 10 - 9}} a {{positionPage * 10}} de {{totalResults}} artículos </span>
+                    <span class="total-results" *ngIf="positionPage === finalPositionPage"> {{positionPage * 10 - 9}} a {{totalResults}} de {{totalResults}} artículos </span>
+                </div>
+                <div class="balloons-component">
+                    <app-balloons></app-balloons>
+                </div>
+
+                <div class="views-components">
+                    <app-target [articles]="articles" *ngIf="view"></app-target>
+                    <app-table [articles]="articles" *ngIf="!view"></app-table>
+                </div>
+
+                <div class="pagination-component">
+                    <app-pagination (click)="goUp()"></app-pagination>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <app-footer></app-footer>
+    </section>
+</section>
