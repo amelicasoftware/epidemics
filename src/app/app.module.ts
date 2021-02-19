@@ -17,22 +17,24 @@ import { HttpErrorInterceptor } from './interceptors/httpError.interceptor';
 import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
 
 // Componentes
+import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 import { AppComponent } from './app.component';
 import { BalloonsComponent } from './components/balloons/balloons.component';
 import { BannerSearchesComponent } from './components/banner-searches/banner-searches.component';
 import { BusquedaGeneralComponent } from './pages/busqueda-general/busqueda-general.component';
 import { BusquedaPaisComponent } from './pages/busqueda-pais/busqueda-pais.component';
 import { BusquedaPalabrasClaveComponent } from './pages/busqueda-palabras-clave/busqueda-palabras-clave.component';
-import { ROUTES } from './routes/app.routes';
 import { FiltersComponent } from './components/filters/filters.component';
-import { TableComponent } from './components/table/table.component';
-import { TargetComponent } from './components/target/target.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { ROUTES } from './routes/app.routes';
+import { TableComponent } from './components/table/table.component';
+import { TargetComponent } from './components/target/target.component';
 
 @NgModule({
   declarations: [
+    AcercaDeComponent,
     AppComponent,
     AuthorsPipe,
     BalloonsComponent,
@@ -41,12 +43,12 @@ import { HeaderComponent } from './components/header/header.component';
     BusquedaPaisComponent,
     BusquedaPalabrasClaveComponent,
     FiltersComponent,
+    FooterComponent,
+    HeaderComponent,
+    PaginationComponent,
     TableComponent,
     TargetComponent,
     TitleArticlePipe,
-    PaginationComponent,
-    FooterComponent,
-    HeaderComponent,
   ],
   imports: [
     BrowserModule,

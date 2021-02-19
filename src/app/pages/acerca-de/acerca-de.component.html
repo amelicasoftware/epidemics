@@ -1,0 +1,181 @@
+<section id="general">
+
+    <section id="header">
+        <app-header [currentSection]="'> Acerca de'"></app-header>
+    </section>
+
+    <section id="searches">
+        <app-banner-searches [sectionAbout]=true></app-banner-searches>
+    </section>
+
+    <section id="content-about">
+        <div>
+            <h2 class="title">Contexto</h2>
+
+            <p>
+                Ante una contingencia mundial de salud, se refrenda la vital función del Acceso Abierto: llevar el conocimiento a todos los rincones del mundo, permitir que la ciencia sea accesible rápida y oportunamente para que su contribución se refleje en la mejora
+                de la calidad de vida humana, en salvar vidas y en el desarrollo de una mejor sociedad para todos. Iniciativas de Acceso Abierto como Redalyc UAEM desde hace 18 años trabajancon ese objetivo. Hoy, la alianza con AmeliCA/Redalyc refrenda
+                su compromiso con el Acceso Abierto y sigue desarrollando tecnología la cual aplica ahora a la diseminación semántica de los artículos publicados en temáticas de interés en epidemiología, pandemias y temas relacionados. Ello permitirá
+                difundir y poner a disposición más de 6 mil artículos en formato de Linked Open Data (LOD) para que sean procesados e interconectados en la nube del conocimiento LOD y ofrecer al usuario lector servicios de navegación y descubrimiento
+                temático para la consulta de los textos completos de este conjunto de datos.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="title">Descripción</h2>
+
+            <p>
+                Esta masa de información que constituye la Web, en ocasiones se siente como “de una milla de ancho pero con una pulgada de profundidad” ¿Cómo poder construir una experiencia Web más integrada, consistente y profunda? (Allemang & Hendler, 2011).Es en este
+                escenario donde la semántica es capaz de mostrar su poder para comunicar la información con suficiente significado. Así es posible construir aplicaciones inteligentes que aporten un mayor conocimiento identificando en mayor profundidad
+                los contenidos y fomenten el descubrimiento de conocimiento.
+            </p>
+
+            <p>
+                Frawley, Piatetsky-Shapiro y Matheus (1992) definen descubrimiento de conocimiento como la extracción no trivial de información implícita, previamente desconocida y potencialmente útil, a partir de datos. El reto de extraer conocimiento a partir de datos
+                demanda investigación en estadística, bases de datos, reconocimiento de patrones, aprendizaje de máquinas, visualización de datos, optimización y cómputo de alto rendimiento, para entregar inteligencia de negocio avanzada y soluciones
+                de descubrimiento web (IBM, 2018).
+            </p>
+
+            <p>
+                AmeliCA/Redalyc 1 ejecutó un algoritmo basado en ontologías, previamente desarrollado llamado OntoOAI OntoOAI (Becerril-García & Aguado-Lopez, 2018), en sus bases de datos para extraer contenido relacionado con epidemias. Los resultados incluyen: una
+                representación ontológica del conocimiento publicado en 13,298 artículos científicos que incluyen conceptos y relaciones, así como sus atributos; un grafo dirigido utilizado como navegador temático de contenido para acceder a los textos
+                completos de los artículos; así como también, un conjunto de datos disponibles en un punto de acceso SPARQL para consultar los resultados encontrados como parte de Linked Open Data.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="title">Metodología</h2>
+
+            <p>
+                Se ejecutó un algoritmo para extraer contenido basado en un tesauro de conceptos relacionados con pandemias / epidemias. En un inicio se basó en una lista predefinida de sinónimos obtenidos de
+                <a class="link-section" href="https://www.powerthesaurus.org/" target="_blank">powerthesaurus.org</a>. Según los conceptos resultantes y las relaciones entre ellos se estableció un conjunto de iteraciones para obtener y refinar una ontología
+                resultante que muestra el conocimiento publicado en ese conjunto de revistas de AA. Finalmente, la ontología se utilizó para desarrollar la representación visual y el navegador de contenido para obtener acceso a artículos de texto completo.
+                El conjunto de datos resultante también se publicó como un SPARQL endpoint.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="title">Conjunto de datos</h2>
+
+            <p>
+                Punto de acceso SPARQL con los datos disponibles para acceder a los resultados para mayores análisis:
+                <a class="link-section" href="http://sparql.amelica.org/" target="_blank"> http://sparql.amelica.org/</a>
+            </p>
+
+            <iframe src="http://sparql.amelica.org/knowledgebase/epidemics/datastore" width="100%" height="900" frameborder="0" marginwidth="0" marginheight="0" scrolling="yes" allowfullscreen=""> </iframe>
+
+            <p class="quote">
+                <sup> 1 </sup> &nbsp; &nbsp; AmeliCA/Redalyc es una infraestructura de Ciencia Abierta que busca fortalecer la comunicación y publicación científica sin fines de lucro propiedad de la academia. A través del respeto a las lenguas y culturas
+                locales, AmeliCA/Redalyc tiene como objetivo incluir e insertar en la conversación científica mundial a diferentes regiones del mundo para lograr que la difusión del conocimiento sea más participativa, incluyente y sustentable. Actualmente,
+                esta infraestructura brinda servicios a más de 1.400 revistas de Acceso Abierto, evaluadas por pares y de calidad certificada, publicadas por 670 instituciones de 31 países de todo el mundo. A través de Redalyc se proporciona acceso a
+                más de 700.000 artículos de texto completo en diferentes idiomas (principalmente español, inglés, portugués y francés) de 1.8 millones de autores de 150 países, con aproximadamente 10 millones de descargas de artículos por mes alrededor
+                del mundo.
+            </p>
+
+            <p>
+                <b>Autores:</b> Arianna Becerril-García, Eduardo Aguado-López. <b>Desarrolladores de Software:</b> Alma Rosa Segundo Escobar, Paulo César Ylloldi Costilla, Luis Angel Ángeles Pineda.
+                <b>Diseño:</b> Priscila Dávila Morales. <b>Ingeniería de Datos:</b> Liliana González Morales, Alma Rosa Segundo Escobar. : Arianna Becerril García. <b>Investigación:</b> Cuerpo Académico Consolidado “Comunicación y Difusión de la Ciencia
+                SEP UAEM/77, Facultad de Ciencias Políticas y Sociales, Universidad Autónoma del Estado de México.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="title">Referencias</h2>
+
+            <p class="reference">
+                1.&nbsp;&nbsp;Keßler, C.; d’Aquin, M.; Dietze, S. Linked Data for Science and Education. Semantic Web Journal 2013, 4 (1), pp. 1-2.
+            </p>
+
+            <p class="reference">
+                2.&nbsp;&nbsp;Allemang, D.; Hendler, J. Semantic Web for the Working Ontologist, 3rd ed. Morgan Kaufmamm: Waltham, Ma, Estados Unidos, 2011; ISBN 978-0123859655.
+            </p>
+
+            <p class="reference">
+                3.&nbsp;Chan, L.; Cuplinskas, D.; Eisen, M.; Friend, F.; Genova, Y.; Guédon, J.-C.; et al. Budapest Open Access Initiative, 2002. Available online: http://www.soros.org/openaccess/read.shtml
+            </p>
+
+            <p class="reference">
+                4.&nbsp;&nbsp;Max Planck Society. Berlin Declaration on Open Access to Knowledge in the Sciences and Humanities, 2003. Available online: http://openaccess.mpg.de/Berlin-Declaration
+            </p>
+
+            <p class="reference">
+                5.&nbsp;&nbsp;Brown, P.; Cabell, D.; Chakravarti, A.; Cohen, B.; Delamothe, T.; Eisen, M.; et al. Declaración de Bethesda sobre Publicación de Acceso Abierto, 2003. Available online: http://ictlogy.net/articles/bethesda_es.html
+            </p>
+
+            <p class="reference">
+                6.&nbsp;&nbsp;Albert, P.; Holmes, K.; Börner, K.; Conlon, M. Research Discovery through Linked Open Data. IN 12th ACM/IEEE-CS Joint Conference on Digital Libraries, Nueva York: ACM, USA, 2012, pp. 429-430.
+            </p>
+
+            <p class="reference">
+                7.&nbsp;&nbsp;Wiederhold, G. Foreword: on the barriers and future of knowledge discovery. In Advances in Knowledge Discovery and Data Mining; Fayyad, U., Piatetsky-Shapiro, G., Smyth, P., Uthurusamy, R.; AAAI Press, 1996.
+            </p>
+
+            <p class="reference">
+                8.&nbsp;&nbsp;Frawley, W. J., Piatetsky-Shapiro, G., Matheus, C. J. Knowledge Discovery in Databases: An Overview. AI Magazine 1992 ,13 (3), 57-70.
+            </p>
+
+            <p class="reference">
+                9.&nbsp;&nbsp;IBM. Knowledge Discovery and Data Mining. Available online: http://researcher.watson.ibm.com/researcher/view_group. php?id=144 (accessed on 2015)
+            </p>
+
+            <p class="reference">
+                10.&nbsp;&nbsp;Becerril-García, A., Aguado-Lopez E. A Semantic Model for Selective Knowledge Discovery over OAI-PMH Structured Resources. Information 2018, 9 (6), 144. https://doi.org/10.3390/info9060144
+            </p>
+
+            <p class="reference">
+                11.&nbsp;&nbsp;Becerril García, A., Lozano Espinosa, R., Molina Espinosa, J. M. Semantic Approach to Context-Aware Resource Discovery over Scholarly Content Structured with OAI-PMH. Computación y Sistemas 2016, 20 (1), 127-142.
+            </p>
+
+            <p class="reference">
+                12.&nbsp;&nbsp;Becerril Garcia, A.; Lozano Espinosa, R.; &amp; Molina Espinosa, J. Modelo para consultas semánticas sensibles al contexto sobre recursos educativos estructurados con OAI-PMH. Proceedings of the Encuentro Nacional de Ciencias de la Computación.
+                ENC 2014. Nova Universitas: Oaxaca, México, 2014, pp. 1- 15.
+            </p>
+
+            <p class="reference">
+                13.&nbsp;Ministerio para la Ciencia e Innovación de España. Informe Modelos de Metadatos para Contenidos Multimedia. Available online: http://omediadis.udl.cat/html/deliverables/215-Modelos_Metadatos_Contenidos_Multimedia/
+            </p>
+
+            <p class="reference">
+                14.&nbsp;&nbsp;Haslhofer, B., &amp; Schandl, B. The OAI2LOD Server: Exposing OAI-PMH Metadata as Linked Data. International Workshop on Linked Data on the Web (LDOW2008). Beijing, China, 2008.
+            </p>
+
+            <p class="reference">
+                15.&nbsp;&nbsp;Bizer, C., Cyganiak, R. D2R Server – Publishing Relational Databases on the Semantic Web 2006. Available online: http://wifo503.informatik.uni-mannheim.de/bizer/pub/Bizer-Cyganiak-D2R-Server-ISWC2006.pdf
+            </p>
+
+            <p class="reference">
+                16.&nbsp; &nbsp;SIMILE. OAI2RDF 2006. Available online: http://simile.mit.edu/repository/RDFizers/oai2rdf/
+            </p>
+
+            <p class="reference">
+                17.&nbsp; &nbsp;Ameen, A., Rahman Khan, K., &amp; Rani, B. Semi-Automatic Merging of Ontologies using Protégé. International Journal of Computer Applications 2014, 85 (12), 35-42.
+            </p>
+
+            <p class="reference">
+                18.&nbsp; &nbsp;Panagiotopoulos, I., Kalou, A., Pierrakeas, C., &amp; Kameas, A. An Ontology-Based Model for Student Representation in Intelligent Tutoring Systems for Distance Learning. In I. M. Lazaros Iliadis (Ed.), Artificial Intelligence Applications
+                and Innovations. Springer: Halkidiki, Grecia, 2012.
+            </p>
+
+            <p class="reference">
+                19.&nbsp; &nbsp;Apache Software Foundation. Available online: http://jena.apache.org/about_jena/about.html
+            </p>
+
+            <p class="reference">
+                20.&nbsp; &nbsp;Dentler, K., Cornet, R., Teije, A., &amp; de Keizer, N. Comparison of Reasoners for large Ontologies in the OWL 2 EL Profile. In Semantic Web; I. Press, Ed, 2008; pp. 1-5.
+            </p>
+
+            <p class="reference">
+                21.&nbsp; &nbsp;Becerril-García, A., Aguado-López, E., Rogel-Salazar, R., Garduño-Oropeza, G., Zúñiga-Roca, M. De un modelo centrado en la revista a un modelo centrado en entidades: la publicación y producción científica en la nueva plataforma Redalyc.org.
+                (I. U. Oviedo, Ed.) Aula Abierta 2012, 40 (2), 53-64.
+            </p>
+
+            <p class="reference">
+                22.&nbsp; &nbsp;Segaran, T., Evans, C., &amp; Taylor, J. (2009). Programming the semantic web, 1st. ed.; O’reilly: Estados Unidos, 2009, pp. 302.
+            </p>
+        </div>
+    </section>
+
+    <section id="footer">
+        <app-footer></app-footer>
+    </section>
+</section>

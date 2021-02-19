@@ -1,0 +1,40 @@
+#searches {
+    background-image: url(../../../assets/img/shared/fondo-covid.jpg);
+    height: 115px;
+}
+
+#content-about {
+    box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.5);
+    margin: 40px 100px;
+}
+
+#content-about div {
+    padding: 5px 30px;
+    font: 15px/32px barlow-regular;
+    color: #575757;
+    font-size: 12pt;
+}
+
+.title {
+    color: #003B60;
+    font-size: 15pt;
+}
+
+.quote {
+    font-size: 8pt;
+}
+
+.link-section {
+    text-decoration: none;
+    color: #08C;
+}
+
+.link-section:hover {
+    text-decoration: none;
+    color: #003B60;
+    transition: background-color, color 0.2s linear;
+}
+
+.reference {
+    font-size: 10pt;
+}
