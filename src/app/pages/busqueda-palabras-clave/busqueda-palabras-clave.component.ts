@@ -132,6 +132,7 @@ export class BusquedaPalabrasClaveComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     console.log('Destroy page busqueda general');
+    this.filterService.cleanFiltersSelected();
     this.subscriptionArray.forEach((subscription: Subscription) => subscription.unsubscribe());
   }
 

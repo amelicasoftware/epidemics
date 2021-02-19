@@ -152,6 +152,7 @@ export class BusquedaPaisComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     console.log('Destroy page busqueda pais');
+    this.filterService.cleanFiltersSelected();
     this.subscriptionArray.forEach((subscription: Subscription) => subscription.unsubscribe());
   }
 
