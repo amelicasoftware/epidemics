@@ -1,0 +1,257 @@
+#searcher{
+    width: 100%;
+    height: 57vh;
+    /* border: solid red 1px; */
+}
+#last-numbers{
+    width: 100%;
+    /* height: 50vh;  */
+    /* border: solid red 1px;
+     */
+     padding: 10px 0px;
+}
+#container{
+    background-image: url(../../../assets/img/home/fondo-epidemias.jpg);
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    text-align: center;
+    /* padding: 20px; */
+    height: 86%;
+}
+#container div{
+    width: 100%;
+    /* display: flex; */
+    margin: 15px 0px;
+}
+#search {
+    width: 100%;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+#input-search{
+    width: 50%;
+    height: 28px;
+    border: none;
+    border-radius: 5px;
+    margin-left: -10px;
+    text-indent: 15px;
+    outline: 0 none;
+    background-color: #eaeef0;
+    border-style: none !important;
+}
+#button-search{
+    position: relative;
+    left: -26px;
+    height: 15px;
+    top: 2px;
+}
+.title{
+    font-size: 16pt;
+    font-weight: bold;
+    font-family: 'Barlow-Regular';
+}
+#text-search{
+    width: 50%!important;
+    text-align: left;
+    margin: 0 auto!important;
+    font-size: 12pt;
+    font-family: 'Barlow-Bold';
+}
+#menu-section{
+    background-color: #014f80;
+    color: white;
+    font-size: 10pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selection{
+    background-color: #003c61;
+}
+.op-menu-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* border: solid red; */
+    height: 50px;
+    padding: 0 10px;
+    margin: 0 2px;
+}
+#container-title{
+    display: flex;
+    width: 60%;
+    margin: 20px auto;
+    border-bottom: #447a9c solid 2px;
+    align-items: center;
+}
+.title-section{
+    width: 80%;
+    color: #004f7d;
+    font-size: 16pt;
+    font-family: 'Barlow-Regular';
+}
+#buttons-carrusell{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+.button-carrusell{
+    margin: 5px;
+}
+#could{
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+}
+#container-cloud{
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px 0px;
+}
+#network{
+    width: 100%;
+    height: 90vh;
+    /* padding: 30px; */
+}
+#map{
+    background-color: #012640;
+    padding: 30px;
+}
+#sparql{
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+}
+/* #sparql div{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+#container-content{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+}
+#container-data{
+    width: 70%;
+    height: 90%;
+    display: flex;
+    padding-top: 3em;
+    justify-content: center;
+}
+
+#descripcion-sparql {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+#titulo-sparql {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #090a35;
+}
+#container-id{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    padding-top: 3em;
+}
+
+.fab {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+}
+
+.social {
+    position: fixed;
+    top: 35%;
+    left: 1%;
+    z-index: 10;
+}
+
+.social ul {
+    list-style: none;
+}
+
+.social li {
+    margin: 10px;
+}
+
+.social a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    /*padding: 10px 15px;*/
+    margin: 10px;
+    z-index: 0;
+    transition: 0.1s ease;
+}
+
+.social a:hover {
+    padding: 8px 8px;
+}
+
+#menu-buscador {
+    background-image: url(../../../assets/img/home/busqueda-b.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#menu-nube {
+    background-image: url(../../../assets/img/home/palabra-b.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#menu-pais {
+    background-image: url(../../../assets/img/home/red-b.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#menu-documentos {
+    background-image: url(../../../assets/img/home/pais-b.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#menu-red {
+    background-image: url(../../../assets/img/home/sparql-b.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#menu-sql {
+    background-image: url(../../../assets/img/home/acerca-de-b.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#menu-colap {
+    display: none;
+}
+
+#menu-colap i {
+    color: white;
+}
+.btn-menu {
+    margin: 15px;
+    cursor: pointer;
+}

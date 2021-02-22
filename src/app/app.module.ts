@@ -31,6 +31,11 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { ROUTES } from './routes/app.routes';
 import { TableComponent } from './components/table/table.component';
 import { TargetComponent } from './components/target/target.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LastArticlesComponent } from './components/last-articles/last-articles.component';
+import { WordCloudComponent } from './components/word-cloud/word-cloud.component';
+import { NetworkComponent } from './components/network/network.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +54,14 @@ import { TargetComponent } from './components/target/target.component';
     TableComponent,
     TargetComponent,
     TitleArticlePipe,
+    PaginationComponent,
+    FooterComponent,
+    HeaderComponent,
+    HomeComponent,
+    LastArticlesComponent,
+    WordCloudComponent,
+    NetworkComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

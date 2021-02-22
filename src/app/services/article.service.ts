@@ -5,6 +5,7 @@ import { ArticleResult } from '../models/ArticleResult.model';
 import { FilterChain } from '../models/FilterChain.model';
 import { environment } from '../../environments/environment';
 import { Country } from '../models/Country.model';
+import { Article } from '../models/Article.model';
 
 @Injectable({
   providedIn: 'root'
@@ -86,4 +87,9 @@ export class ArticleService {
     articlesLength ? articlesExists = true : articlesExists = false;
     return articlesExists;
   }
+
+  getLastArticles(): any {
+    return this.http.get(`http://localhost:4200/assets/json/articlesCovidHomeRedalyc2021.json`, {responseType: 'text'});
+  }
+
 }
