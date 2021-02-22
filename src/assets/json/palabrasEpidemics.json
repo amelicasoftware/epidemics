@@ -1,0 +1,402 @@
+[
+    {
+        "weight": 1283,
+        "word": "epidemiología"
+    },
+    {
+        "weight": 946,
+        "word": "vih"
+    },
+    {
+        "weight": 834,
+        "word": "crecimiento"
+    },
+    {
+        "weight": 669,
+        "word": "tuberculosis"
+    },
+    {
+        "weight": 594,
+        "word": "sida"
+    },
+    {
+        "weight": 503,
+        "word": "contaminación"
+    },
+    {
+        "weight": 290,
+        "word": "enfermedad"
+    },
+    {
+        "weight": 271,
+        "word": "síndrome de inmunodeficiencia adquirida"
+    },
+    {
+        "weight": 245,
+        "word": "infección"
+    },
+    {
+        "weight": 214,
+        "word": "inflamación"
+    },
+    {
+        "weight": 196,
+        "word": "enfermería"
+    },
+    {
+        "weight": 190,
+        "word": "19"
+    },
+    {
+        "weight": 188,
+        "word": "factores de riesgo"
+    },
+    {
+        "weight": 186,
+        "word": "méxico"
+    },
+    {
+        "weight": 182,
+        "word": "covid"
+    },
+    {
+        "weight": 180,
+        "word": "mortalidad"
+    },
+    {
+        "weight": 167,
+        "word": "neumonía"
+    },
+    {
+        "weight": 162,
+        "word": "prevalencia"
+    },
+    {
+        "weight": 159,
+        "word": "sepsis"
+    },
+    {
+        "weight": 156,
+        "word": "colombia"
+    },
+    {
+        "weight": 156,
+        "word": "diagnóstico"
+    },
+    {
+        "weight": 149,
+        "word": "salud"
+    },
+    {
+        "weight": 142,
+        "word": "epidemiología descriptiva"
+    },
+    {
+        "weight": 123,
+        "word": "difusión"
+    },
+    {
+        "weight": 122,
+        "word": "salud pública"
+    },
+    {
+        "weight": 121,
+        "word": "enfermedades"
+    },
+    {
+        "weight": 102,
+        "word": "hiv"
+    },
+    {
+        "weight": 101,
+        "word": "virus"
+    },
+    {
+        "weight": 101,
+        "word": "prevención"
+    },
+    {
+        "weight": 100,
+        "word": "aprendizaje basado en problemas"
+    },
+    {
+        "weight": 97,
+        "word": "público"
+    },
+    {
+        "weight": 93,
+        "word": "mundo"
+    },
+    {
+        "weight": 83,
+        "word": "niños"
+    },
+    {
+        "weight": 83,
+        "word": "epidemiologia"
+    },
+    {
+        "weight": 83,
+        "word": "niño"
+    },
+    {
+        "weight": 79,
+        "word": "atención primaria de salud"
+    },
+    {
+        "weight": 78,
+        "word": "incidencia"
+    },
+    {
+        "weight": 77,
+        "word": "desarrollo"
+    },
+    {
+        "weight": 77,
+        "word": "moda"
+    },
+    {
+        "weight": 73,
+        "word": "mycobacterium tuberculosis"
+    },
+    {
+        "weight": 72,
+        "word": "riesgo"
+    },
+    {
+        "weight": 68,
+        "word": "obesidad"
+    },
+    {
+        "weight": 67,
+        "word": "epidemias"
+    },
+    {
+        "weight": 67,
+        "word": "vulnerabilidad"
+    },
+    {
+        "weight": 66,
+        "word": "epidemia"
+    },
+    {
+        "weight": 66,
+        "word": "adolescentes"
+    },
+    {
+        "weight": 64,
+        "word": "género"
+    },
+    {
+        "weight": 64,
+        "word": "bireme)"
+    },
+    {
+        "weight": 63,
+        "word": "sucesión"
+    },
+    {
+        "weight": 63,
+        "word": "argentina"
+    },
+    {
+        "weight": 63,
+        "word": "educación"
+    },
+    {
+        "weight": 62,
+        "word": "coronavirus"
+    },
+    {
+        "weight": 61,
+        "word": "calidad de vida"
+    },
+    {
+        "weight": 60,
+        "word": "venezuela"
+    },
+    {
+        "weight": 58,
+        "word": "españa"
+    },
+    {
+        "weight": 57,
+        "word": "privado"
+    },
+    {
+        "weight": 57,
+        "word": "adolescente"
+    },
+    {
+        "weight": 57,
+        "word": "comunicación"
+    },
+    {
+        "weight": 57,
+        "word": "conocimiento"
+    },
+    {
+        "weight": 56,
+        "word": "cáncer"
+    },
+    {
+        "weight": 56,
+        "word": "pandemia"
+    },
+    {
+        "weight": 56,
+        "word": "mujeres"
+    },
+    {
+        "weight": 56,
+        "word": "metales pesados"
+    },
+    {
+        "weight": 56,
+        "word": "tratamiento"
+    },
+    {
+        "weight": 56,
+        "word": "historia"
+    },
+    {
+        "weight": 53,
+        "word": "familia"
+    },
+    {
+        "weight": 52,
+        "word": "enfermedades infecciosas"
+    },
+    {
+        "weight": 52,
+        "word": "afecto"
+    },
+    {
+        "weight": 52,
+        "word": "adulto"
+    },
+    {
+        "weight": 52,
+        "word": "anciano"
+    },
+    {
+        "weight": 51,
+        "word": "embarazo"
+    },
+    {
+        "weight": 50,
+        "word": "rendimiento"
+    },
+    {
+        "weight": 48,
+        "word": "veneno"
+    },
+    {
+        "weight": 47,
+        "word": "dengue"
+    },
+    {
+        "weight": 46,
+        "word": "global"
+    },
+    {
+        "weight": 46,
+        "word": "influenza"
+    },
+    {
+        "weight": 46,
+        "word": "pobreza"
+    },
+    {
+        "weight": 45,
+        "word": "cuba"
+    },
+    {
+        "weight": 45,
+        "word": "perú"
+    },
+    {
+        "weight": 45,
+        "word": "evaluación"
+    },
+    {
+        "weight": 45,
+        "word": "inundación"
+    },
+    {
+        "weight": 45,
+        "word": "supervivencia"
+    },
+    {
+        "weight": 45,
+        "word": "pandemias"
+    },
+    {
+        "weight": 45,
+        "word": "infecciones por coronavirus"
+    },
+    {
+        "weight": 44,
+        "word": "tendencia"
+    },
+    {
+        "weight": 44,
+        "word": "terapia"
+    },
+    {
+        "weight": 44,
+        "word": "depresión"
+    },
+    {
+        "weight": 43,
+        "word": "conocimientos"
+    },
+    {
+        "weight": 43,
+        "word": "tuberculosis pulmonar"
+    },
+    {
+        "weight": 42,
+        "word": "cuerpo"
+    },
+    {
+        "weight": 42,
+        "word": "cov"
+    },
+    {
+        "weight": 41,
+        "word": "vigilancia epidemiológica"
+    },
+    {
+        "weight": 40,
+        "word": "chile"
+    },
+    {
+        "weight": 40,
+        "word": "sars"
+    },
+    {
+        "weight": 39,
+        "word": "sexualidad"
+    },
+    {
+        "weight": 39,
+        "word": "plaga"
+    },
+    {
+        "weight": 38,
+        "word": "zoonosis"
+    },
+    {
+        "weight": 38,
+        "word": "investigación"
+    },
+    {
+        "weight": 38,
+        "word": "complicaciones"
+    },
+    {
+        "weight": 38,
+        "word": "mal"
+    }
+]

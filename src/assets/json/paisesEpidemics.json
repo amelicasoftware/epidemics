@@ -1,0 +1,227 @@
+[
+    {
+        "clave": "2",
+        "color": "#ae2f8a",
+        "latitude": 51.0834196,
+        "name": "Alemania",
+        "id": "DE",
+        "value": "3",
+        "longitude": 10.4234469
+    },
+    {
+        "clave": "4",
+        "color": "#ae2f8a",
+        "latitude": -8.8159,
+        "name": "Angola",
+        "id": "AO",
+        "value": "1",
+        "longitude": 13.2306
+    },
+    {
+        "clave": "9",
+        "color": "#ae2f8a",
+        "latitude": -34.6118,
+        "name": "Argentina",
+        "id": "AR",
+        "value": "501",
+        "longitude": "-63.4173"
+    },
+    {
+        "clave": "19",
+        "color": "#ae2f8a",
+        "latitude": -19.0421,
+        "name": "Bolivia",
+        "id": "BO",
+        "value": "56",
+        "longitude": -65.2559
+    },
+    {
+        "clave": "21",
+        "color": "#ae2f8a",
+        "latitude": -15.7801,
+        "name": "Brasil",
+        "id": "BR",
+        "value": "4516",
+        "longitude": -47.9292
+    },
+    {
+        "clave": "25",
+        "color": "#ae2f8a",
+        "latitude": 61.0666922,
+        "name": "Canadá",
+        "id": "CA",
+        "value": "2",
+        "longitude": -107.9917071
+    },
+    {
+        "clave": "26",
+        "color": "#ae2f8a",
+        "latitude": -33.4691,
+        "name": "Chile",
+        "id": "CL",
+        "value": "503",
+        "longitude": "-70.642"
+    },
+    {
+        "clave": "30",
+        "color": "#ae2f8a",
+        "latitude": 4.6473,
+        "name": "Colombia",
+        "id": "CO",
+        "value": "2176",
+        "longitude": -74.0962
+    },
+    {
+        "clave": "33",
+        "color": "#ae2f8a",
+        "latitude": 9.9402,
+        "name": "Costa Rica",
+        "id": "CR",
+        "value": "314",
+        "longitude": -84.1002
+    },
+    {
+        "clave": "35",
+        "color": "#ae2f8a",
+        "latitude": 23.1333,
+        "name": "Cuba",
+        "id": "CU",
+        "value": "1042",
+        "longitude": -82.3667
+    },
+    {
+        "clave": "36",
+        "color": "#ae2f8a",
+        "latitude": 55.6763,
+        "name": "Dinamarca",
+        "id": "DK",
+        "value": "2",
+        "longitude": 12.5681
+    },
+    {
+        "clave": "37",
+        "color": "#ae2f8a",
+        "latitude": -0.2295,
+        "name": "Ecuador",
+        "id": "EC",
+        "value": "78",
+        "longitude": -78.5243
+    },
+    {
+        "clave": "42",
+        "color": "#ae2f8a",
+        "latitude": 40.4167,
+        "name": "España",
+        "id": "ES",
+        "value": "1176",
+        "longitude": -3.7033
+    },
+    {
+        "clave": "43",
+        "color": "#ae2f8a",
+        "latitude": 39.7837304,
+        "name": "Estados Unidos",
+        "id": "US",
+        "value": "48",
+        "longitude": -100.4458825
+    },
+    {
+        "clave": "60",
+        "color": "#ae2f8a",
+        "latitude": 28.6353,
+        "name": "India",
+        "id": "IN",
+        "value": "13",
+        "longitude": 77.225
+    },
+    {
+        "clave": "67",
+        "color": "#ae2f8a",
+        "latitude": 42.6384261,
+        "name": "Italia",
+        "id": "IT",
+        "value": "21",
+        "longitude": 12.674297
+    },
+    {
+        "clave": "73",
+        "color": "#ae2f8a",
+        "latitude": 19.4326009,
+        "name": "México",
+        "id": "MX",
+        "value": "1639",
+        "longitude": -99.1333416
+    },
+    {
+        "clave": "81",
+        "color": "#ae2f8a",
+        "latitude": -12.0931,
+        "name": "Perú",
+        "id": "PE",
+        "value": "476",
+        "longitude": -74.0465
+    },
+    {
+        "clave": "82",
+        "color": "#ae2f8a",
+        "latitude": 52.2297,
+        "name": "Polonia",
+        "id": "PL",
+        "value": "3",
+        "longitude": 21.0122
+    },
+    {
+        "clave": "83",
+        "color": "#ae2f8a",
+        "latitude": 40.0332629,
+        "name": "Portugal",
+        "id": "PT",
+        "value": "141",
+        "longitude": -7.8896263
+    },
+    {
+        "clave": "85",
+        "color": "#ae2f8a",
+        "latitude": 18.479,
+        "name": "República Dominicana",
+        "id": "DO",
+        "value": "11",
+        "longitude": -69.8908
+    },
+    {
+        "clave": "93",
+        "color": "#ae2f8a",
+        "latitude": -32.8941,
+        "name": "Uruguay",
+        "id": "UY",
+        "value": "30",
+        "longitude": -56.0675
+    },
+    {
+        "clave": "94",
+        "color": "#ae2f8a",
+        "latitude": 7.4961,
+        "name": "Venezuela",
+        "id": "VE",
+        "value": "512",
+        "longitude": -63.8983
+    },
+    {
+        "clave": "97",
+        "color": "#ae2f8a",
+        "latitude": 18.45,
+        "name": "Puerto Rico",
+        "id": "PR",
+        "value": "31",
+        "longitude": -66.0667
+    },
+    {
+        "clave": "205",
+        "color": "#ae2f8a",
+        "latitude": "",
+        "name": "Organismo Internacional",
+        "id": "",
+        "value": "3",
+        "longitude": ""
+    }
+]
