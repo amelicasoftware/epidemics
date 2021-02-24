@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: 'http://portal.amelica.org/ApiReaderIndex/resources/',
+  urlProject: 'http://localhost:4200/'
 };
 
 /*

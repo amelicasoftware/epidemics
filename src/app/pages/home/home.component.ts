@@ -11,9 +11,9 @@ import { HostListener } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   // palabra: string;
-  numArticulos: number;
-  numRevistas: number;
-  numPaises: number;
+  numArticulos: number = 13298;
+  numRevistas: number = 1241;
+  numPaises: number = 25;
   selection: number;
 
   constructor(
@@ -46,28 +46,32 @@ export class HomeComponent implements OnInit {
 
   toCould() {
     document.getElementById('could').scrollIntoView({ behavior: "smooth" });
-    this.selection = 2;
+    // this.selection = 2;
   }
   toSearcher() {
     document.getElementById('searcher').scrollIntoView({ behavior: "smooth" });
-    this.selection = 1;
+    // this.selection = 1;
   }
   toNetwork() {
     document.getElementById('network').scrollIntoView({ behavior: "smooth" });
-    this.selection = 3;
+    // this.selection = 3;
   }
   toMap() {
     document.getElementById('map').scrollIntoView({ behavior: "smooth" });
-    this.selection = 4;
+    // this.selection = 4;
   }
   toSparql() {
     document.getElementById('sparql').scrollIntoView({ behavior: "smooth" });
-    this.selection = 5;
+    // this.selection = 5;
+  }
+  toAbout(){
+    this.router.navigate(['/acerca-de']);
   }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event) {
-    // console.log('estoy scrolleando');
+    // console.log($(window).scrollTop());
+    // fixed menu secciones y header
     if ($(window).scrollTop() + 80 >= $('#menu-section').offset().top) {
       if ($('#menu-section').offset().top < 400) {
         $('#menu-section').css('position', 'inherit');
@@ -83,17 +87,22 @@ export class HomeComponent implements OnInit {
         $('.navigation').css('justify-content', 'center');
         $('.navigation').css('background-color', '#37464e');
       }
-      // $("#menu2").css('display','block');
-      // $("#header").css('opacity', 1);
-      // console.log($(window).scrollTop());
-
-    } else {
-      // $("#menu2").css('display','none');
-      // $("#header").css('opacity', 0.9);
-      // console.log('voy a regresar');
-      // $('#menu-section').css('position', 'inherit');
+    }
+    
+    if ($(window).scrollTop() > 0 && $(window).scrollTop() < 600) {
+      this.selection = 1;
+    }
+    if ($(window).scrollTop() > 600 && $(window).scrollTop() < 1600) {
+      this.selection = 2;
+    }
+    if ($(window).scrollTop() > 1601 && $(window).scrollTop() < 2500) {
+      this.selection = 3;
+    }
+    if ($(window).scrollTop() > 2501 && $(window).scrollTop() < 3600) {
+      this.selection = 4;
+    }
+    if ($(window).scrollTop() > 3501 && $(window).scrollTop() < 4000) {
+      this.selection = 5;
     }
   }
-
-  
 }

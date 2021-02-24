@@ -5,7 +5,7 @@
             <a ng-href="#contenedor-banner" id="btn-buscador" class="fab" title="Buscador"></a>
         </div>
         <div (click)="toCould()" id="menu-nube" class="btn-menu">
-            <a ng-href="#contenedor-nube" id="btn-nube" class="fab" title="Artículos por tema"></a>
+            <a ng-href="#contenedor-nube" id="btn-nube" class="fab" title="Artículos por palabra clave"></a>
         </div>
         <div (click)="toNetwork()" id="menu-red" class="btn-menu">
             <a ng-href="#red-conceptos" id="btn-red" class="fab" title="Representación del conocimiento"></a>
@@ -14,10 +14,10 @@
             <a ng-href="#contenedor-mapa" id="btn-pais" class="fab" title="Artículos por país"></a>
         </div>
         <div (click)="toSparql()" id="menu-documentos" class="btn-menu">
-            <a ng-href="#contenedor-ultimos-documentos" id="btn-documentos" class="fab" title="Más recientes"></a>
+            <a ng-href="#contenedor-ultimos-documentos" id="btn-documentos" class="fab" title="Base del conocimiento"></a>
         </div>
-        <div id="menu-sql" class="btn-menu">
-            <a ng-href="#sparql" id="btn-sql" class="fab" title="Base del conocimiento"></a>
+        <div (click)="toAbout()" id="menu-sql" class="btn-menu">
+            <a ng-href="#sparql" id="btn-sql" class="fab" title="Acerca de"></a>
         </div>
     </div>
 </div>
@@ -58,7 +58,7 @@
         <div (click)="toSparql()" [ngClass]="{'selection': selection == 5}" class="op-menu-section btn-sparql" id="btn-sparql">
             <img src="assets/img/home/sparql.png"><span>Base del conocimiento SPARQL</span>
         </div>
-        <div class="op-menu-section btn-recientes" id="btn-recientes">
+        <div (click)="toAbout()" class="op-menu-section btn-recientes" id="btn-recientes">
             <img src="assets/img/home/acerca.png"><span>Acerca de</span>
         </div>
     </div>

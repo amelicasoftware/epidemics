@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { get } from 'scriptjs';
 import * as $ from 'jquery';
-import cargarRed from '../../../assets/js/red.js';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-network',
@@ -10,10 +10,12 @@ import cargarRed from '../../../assets/js/red.js';
 })
 export class NetworkComponent implements OnInit {
 
+  private urlProject: string = environment.urlProject;
+
   constructor() { }
 
   ngOnInit(): void {
-    get(`http://localhost:4200/assets/js/red.js`, () => {
+    get(`${this.urlProject}assets/js/red.js`, () => {
     });
 
     // cargarRed($);

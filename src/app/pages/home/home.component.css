@@ -221,19 +221,19 @@
 }
 
 #menu-pais {
-    background-image: url(../../../assets/img/home/red-b.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-#menu-documentos {
     background-image: url(../../../assets/img/home/pais-b.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-#menu-red {
+#menu-documentos {
     background-image: url(../../../assets/img/home/sparql-b.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#menu-red {
+    background-image: url(../../../assets/img/home/red-b.png);
     background-repeat: no-repeat;
     background-size: contain;
 }

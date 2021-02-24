@@ -5,6 +5,7 @@ import am4geofata_wordLow from "@amcharts/amcharts4-geodata/worldLow";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { ArticleService } from 'src/app/services/article.service';
 import { Country } from 'src/app/models/Country.model';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-map',
@@ -15,6 +16,7 @@ export class MapComponent implements OnInit {
 
   private chart: am4maps.MapChart;
   private countrys: Country[];
+  private urlProject: string = environment.urlProject;
 
   constructor(
     private articlesService: ArticleService
@@ -65,9 +67,9 @@ export class MapComponent implements OnInit {
     circle.propertyFields.fill = 'color';
     circle.tooltipText = '{name}';
     circle.urlTarget = '_blank';
-    circle.url = 'http://localhost:4200/#/busqueda-pais/{clave}';
+    circle.url = this.urlProject + '#/busqueda-pais/{clave}';
 
-    imageSeries.dataSource.url = 'http://localhost:4200/assets/json/paisesEpidemics.json';
+    imageSeries.dataSource.url = this.urlProject + 'assets/json/paisesEpidemics.json';
     // imageSeries.dataSource.data = this.countrys;
     imageSeries.dataSource.parser = new am4core.JSONParser();
     console.log(imageSeries.dataSource.data);

@@ -1,3 +1,5 @@
+const urlProject = 'http://206.189.224.97/pruebas/epidemics2/';
+
 let newscript = document.createElement('script');
 newscript.type = 'text/javascript';
 newscript.async = true;
@@ -130,7 +132,8 @@ function cargarRed() {
                 cargando.style.display = "none";
                 document.getElementById("contenedorArticulos").style.display = "block";
                 var itemBoton = document.createElement('div');
-                itemBoton.innerHTML = `<a href="http://semantic.redalyc.org/conocimientoancestral/#/busqueda-pal-clav/${params.nodes}"> <div id="btn-mas-articulos">Más artículos</div></a>`;
+                itemBoton.setAttribute("style", "margin: 20px auto; border-radius: 5px; padding: 10px; background: #014f80;      text-align: center; width: 50%;");
+                itemBoton.innerHTML = `<a style="text-decoration: none; color: white;" href="${urlProject}#/busqueda-palabra-clave/${params.nodes}"> <div id="btn-mas-articulos">Más artículos</div></a>`;
                 document.getElementById('datosArticulo').appendChild(itemBoton);
             }
         });

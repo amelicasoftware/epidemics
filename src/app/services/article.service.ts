@@ -14,6 +14,7 @@ export class ArticleService {
   private _search$: Subject<string> = new Subject<string>();
 
   public url: string = environment.baseUrl;
+  private urlProject: string = environment.urlProject;
 
   constructor( private http: HttpClient ) { }
 
@@ -79,7 +80,7 @@ export class ArticleService {
   }
 
   getCountries(): Observable<Country[]> {
-    return this.http.get<Country[]>(`http://localhost:4200/assets/json/paises.json`);
+    return this.http.get<Country[]>(`${this.urlProject}assets/json/paises.json`);
   }
 
   articlesExists(articlesLength: number): boolean {
@@ -89,7 +90,7 @@ export class ArticleService {
   }
 
   getLastArticles(): any {
-    return this.http.get(`http://localhost:4200/assets/json/articlesCovidHomeRedalyc2021.json`, {responseType: 'text'});
+    return this.http.get(`${this.urlProject}assets/json/articlesCovidHomeRedalyc2021.json`, {responseType: 'text'});
   }
 
 }
