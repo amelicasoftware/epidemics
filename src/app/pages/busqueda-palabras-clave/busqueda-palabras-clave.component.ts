@@ -89,7 +89,7 @@ export class BusquedaPalabrasClaveComponent implements OnInit, OnDestroy {
               this.paginationService.changeInitialPosition();
               this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
             } else {
-              this.errorService.showErrorSearchs(`No existen resultados para ${search} Sugerencias: Prueba con una búsqueda nueva`);
+              this.errorService.showErrorSearchs(`No existen resultados para ${search}. Sugerencias: Prueba con una búsqueda nueva`);
               this.key = this.keyCopy;
             }
           }

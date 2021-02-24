@@ -95,7 +95,7 @@ export class BusquedaPaisComponent implements OnInit, OnDestroy {
               this.paginationService.changeInitialPosition();
               this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
             } else {
-              this.errorService.showErrorSearchs(`No existen resultados para ${this.countryError} Sugerencias: Prueba con una búsqueda nueva`);
+              this.errorService.showErrorSearchs(`No existen resultados para ${this.countryError}. Sugerencias: Prueba con una búsqueda nueva`);
               this.countryId = this.countryIdCopy;
             }
           }
@@ -136,11 +136,15 @@ export class BusquedaPaisComponent implements OnInit, OnDestroy {
       )
     ).subscribe(
       (articles: ArticleResult) => {
-        this.articles = articles.resultados;
-        this.country = articles.resultados[0].nombrePais;
-        this.totalResults = articles.totalResultados;
-        this.filterService.changeFilters(articles.filtros);
-        this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
+        if (this.articleService.articlesExists(articles.resultados.length)){
+          this.articles = articles.resultados;
+          this.country = articles.resultados[0].nombrePais;
+          this.totalResults = articles.totalResultados;
+          this.filterService.changeFilters(articles.filtros);
+          this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
+        } else {
+          this.errorService.showErrorSearchs('No existen resultados. Sugerencias: Prueba con una búsqueda nueva');
+        }
       }
     );
 
