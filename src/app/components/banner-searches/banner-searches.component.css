@@ -22,8 +22,11 @@
     font-size: 12px;
     padding: 6px 10px;
     /* cursor: pointer; */
-    text-decoration: none;
+}
+
+.link {
     color: white;
+    text-decoration: none;
 }
 
 .selected-searcher {

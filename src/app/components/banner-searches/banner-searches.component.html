@@ -1,7 +1,7 @@
 <div class="title-virus">
     <img target="_blank" src="assets/img/icons/icono-virus.png" alt="">
     <span>
-        Base de conocimiento en epidemias y COVID-19
+        <a [routerLink]="['/home']" class="link">Base de conocimiento en epidemias y COVID-19</a>
     </span>
     <span class="pipe-title-virus">
         | 
@@ -9,27 +9,27 @@
     <span>Más de 13,000 artículos</span>
 </div>
 <div class="navigation-searches">
-    <a [routerLink]="['/busqueda-general', 'covid-19']" [ngClass]="{'selected-searcher': sectionGeneral}">
+    <a class="link" [routerLink]="['/busqueda-general', 'covid-19']" [ngClass]="{'selected-searcher': sectionGeneral}">
         <img target="_blank" src="assets/img/icons/buscador.png" alt=""> Buscador
     </a>
 
-    <a [routerLink]="['/busqueda-palabra-clave', 'covid-19']" [ngClass]="{'selected-searcher': sectionKey}">
+    <a class="link" [routerLink]="['/busqueda-palabra-clave', 'covid-19']" [ngClass]="{'selected-searcher': sectionKey}">
         <img target="_blank" src="assets/img/icons/palabra-clave.png" alt=""> Artículos por palabra clave
     </a>
 
-    <a href=" http://amelica.org/epidemics/" target="_blank">
+    <a class="link" href=" http://amelica.org/epidemics/" target="_blank">
         <img target="_blank" src="assets/img/icons/red.png" alt=""> Representación del conocimiento
     </a>
 
-    <a [routerLink]="['/busqueda-pais', '73']" [ngClass]="{'selected-searcher': sectionCountry}">
+    <a class="link" [routerLink]="['/busqueda-pais', '73']" [ngClass]="{'selected-searcher': sectionCountry}">
         <img target="_blank" src="assets/img/icons/por-pais.png" alt=""> Artículos por país
     </a>
 
-    <a href="http://sparql.amelica.org/knowledgebase/epidemics/datastore" target="_blank">
+    <a class="link" href="http://sparql.amelica.org/knowledgebase/epidemics/datastore" target="_blank">
         <img target="_blank" src="assets/img/icons/sparcql.png" alt=""> Base de conocimiento en SPARQL
     </a>
 
-    <a [routerLink]="['/acerca-de']" [ngClass]="{'selected-searcher': sectionAbout}">
+    <a class="link" [routerLink]="['/acerca-de']" [ngClass]="{'selected-searcher': sectionAbout}">
         <img target="_blank" src="assets/img/icons/acerca-de.png" alt=""> Acerca de
     </a>
 </div>
