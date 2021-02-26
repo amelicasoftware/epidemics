@@ -124,11 +124,12 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
     );
 
     if (!this.search){
+      this.results = false;
       this.errorService.showErrorNullArticles().then(
         (value: string) => this.search = value
       ).finally(
         () => {
-          this.searchArticles(this.search);
+          this.searchArticles(this.search.trim());
         }
       );
     } else {

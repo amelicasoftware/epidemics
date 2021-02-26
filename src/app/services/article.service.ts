@@ -28,7 +28,7 @@ export class ArticleService {
     }
 
     return (str: string) => {
-      str = str.replace(/ñ/gi, 'n-n');
+      str ? str = str.replace(/ñ/gi, 'n-n') : str = '\'\'';
       const ret = [];
       for ( let i = 0, j = str.length; i < j; i++ ) {
         const c = str.charAt( i );

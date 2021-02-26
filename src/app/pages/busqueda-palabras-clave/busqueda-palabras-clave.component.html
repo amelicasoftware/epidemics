@@ -18,7 +18,7 @@
         </div>
 
         <div class="searcher">
-            <input class="searcher-text" #predefined (keyup.enter)="searchArticlesByKey(predefined.value)" type="text" placeholder="Buscar" required />
+            <input class="searcher-text" #predefined (keyup.enter)="searchArticlesByKey(predefined.value)" type="text" placeholder="Ingresé palabra de búsqueda" required />
             <input class="searcher-icon" type="image" src="assets/img/icons/buscador-institucionmdpi.png" (click)="searchArticlesByKey(predefined.value)" name="boton-buscar-articulo" alt="Buscar" required />
         </div>
     </section>
@@ -40,6 +40,22 @@
                     <img src="assets/img/icons/articulos-act.png" />
                     <span>Artículos de revista</span>
                 </div>
+                <div class="filters-icon">
+                    <!--  <a><img src="assets/img/icons/filtro.png" /></a> -->
+                    <input id="abrir-cerrar" name="abrir-cerrar" type="checkbox" value="" />
+                    <label for="abrir-cerrar">
+                        <img src="assets/img/icons/filtro.png" />
+                    </label>
+                    <div id="sidebar" class="sidebar">
+                        <ul class="menu">
+                            <input id="abrir-cerrar" name="abrir-cerrar" type="checkbox" value="" />
+                            <label for="abrir-cerrar">
+                                <img class="close-filters" src="assets/img/icons/filtro.png" />
+                            </label>
+                            <app-filters></app-filters>
+                        </ul>
+                    </div>
+                </div>
                 <div class="view-results">
                     <span>Modo de visualizar resultados</span>
                 </div>
@@ -53,7 +69,7 @@
                 </div>
             </div>
             <div>
-                <div class="results">
+                <div class="results" *ngIf="results">
                     <span>Resultados para: <b>{{ key }}</b> en artículos de revista</span>
                     <span class="total-results" *ngIf="positionPage !== finalPositionPage">{{positionPage * 10 - 9}} a {{positionPage * 10}} de {{totalResults}} artículos </span>
                     <span class="total-results" *ngIf="positionPage === finalPositionPage"> {{positionPage * 10 - 9}} a {{totalResults}} de {{totalResults}} artículos </span>

@@ -9,19 +9,19 @@
     <span>Más de 13,000 artículos</span>
 </div>
 <div class="navigation-searches">
-    <a class="link" [routerLink]="['/busqueda-general', 'covid-19']" [ngClass]="{'selected-searcher': sectionGeneral}">
+    <a class="link" [routerLink]="['/busqueda-general']" [ngClass]="{'selected-searcher': sectionGeneral}">
         <img target="_blank" src="assets/img/icons/buscador.png" alt=""> Buscador
     </a>
 
-    <a class="link" [routerLink]="['/busqueda-palabra-clave', 'covid-19']" [ngClass]="{'selected-searcher': sectionKey}">
+    <a class="link" [routerLink]="['/busqueda-palabra-clave']" [ngClass]="{'selected-searcher': sectionKey}">
         <img target="_blank" src="assets/img/icons/palabra-clave.png" alt=""> Artículos por palabra clave
     </a>
 
-    <a class="link" [routerLink]="['/home']">
+    <a class="link" [routerLink]="['/#/home/network']">
         <img target="_blank" src="assets/img/icons/red.png" alt=""> Representación del conocimiento
     </a>
 
-    <a class="link" [routerLink]="['/busqueda-pais', '73']" [ngClass]="{'selected-searcher': sectionCountry}">
+    <a class="link" [routerLink]="['/busqueda-pais']" [ngClass]="{'selected-searcher': sectionCountry}">
         <img target="_blank" src="assets/img/icons/por-pais.png" alt=""> Artículos por país
     </a>
 

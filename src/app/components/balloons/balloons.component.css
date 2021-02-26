@@ -26,3 +26,9 @@
     font-size: 15pt;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 340px) and (min-width: 5px) {
+    .balloons {
+        padding-top: 10px;
+    }
+}

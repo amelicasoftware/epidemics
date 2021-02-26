@@ -67,3 +67,13 @@
     height: 20px;
     margin-left: 10px;
 }
+
+@media only screen and (max-width: 620px) and (min-width: 5px) {
+    .container-target-articles {
+        display: block;
+    }
+    .article {
+        width: auto;
+        margin: 20px 20px;
+    }
+}

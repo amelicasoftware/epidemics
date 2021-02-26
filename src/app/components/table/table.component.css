@@ -101,3 +101,38 @@ img {
 .tittle {
     text-decoration: none;
 }
+
+@media only screen and (max-width: 340px) and (min-width: 5px) {
+    #table {
+        overflow-x: auto;
+        width: 290px;
+    }
+}
+
+@media only screen and (max-width: 400px) and (min-width: 341px) {
+    #table {
+        overflow-x: auto;
+        width: 310px;
+    }
+}
+
+@media only screen and (max-width: 450px) and (min-width: 401px) {
+    #table {
+        overflow-x: auto;
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 451px) {
+    #table {
+        overflow-x: auto;
+        width: 410px;
+    }
+}
+
+@media only screen and (max-width: 620px) and (min-width: 501px) {
+    #table {
+        overflow-x: auto;
+        width: 510px;
+    }
+}

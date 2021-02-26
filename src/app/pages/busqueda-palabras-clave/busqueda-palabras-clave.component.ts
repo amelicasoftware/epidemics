@@ -37,6 +37,7 @@ export class BusquedaPalabrasClaveComponent implements OnInit, OnDestroy {
   view = true;
   imgTable = 'assets/img/icons/table.png';
   imgList = 'assets/img/icons/list-act.png';
+  results = true;
   totalResults: number;
 
   constructor(
@@ -84,6 +85,7 @@ export class BusquedaPalabrasClaveComponent implements OnInit, OnDestroy {
           (articles: ArticleResult) => {
             if (this.articleService.articlesExists(articles.resultados.length)){
               this.articles = articles.resultados;
+              this.results = this.articleService.articlesExists(articles.resultados.length);
               this.totalResults = articles.totalResultados;
               this.filterService.changeFilters(articles.filtros);
               this.paginationService.changeInitialPosition();
@@ -122,7 +124,18 @@ export class BusquedaPalabrasClaveComponent implements OnInit, OnDestroy {
       }
     );
 
-    this.geyArticlesByKey();
+    if (!this.key){
+      this.results = false;
+      this.errorService.showErrorNullArticles().then(
+        (value: string) => this.key = value
+      ).finally(
+        () => {
+          this.searchArticlesByKey(this.key.trim());
+        }
+      );
+    } else {
+      this.geyArticlesByKey();
+    }
 
     this.subscriptionArray.push(this.finalPositionSubscription$);
     this.subscriptionArray.push(this.positionSubscription$);
@@ -140,6 +153,7 @@ export class BusquedaPalabrasClaveComponent implements OnInit, OnDestroy {
     this.articleService.getArticlesByKey(this.key, 1, this.filtersChain).subscribe(
       (articles: ArticleResult) => {
         this.articles = articles.resultados;
+        this.results = this.articleService.articlesExists(articles.resultados.length);
         this.totalResults = articles.totalResultados;
         this.filterService.changeFilters(articles.filtros);
         this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');

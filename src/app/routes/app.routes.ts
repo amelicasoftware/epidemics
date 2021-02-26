@@ -8,8 +8,11 @@ import { HomeComponent } from '../pages/home/home.component';
 export const ROUTES: Routes = [
     { path: 'acerca-de', component: AcercaDeComponent },
     { path: 'busqueda-general/:search', component: BusquedaGeneralComponent },
+    { path: 'busqueda-general', component: BusquedaGeneralComponent },
     { path: 'busqueda-palabra-clave/:key', component: BusquedaPalabrasClaveComponent },
+    { path: 'busqueda-palabra-clave', component: BusquedaPalabrasClaveComponent },
     { path: 'busqueda-pais/:countryId', component: BusquedaPaisComponent },
+    { path: 'busqueda-pais', component: BusquedaPaisComponent },
     { path: 'home', component: HomeComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
