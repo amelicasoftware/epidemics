@@ -1,6 +1,6 @@
 #mynetwork {
     width: 100%;
-    height: 82vh;
+    height: 800px;
     background-color: white;
     position: relative;
     float: left;
@@ -10,7 +10,7 @@
 
 #contenedorArticulos {
     width: 100%;
-    height: 82vh;
+    /* height: 82vh; */
     position: relative;
     float: left;
     /* border: 1px solid lightgray; */
@@ -96,4 +96,50 @@
 #charger{
     margin: auto auto; 
     display: none;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #container-graph-network {
+        width: 100%;
+    }    
+    #container-articles {
+        width: 90%;
+        padding-top: 20px;
+    }
+    #mynetwork {
+        height: 400px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) and (max-width: 992px) {
+    #container-graph-network {
+        width: 100%;
+    }    
+    #container-articles {
+        width: 90%;
+        padding-top: 20px;
+    }
+    #mynetwork {
+        height: 400px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #container-articles {
+        height: 900px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }

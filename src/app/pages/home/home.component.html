@@ -21,6 +21,9 @@
         </div>
     </div>
 </div>
+<div id="btn-top" (click)="toScrollTop()">
+    <i class="fa fa-chevron-up"></i>
+</div>
 <section id="searcher">
     <div id="container">
         <div id="container-searcher">
@@ -32,11 +35,11 @@
             </div>
         </div>
         <div id="contenedor-numeralias">
-            <div>
-                <p>Más de <span>{{numArticulos}} artículos</span> extraidos de <span>{{numRevistas}} revistas</span> en <span>{{numPaises}} países</span></p>
+            <div class="text-description">
+                <p>Más de <span class="number">{{numArticulos}} artículos</span> extraidos de <span class="number">{{numRevistas}} revistas</span> en <span class="number">{{numPaises}} países</span></p>
             </div>
         </div>
-        <div id="contenedor-resumen">
+        <div id="contenedor-resumen" class="text-description">
             Por un modelo de publicación sin fines de lucro para conservar la naturaleza académica 
             <br>
             y abierta de la comunicación cientifíca.
@@ -83,7 +86,7 @@
     </div>
 </section>
 <section id="network">
-    <div style="width: 90%; font-size: 16pt; font-family: 'Barlow-Regular'; margin: 0px auto;">Representación del conocimiento</div>
+    <div id="title-network">Representación del conocimiento</div>
     <div>
         <app-network></app-network>
     </div>
@@ -94,7 +97,7 @@
         <app-map></app-map>
     </div>
 </section>
-<section id="sparql">}
+<section id="sparql">
     <div id="container-content">
         <div id="descripcion-sparql">
             <p id="titulo-sparql">Base de Conocimiento en SPARQL</p>

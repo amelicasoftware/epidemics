@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import { HostListener } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,21 +12,27 @@ import { HostListener } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   // palabra: string;
-  numArticulos: number = 13298;
-  numRevistas: number = 1241;
-  numPaises: number = 25;
+  numArticulos: string = '13,298';
+  numRevistas: string = '1,241';
+  numPaises: string = '25';
   selection: number;
+  section: string;
 
   constructor(
-    private router: Router
-  ) { }
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    const section = 'section';
+    this.route.params.subscribe((params) => {
+      this.section = params[section];
+    });
+   }
 
   ngOnInit(): void {
+    if(this.section === 'network'){
+      this.toNetwork();
+    }
   }
-
-  // searchText(word: string) {
-  //   this.router.navigate(['/busquedaGeneral', word]);
-  // }
 
   searchText(word: string){
     console.log(word);
@@ -67,11 +74,13 @@ export class HomeComponent implements OnInit {
   toAbout(){
     this.router.navigate(['/acerca-de']);
   }
+  toScrollTop(){
+    const element = document.getElementsByClassName('header');
+    element[0].scrollIntoView({ behavior: 'smooth'});
+  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event) {
-    // console.log($(window).scrollTop());
-    // fixed menu secciones y header
     if ($(window).scrollTop() + 80 >= $('#menu-section').offset().top) {
       if ($('#menu-section').offset().top < 400) {
         $('#menu-section').css('position', 'inherit');

@@ -3,10 +3,12 @@
 }
 
 .navigation {
+    width: 100%;
     display: flex;
     color: white;
     align-items: center;
     height: 90px;
+    justify-content: center;
 }
 
 .to-home {
@@ -20,6 +22,9 @@
     background-color: #37464E;
     color: white;
     white-space: normal;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .links-home li:hover {
@@ -66,4 +71,68 @@ a {
 #menuitem_4 a,
 #menuitem_5 a {
     pointer-events: none;
+}
+
+#menu-mobile {
+    display: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .links-home{
+        display: none;
+    }
+    .current-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0px;
+    }
+    #menu-mobile {
+        display: block;
+        margin: 0px 10px;
+        cursor: pointer;
+        font-size: 15pt;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) and (max-width: 992px) {
+    .links-home{
+        display: none;
+    }
+    .current-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0px;
+    }
+    .navigation {
+        height: 65px;
+        justify-content: space-between;
+    }
+    #menu-mobile {
+        display: block;
+        margin: 0px 10px;
+        cursor: pointer;
+        font-size: 15pt;
+    }
+    .navigation div{
+        margin: 0px 30px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }
