@@ -1,3 +1,4 @@
+<app-menu-mobile></app-menu-mobile>
 <div class="header">
     <div class="navigation">
         <div class="logo-redalyc">
@@ -12,7 +13,11 @@
                 </ng-template>
             </ejs-menu>
         </div>
+        
         <div class="languages-social-netwoks">
+            <div id="menu-mobile" (click)="openNav()">
+                <i class="fa fa-bars"></i>
+            </div>
             <!-- <span>ESP</span>
             <span>ENG</span> -->
             <a href="https://www.instagram.com/redalyc_oficial" target="_blank"><img class="instragram" src="assets/img/icons/ig.png"></a>

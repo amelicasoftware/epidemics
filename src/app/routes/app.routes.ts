@@ -11,5 +11,6 @@ export const ROUTES: Routes = [
     { path: 'busqueda-palabra-clave/:key', component: BusquedaPalabrasClaveComponent },
     { path: 'busqueda-pais/:countryId', component: BusquedaPaisComponent },
     { path: 'home', component: HomeComponent },
+    { path: 'home/:section', component: HomeComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

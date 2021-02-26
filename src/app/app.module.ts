@@ -36,6 +36,7 @@ import { LastArticlesComponent } from './components/last-articles/last-articles.
 import { WordCloudComponent } from './components/word-cloud/word-cloud.component';
 import { NetworkComponent } from './components/network/network.component';
 import { MapComponent } from './components/map/map.component';
+import { MenuMobileComponent } from './components/menu-mobile/menu-mobile.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { MapComponent } from './components/map/map.component';
     WordCloudComponent,
     NetworkComponent,
     MapComponent,
+    MenuMobileComponent,
   ],
   imports: [
     BrowserModule,

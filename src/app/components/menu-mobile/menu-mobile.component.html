@@ -1,0 +1,23 @@
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <div class="overlay-content">
+        <div (click)="toSearcher()" class="op-menu-section btn-search" id="btn-search">
+            <img src="assets/img/home/busqueda.png"><span>Buscador</span>
+        </div>
+        <div (click)="toCould()" class="op-menu-section btn-tema" id="btn-articles">
+            <img src="assets/img/home/palabra_clave.png"><span>Artículos por palabra clave</span>
+        </div>
+        <div (click)="toNetwork()" class="op-menu-section btn-representacion" id="btn-representacion">
+            <img src="assets/img/home/red.png"><span>Representación del conocimiento</span>
+        </div>
+        <div (click)="toMap()" class="op-menu-section btn-pais" id="btn-pais">
+            <img src="assets/img/home/por_pais.png"><span>Artículos por país</span>
+        </div>
+        <div (click)="toSparql()" class="op-menu-section btn-sparql" id="btn-sparql">
+            <img src="assets/img/home/sparql.png"><span>Base del conocimiento SPARQL</span>
+        </div>
+        <div (click)="toAbout()" class="op-menu-section btn-recientes" id="btn-recientes">
+            <img src="assets/img/home/acerca.png"><span>Acerca de</span>
+        </div>
+    </div>
+</div>

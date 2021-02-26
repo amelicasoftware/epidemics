@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MenuItemModel } from '@syncfusion/ej2-angular-navigations';
+import { MenuMobileComponent } from '../menu-mobile/menu-mobile.component';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { MenuItemModel } from '@syncfusion/ej2-angular-navigations';
 })
 export class HeaderComponent implements OnInit {
   @Input() currentSection: string;
+  @ViewChild(MenuMobileComponent) menu: MenuMobileComponent;
 
   public menuItems: MenuItemModel[] = [
     {
@@ -130,6 +132,10 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openNav(): void {
+    this.menu.openNav();
   }
 
 }

@@ -25,3 +25,16 @@
     margin-top: 50px;
     width: 30%;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #logo-uaem img{
+        width: 70%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1025px) {
+    #logo-uaem img{
+        width: 70%;
+    }
+}
