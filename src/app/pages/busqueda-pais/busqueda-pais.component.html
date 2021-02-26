@@ -38,9 +38,25 @@
 
         <div class="content-general">
             <div class="container-sections">
-                <div class="selected sections-aling">
+                <div class="selected sections-aling article-icon">
                     <img src="assets/img/icons/articulos-act.png" />
                     <span>Artículos de revista</span>
+                </div>
+                <div class="filters-icon">
+                    <!--  <a><img src="assets/img/icons/filtro.png" /></a> -->
+                    <input id="abrir-cerrar" name="abrir-cerrar" type="checkbox" value="" />
+                    <label for="abrir-cerrar">
+                        <img src="assets/img/icons/filtro.png" />
+                    </label>
+                    <div id="sidebar" class="sidebar">
+                        <ul class="menu">
+                            <input id="abrir-cerrar" name="abrir-cerrar" type="checkbox" value="" />
+                            <label for="abrir-cerrar">
+                                <img class="close-filters" src="assets/img/icons/filtro.png" />
+                            </label>
+                            <app-filters></app-filters>
+                        </ul>
+                    </div>
                 </div>
                 <div class="view-results">
                     <span>Modo de visualizar resultados</span>
