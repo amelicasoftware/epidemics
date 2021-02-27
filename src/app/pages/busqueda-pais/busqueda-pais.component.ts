@@ -142,8 +142,6 @@ export class BusquedaPaisComponent implements OnInit, OnDestroy {
           this.totalResults = articles.totalResultados;
           this.filterService.changeFilters(articles.filtros);
           this.paginationService.changeFinalPosition(articles.totalResultados, 'articles');
-        } else {
-          this.errorService.showErrorSearchs('No existen resultados. Sugerencias: Prueba con una búsqueda nueva');
         }
       }
     );
