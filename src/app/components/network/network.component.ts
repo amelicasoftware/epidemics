@@ -21,4 +21,9 @@ export class NetworkComponent implements OnInit {
     // cargarRed($);
   }
 
+  ngAfterContentInit(){
+    get(`${this.urlProject}assets/js/red.js`, () => {
+    });
+  }
+
 }
