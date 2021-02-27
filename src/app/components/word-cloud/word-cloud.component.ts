@@ -42,9 +42,9 @@ export class WordCloudComponent implements OnInit {
         dataField: 'value'
       });
 
-      series.labels.template.url = `http://localhost:4200/#/busqueda-palabra-clave/{word}`;
+      series.labels.template.url = `http://semantic.redalyc.org/epidemics/#/busqueda-palabra-clave/{word}`;
       series.labels.template.urlTarget = '_self';
-      console.log('############' + `http://localhost:4200/#/busqueda-palabra-clave/{word}`);
+      console.log('############' + `http://semantic.redalyc.org/epidemics/#/busqueda-palabra-clave/{word}`);
 
       const subtitle2 = chart2.titles.create();
       subtitle2.text = '';
