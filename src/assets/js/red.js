@@ -1,4 +1,4 @@
-const urlProject = 'http://206.189.224.97/pruebas/epidemics2/';
+const urlProject = 'http://semantic.redalyc.org/epidemics/';
 
 let newscript = document.createElement('script');
 newscript.type = 'text/javascript';
