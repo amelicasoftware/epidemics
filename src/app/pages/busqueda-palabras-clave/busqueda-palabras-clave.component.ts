@@ -166,7 +166,7 @@ export class BusquedaPalabrasClaveComponent implements OnInit, OnDestroy {
       this.filterService.cleanFiltersSelected();
       this.articleService.changeSearch(key);
     }else{
-      this.errorService.showErrorSearchs('Ingresé una palabra');
+      this.errorService.showErrorSearchs('Ingrese la palabra clave a buscar');
     }
   }
 
