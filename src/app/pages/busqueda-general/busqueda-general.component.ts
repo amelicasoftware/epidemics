@@ -165,7 +165,7 @@ export class BusquedaGeneralComponent implements OnInit, OnDestroy{
       this.filterService.cleanFiltersSelected();
       this.articleService.changeSearch(search);
     }else{
-      this.errorService.showErrorSearchs('Ingresé una palabra');
+      this.errorService.showErrorSearchs('Ingrese una palabra');
     }
   }
 
