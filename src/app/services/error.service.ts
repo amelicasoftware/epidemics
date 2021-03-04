@@ -28,7 +28,7 @@ export class ErrorService {
 
   async showErrorNullArticles(): Promise<string> {
     const result_1 = await Swal.fire({
-      title: 'Ingresé palabra de búsqueda',
+      title: 'Ingrese palabra de búsqueda',
       input: 'text',
       inputAttributes: {
         autocapitalize: 'off'
