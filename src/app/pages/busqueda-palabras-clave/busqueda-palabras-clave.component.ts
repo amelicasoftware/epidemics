@@ -126,13 +126,13 @@ export class BusquedaPalabrasClaveComponent implements OnInit, OnDestroy {
 
     if (!this.key){
       this.results = false;
-      this.errorService.showErrorNullArticles().then(
+     /*  this.errorService.showErrorNullArticles().then(
         (value: string) => this.key = value
       ).finally(
         () => {
           this.searchArticlesByKey(this.key.trim());
         }
-      );
+      ); */
     } else {
       this.geyArticlesByKey();
     }
