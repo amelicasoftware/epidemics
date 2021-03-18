@@ -115,6 +115,7 @@ function cargarRed() {
         $.ajax({
             url: `http://portal.amelica.org/ApiReaderIndex/resources/articulos/epidemics/palabras/${params.nodes}/1/10/relevancia/0/{"anios":"","idiomas":"", "paises":"","areas":"","disciplinas":"","autores":"","instituciones":"","origen":"","funete":"","fb":1}`,
             success: function (result) {
+                let titleArticle = '';
                 // console.log('datos de articulos home', result);
                 var articulosConcepto = result.resultados;
                 // console.log(articulosConcepto);
@@ -122,11 +123,19 @@ function cargarRed() {
                 tamano = Object.keys(articulosConcepto).length;
                 for (let index = 0; index < tamano; index++) {
                     const element = articulosConcepto[index];
+                    const titlesArticle = element.tituloArticulo.split('<<<');
+                    // console.log(titlesArticle);
+                    if(titlesArticle.length === 1){
+                        titleArticle = titlesArticle[0];
+                    }else{
+                        titleArticle = titlesArticle[1];
+                    }
+                    
                     var item = document.createElement('a');
                     item.setAttribute("href", 'https://redalyc.org/articulo.oa?id=' + element.cveArticulo);
                     item.setAttribute("target", "_blank");
                     item.setAttribute("style", "text-decoration: none");
-                    item.innerHTML = '<div class="card-article" style="box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%); transition: 0.3s; width: 90%; border-radius: 5px; margin: 5px; padding: 5px; color: black;"><span class="text-link" style="font-family: Barlow-Bold; font-size: 10pt; color: #014f80;">' + element.tituloArticulo + '</span><br><span class="text-revista" style="font-family: Barlow-Regular; font-size: 10pt; color: #37464e;">' + element.nombreRevista + ', ' + element.anio + ' ' + element.numero + '(' + element.volumen + ')</span></div>';
+                    item.innerHTML = '<div class="card-article" style="box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%); transition: 0.3s; width: 90%; border-radius: 5px; margin: 5px; padding: 5px; color: black;"><span class="text-link" style="font-family: Barlow-Bold; font-size: 10pt; color: #014f80;">' + titleArticle + '</span><br><span class="text-revista" style="font-family: Barlow-Regular; font-size: 10pt; color: #37464e;">' + element.nombreRevista + ', ' + element.anio + ' ' + element.numero + '(' + element.volumen + ')</span></div>';
                     document.getElementById('datosArticulo').appendChild(item);
                 }
                 cargando.style.display = "none";
@@ -137,6 +146,9 @@ function cargarRed() {
                 itemBoton.setAttribute("style", "margin: 20px auto; border-radius: 5px; padding: 10px; background: #014f80;      text-align: center; width: 50%;");
                 itemBoton.innerHTML = `<a style="text-decoration: none; color: white;" href="${urlProject}#/busqueda-palabra-clave/${params.nodes}"> <div id="btn-mas-articulos">Más artículos</div></a>`;
                 document.getElementById('datosArticulo').appendChild(itemBoton);
+            },
+            error: function (error) {
+                console.log('no hay resultados', error.status);
             }
         });
 
