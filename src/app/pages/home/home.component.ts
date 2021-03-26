@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import { HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Numeraries } from '../../constants/numerary';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +13,9 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   // palabra: string;
-  numArticulos: string = '13,298';
-  numRevistas: string = '1,241';
-  numPaises: string = '25';
+  numArticulos: string = Numeraries.numArticles;
+  numRevistas: string = Numeraries.numJournals;
+  numPaises: string = Numeraries.numCountries;
   selection: number;
   section: string;
 
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if(this.section === 'network'){
+    if (this.section === 'network'){
       this.toNetwork();
     }
   }
@@ -52,23 +53,23 @@ export class HomeComponent implements OnInit {
   }
 
   toCould() {
-    document.getElementById('could').scrollIntoView({ behavior: "smooth" });
+    document.getElementById('could').scrollIntoView({ behavior: 'smooth' });
     // this.selection = 2;
   }
   toSearcher() {
-    document.getElementById('searcher').scrollIntoView({ behavior: "smooth" });
+    document.getElementById('searcher').scrollIntoView({ behavior: 'smooth' });
     // this.selection = 1;
   }
   toNetwork() {
-    document.getElementById('network').scrollIntoView({ behavior: "smooth" });
+    document.getElementById('network').scrollIntoView({ behavior: 'smooth' });
     // this.selection = 3;
   }
   toMap() {
-    document.getElementById('map').scrollIntoView({ behavior: "smooth" });
+    document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
     // this.selection = 4;
   }
   toSparql() {
-    document.getElementById('sparql').scrollIntoView({ behavior: "smooth" });
+    document.getElementById('sparql').scrollIntoView({ behavior: 'smooth' });
     // this.selection = 5;
   }
   toAbout(){
@@ -97,7 +98,7 @@ export class HomeComponent implements OnInit {
         $('.navigation').css('background-color', '#37464e');
       }
     }
-    
+
     if ($(window).scrollTop() > 0 && $(window).scrollTop() < 600) {
       this.selection = 1;
     }
