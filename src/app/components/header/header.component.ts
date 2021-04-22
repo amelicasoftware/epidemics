@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MenuItemModel } from '@syncfusion/ej2-angular-navigations';
 import { MenuMobileComponent } from '../menu-mobile/menu-mobile.component';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-header',
@@ -13,109 +14,109 @@ export class HeaderComponent implements OnInit {
 
   public menuItems: MenuItemModel[] = [
     {
-      text: 'Acerca de Redalyc',
+      text:  'header.acerca.redalyc',
       items: [
           {
-            text: 'Misión',
+            text: 'header.mision',
             url: 'https://www.redalyc.org/redalyc/acerca-de/mision.html'
           },
           {
-            text: 'Consejo asesor',
+            text: 'header.consejo',
             url: 'https://www.redalyc.org/redalyc/acerca-de/comite.html'
           },
           {
-            text: 'Directorio',
+            text: 'header.directorio',
             url: 'https://www.redalyc.org/redalyc/acerca-de/directorio.html'
           },
           {
-            text: 'Cronología',
+            text: 'header.cronologia',
             url: 'https://www.redalyc.org/redalyc/acerca-de/noticias.html'
           },
           {
-            text: 'Reconocimientos internacionales',
+            text: 'header.reconocimientos',
             url: 'https://www.redalyc.org/redalyc/acerca-de/reconocimientos.html'
           },
           {
-            text: 'OAI-PMH',
+            text: 'header.oai',
             url: 'https://www.redalyc.org/redalyc/acerca-de/oai-pmh.html'
           },
           {
-            text: 'Redalyc en tu sitio web',
+            text: 'header.sitio',
             url: 'https://www.redalyc.org/redalyc/acerca-de/buscador.html'
           },
           {
-            text: 'Uso legal',
+            text: 'header.uso',
             url: 'https://www.redalyc.org/redalyc/acerca-de/usolegal.html'
           },
           {
-            text: 'Publicaciones',
+            text: 'header.publicaciones',
             url: 'https://www.redalyc.org/redalyc/acerca-de/productos.html'
           },
       ]
     },
     {
-      text: 'Accesso Abierto Diamante',
+      text: 'header.acceso',
       url: 'https://www.redalyc.org/home.oa?id=accesso'
     },
     {
-      text: 'Principios y Valores',
+      text: 'header.valores',
       url: 'https://www.redalyc.org/home.oa?id=principios'
     },
     {
-      text: 'Tecnología de Publicación Digital (XML JATS)',
+      text: 'header.jats',
       items: [
         {
-          text: 'Marcalyc Sistema de Marcación (XML JATS)',
+          text: 'header.marcalyc',
           url: 'http://marcalyc.redalyc.org/'
         },
         {
-          text: 'Integración OJS',
+          text: 'header.ojs',
           url: 'https://www.redalyc.org/'
         },
         {
-          text: 'Capacitación XML JATS',
+          text: 'header.capacitacion',
           url: 'http://marcalyc.redalyc.org/ayuda/'
         },
         {
-          text: 'Generación Automática de ePUB, PDF HTML',
+          text: 'header.generacion',
           url: 'https://www.redalyc.org/'
         },
         {
-          text: 'Visor de artículos',
+          text: 'header.visor',
           url: 'https://www.redalyc.org/'
         },
         {
-          text: 'Visor móvil de articulos',
+          text: 'header.movil',
           url: 'https://www.redalyc.org/'
         }
       ]
     },
     {
-      text: 'Indexación de Revistas',
+      text: 'header.indexacion',
       items: [
         {
-          text: 'Índice de Revistas Consolidadas Redalyc',
+          text: 'header.consolidadas.redalyc',
           items: [
             {
-              text: 'Criterios de evaluación',
+              text: 'header.evaluacion',
               url: 'https://www.redalyc.org/postulacion.oa?q=criterios'
             },
             {
-              text: 'Proceso de postulación',
+              text: 'header.postulacion',
               url: 'https://www.redalyc.org/postulacion.oa?q=proceso'
             }
           ],
           url: 'https://www.redalyc.org/'
         },
         {
-          text: 'Índice de Revistas en consolidación AmeliCA',
+          text: 'header.consolidadas.amelica',
           items: [
             {
-              text: 'Criterios de evaluación',
+              text: 'header.evaluacion',
               url: 'http://portal.amelica.org/microPortal.oa?opcion=postula'
             },
             {
-              text: 'Proceso de postulación',
+              text: 'header.postulacion',
               url: 'http://portal.amelica.org/microPortal.oa?opcion=postula'
             }
           ],
@@ -124,18 +125,24 @@ export class HeaderComponent implements OnInit {
       ]
     },
     {
-      text: 'Servicios',
+      text: 'header.servicios',
       url: 'https://www.redalyc.org/home.oa?id=servicios'
     }
   ];
 
-  constructor() { }
+  constructor(
+    private translationService: TranslationService
+  ) { }
 
   ngOnInit(): void {
   }
 
   openNav(): void {
     this.menu.openNav();
+  }
+
+  changeLanguage(lang: string): void {
+    this.translationService.changeLanguage(lang);
   }
 
 }

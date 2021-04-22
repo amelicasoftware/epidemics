@@ -10,66 +10,47 @@
 
     <section id="content-about">
         <div>
-            <h2 class="title">Contexto</h2>
+            <h2 class="title">{{ 'estatica.contexto' | translate }}</h2>
 
             <p>
-                Ante una contingencia mundial de salud, se refrenda la vital función del Acceso Abierto: llevar el conocimiento a todos los rincones del mundo, permitir que la ciencia sea accesible rápida y oportunamente para que su contribución se refleje en la mejora
-                de la calidad de vida humana, en salvar vidas y en el desarrollo de una mejor sociedad para todos. Iniciativas de Acceso Abierto como Redalyc UAEM desde hace 18 años trabajancon ese objetivo. Hoy, la alianza con AmeliCA/Redalyc refrenda
-                su compromiso con el Acceso Abierto y sigue desarrollando tecnología la cual aplica ahora a la diseminación semántica de los artículos publicados en temáticas de interés en epidemiología, pandemias y temas relacionados. Ello permitirá
-                difundir y poner a disposición más de 6 mil artículos en formato de Linked Open Data (LOD) para que sean procesados e interconectados en la nube del conocimiento LOD y ofrecer al usuario lector servicios de navegación y descubrimiento
-                temático para la consulta de los textos completos de este conjunto de datos.
+                {{ 'estatica.parrafo1' | translate }}
             </p>
         </div>
 
         <div>
-            <h2 class="title">Descripción</h2>
+            <h2 class="title">{{ 'estatica.descripcion' | translate }}</h2>
 
             <p>
-                Esta masa de información que constituye la Web, en ocasiones se siente como “de una milla de ancho pero con una pulgada de profundidad” ¿Cómo poder construir una experiencia Web más integrada, consistente y profunda? (Allemang & Hendler, 2011).Es en este
-                escenario donde la semántica es capaz de mostrar su poder para comunicar la información con suficiente significado. Así es posible construir aplicaciones inteligentes que aporten un mayor conocimiento identificando en mayor profundidad
-                los contenidos y fomenten el descubrimiento de conocimiento.
+                {{ 'estatica.parrafo2' | translate }}
             </p>
 
             <p>
-                Frawley, Piatetsky-Shapiro y Matheus (1992) definen descubrimiento de conocimiento como la extracción no trivial de información implícita, previamente desconocida y potencialmente útil, a partir de datos. El reto de extraer conocimiento a partir de datos
-                demanda investigación en estadística, bases de datos, reconocimiento de patrones, aprendizaje de máquinas, visualización de datos, optimización y cómputo de alto rendimiento, para entregar inteligencia de negocio avanzada y soluciones
-                de descubrimiento web (IBM, 2018).
+                {{ 'estatica.parrafo3' | translate }}
             </p>
 
             <p>
-                AmeliCA/Redalyc 1 ejecutó un algoritmo basado en ontologías, previamente desarrollado llamado OntoOAI OntoOAI (Becerril-García & Aguado-Lopez, 2018), en sus bases de datos para extraer contenido relacionado con epidemias. Los resultados incluyen: una
-                representación ontológica del conocimiento publicado en {{numeraries.numArticles}} artículos científicos que incluyen conceptos y relaciones, así como sus atributos; un grafo dirigido utilizado como navegador temático de contenido para
-                acceder a los textos completos de los artículos; así como también, un conjunto de datos disponibles en un punto de acceso SPARQL para consultar los resultados encontrados como parte de Linked Open Data.
+                {{ 'estatica.parrafo4' | translate }}
             </p>
         </div>
 
         <div>
-            <h2 class="title">Metodología</h2>
+            <h2 class="title">{{ 'estatica.metodologia' | translate }}</h2>
 
             <p>
-                Se ejecutó un algoritmo para extraer contenido basado en un tesauro de conceptos relacionados con pandemias / epidemias. En un inicio se basó en una lista predefinida de sinónimos obtenidos de
-                <a class="link-section" href="https://www.powerthesaurus.org/" target="_blank">powerthesaurus.org</a>. Según los conceptos resultantes y las relaciones entre ellos se estableció un conjunto de iteraciones para obtener y refinar una ontología
-                resultante que muestra el conocimiento publicado en ese conjunto de revistas de AA. Finalmente, la ontología se utilizó para desarrollar la representación visual y el navegador de contenido para obtener acceso a artículos de texto completo.
-                El conjunto de datos resultante también se publicó como un SPARQL endpoint.
+                {{ 'estatica.parrafo5' | translate }}
+                <a class="link-section" href="https://www.powerthesaurus.org/" target="_blank">powerthesaurus.org</a>{{ 'estatica.parrafo6' | translate }}
             </p>
 
             <p class="quote">
-                <sup> 1 </sup> &nbsp; &nbsp; AmeliCA/Redalyc es una infraestructura de Ciencia Abierta que busca fortalecer la comunicación y publicación científica sin fines de lucro propiedad de la academia. A través del respeto a las lenguas y culturas
-                locales, AmeliCA/Redalyc tiene como objetivo incluir e insertar en la conversación científica mundial a diferentes regiones del mundo para lograr que la difusión del conocimiento sea más participativa, incluyente y sustentable. Actualmente,
-                esta infraestructura brinda servicios a más de 1.400 revistas de Acceso Abierto, evaluadas por pares y de calidad certificada, publicadas por 670 instituciones de 31 países de todo el mundo. A través de Redalyc se proporciona acceso a
-                más de 700.000 artículos de texto completo en diferentes idiomas (principalmente español, inglés, portugués y francés) de 1.8 millones de autores de 150 países, con aproximadamente 10 millones de descargas de artículos por mes alrededor
-                del mundo.
+                <sup> 1 </sup> &nbsp; &nbsp; {{ 'estatica.parrafo7' | translate }}
             </p>
 
-            <p>
-                <b>Autores:</b> Arianna Becerril-García, Eduardo Aguado-López. <b>Desarrolladores de Software:</b> Alma Rosa Segundo Escobar, Paulo César Ylloldi Costilla, Luis Angel Ángeles Pineda.
-                <b>Diseño:</b> Priscila Dávila Morales. <b>Ingeniería de Datos:</b> Liliana González Morales, Alma Rosa Segundo Escobar. : Arianna Becerril García. <b>Investigación:</b> Cuerpo Académico Consolidado “Comunicación y Difusión de la Ciencia
-                SEP UAEM/77, Facultad de Ciencias Políticas y Sociales, Universidad Autónoma del Estado de México.
+            <p [innerHTML]="'estatica.parrafo8' | translate">
             </p>
         </div>
 
         <div>
-            <h2 class="title">Referencias</h2>
+            <h2 class="title">{{ 'estatica.referencias' | translate }}</h2>
 
             <p class="reference">
                 1.&nbsp;&nbsp;Keßler, C.; d’Aquin, M.; Dietze, S. Linked Data for Science and Education. Semantic Web Journal 2013, 4 (1), pp. 1-2.

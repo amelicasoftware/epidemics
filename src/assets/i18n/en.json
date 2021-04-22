@@ -1,0 +1,108 @@
+{
+    "header": {
+        "acerca.redalyc": "About Redalyc",
+        "mision": "Mision",
+        "consejo": "Advisory Board",
+        "directorio": "Directory",
+        "cronologia": "Chronology",
+        "reconocimientos": "International Awards",
+        "oai": "OAI-PMH",
+        "sitio": "Redalyc on your website",
+        "uso": "Legal use",
+        "publicaciones": "Publications",
+        "acceso": "Diamond Open Access",
+        "valores": "Principles and Values",
+        "jats": "Digital Publication Technology (XML JATS)",
+        "marcalyc": "Marcalyc Markup System (XML JATS)",
+        "ojs": "OJS integration",
+        "capacitacion": "XML JATS Capacitation",
+        "generacion": "ePUB, PDF HTML Automatic Generation",
+        "visor": "Article viewer",
+        "movil": "Mobile article viewer",
+        "indexacion": "Journal Indexings",
+        "consolidadas.redalyc": "Redalycs' consolidated journal index",
+        "consolidadas.amelica": "AmeliCAs' in consolidation journal index",
+        "evaluacion": "Evaluation Criteria",
+        "postulacion": "Postulation Process",
+        "servicios": "Services",
+        "redalyc": "Redalyc",
+        "acerca.epidemics": "About",
+        "pais": "Search by country"
+    },
+    "navegacion": {
+        "total": "More than {{ articles }} articles",
+        "buscador": "Browser",
+        "clave": "Articles by keyword",
+        "conocimiento": "Knowledge representation",
+        "pais": "Articles by country",
+        "sparql": "Knowledge base in  SPARQL"
+    },
+    "home": {
+        "buscar": "Search",
+        "mensaje": "For a non-for-profit publishing model to keep the academic and open nature of the scientific communication.",
+        "recientes": "Recent articles about epidemics and COVID-19",
+        "mas": "Display more articles",
+        "cargando": "Loading Articles...",
+        "sparql": "SPARQL access point with the available data to access the results for better analysis: {{ value }}"
+    },
+    "busqueda": {
+        "banner": {
+            "pais": "Select country:",
+            "palabras": "Search by keyword",
+            "general": "General search",
+            "buscar.general": "Type the search word",
+            "buscar.clave": "Type the keyword to search"
+        },
+        "secciones": {
+            "principal": "Journal articles",
+            "modo": "Results visualization mode",
+            "tabla": "Table",
+            "lista": "List",
+            "resultados": "Results for: {{ text }} in journal articles",
+            "resultados.pais": "Articles published in journals from: {{ value }}",
+            "total": "{{ value1 }} from {{ value2 }} to {{ value3 }} articles"
+        },
+        "filtros": {
+            "titulo": "Search filters",
+            "Año": "Year",
+            "Idioma": "Language",
+            "Disciplina": "Discipline",
+            "Pa�?s": "Country",
+            "mas": "Show more",
+            "menos": "Show less",
+            "aplicar": "Apply filters"
+        },
+        "tabla": {
+            "titulo": "Title",
+            "autor": "Authors",
+            "revista": "Journal",
+            "numero": "Number",
+            "texto": "full text"
+        }
+    },
+    "estatica": {
+        "contexto": "Context",
+        "descripcion": "Description",
+        "metodologia": "Methodology",
+        "referencias": "References",
+        "parrafo1": "In the face of a global health contingency, the vital function of Open Access is endorsed: delivering knowledge to every place in the world, to allow science to become accesible quickly and in a timely manner so that its contribution reflects on the betterent of the quaility of human life, saving lives and the development of a better society for all. Open Access initiatives like Redalyc UAEM have been working for more than 18 years towards this objective. Today the Redalyc/AmeliCA alliance reaffirms their commitment to Open Access and continues developing technology that applies now the semantic dissemination of articles published in particular themes of interest in epidemiology, pandemics and related topics. This allows the dissemination and availability of more than 6 thousand articles in a Linked Open Data (LOD) format to be processed and interconnected in the LOD knowledge cloud providing the reading user browsing services and thematic discovery for consultation of the full text content from this data set.",
+        "parrafo2": "This mass of information that constitutes the web, sometimes feels like “it's a mile long wide but one inch deep” How can a more integrated, consistent, and deep web experience be built? (Allemang & Hendler, 2011) It is in this scenario that semantics are capable of showing their power to communicate information with enough meaning. In this sense it is possible to build smart applications that provide a greater knowledge, identifying in greater depth the contents and encouraging the discovery of knowledge.",
+        "parrafo3": "Frawley, Piatetsky-Shapiro y Matheus (1992)l define the discovery of knowledge as the non-trivial extraction of implicit information from data, previously unknown and potentially usefu. The challenge of extracting knowledge from data demands statistic investigation, databases, pattern recognition, machine learning, data visualization, optimization, and high perfomance computing to deliver advaned business intelligence and web discovery solutions. (IBM, 2018).",
+        "parrafo4": "AmeliCA/Redalyc 1 run an algorithm based on ontologies, previously developed called OntoOAI (Becerril-García & Aguado-Lopez, 2018), on its databases to extract pandemic related content. The results include. an ontological representation of the knowledge published in 13,298 scientific articles that include concepts and relations, as well as their attributions; in the same way a graph, used as a thematic content browser to access the full text of the articles; likewise, a data set availablee on a SPARQL endpoint, to consult the resultd found as part of Linked Open Data.",
+        "parrafo5": "An algorithm is run to extract the content based on a thesaurus of concepts related to pandemics / epidemics. In the beginning it was based on a prewritten list of synonyms obtained from ",
+        "parrafo6": ". According to the resulting concepts and the relations found between them, a set of iterations was established to obtain and refine a resulting ontology that shows the knowledge published on that set of OA journals. Finally the ontology is used to develop the visual representation and the content browser to get an access to full text articles. The resulting data set is also published as a SPARQL endpoint.",
+        "parrafo7": " AmeliCA/Redalyc is an Open Science infrastructure that seeks to strengthen the non-for-profit academy-owned scientific communication and publishing. Through the respect for the languages and local cultures, AmeliCA/Redalyc has as objjective to include and insert in the global scientific conversation to different regions of the world to achieve that the dissemination of knowledge becomes more participatory, inclusive and sustainable. Currently this infrastructureprovides services to more than 1,400 Open Access journals, peer reviewed and of certifieds quality, published by 670 institutions of 31 countries from around the world. Through Redalyc access to more than 700,000 full text articles is provided in different languages (mainly spanish, english, portuguese and french) from 1.8 million authors from 150 countries, with approximately 10 million of article downloads per month, around the world.",
+        "parrafo8": "<b>Authors:</b> Arianna Becerril-García, Eduardo Aguado-López. <b>Software Developer:</b> Alma Rosa Segundo Escobar, Paulo César Ylloldi Costilla, Luis Angel Ángeles Pineda. <b>Design:</b> Priscila Dávila Morales. <b>Data Engineers:</b> Liliana González Morales, Alma Rosa Segundo Escobar. : Arianna Becerril García. Research: Academic consolidated body “Communication and dissemination of of Science SEP UAEM/77, Poilitical and Social Sciences Faculty, Autoonomous University of the State of Mexico.",
+        "link": "powerthesaurus.org"
+    },
+    "general": {
+        "spinner": "Loading search results...",
+        "proyecto": "Knowledge base on epidemics and COVID-19"
+    },
+    "footer": {
+        "copyright": "Redalyc's System of Scientific Information ®",
+        "copyright2": "Network of non-commercial academy-owned Open Access Scholarly and Scientific Journals.",
+        "version": "Redalyc 2021 Version 5.0 | 2020",
+        "correo": "redalyc@redalyc.org"
+    }
+}

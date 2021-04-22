@@ -1,35 +1,35 @@
 <div class="title-virus">
     <img target="_blank" src="assets/img/icons/icono-virus.png" alt="">
     <span>
-        <a [routerLink]="['/home']" class="link">Base de conocimiento en epidemias y COVID-19</a>
+        <a [routerLink]="['/home']" class="link">{{ 'general.proyecto' | translate }}</a>
     </span>
     <span class="pipe-title-virus">
         | 
     </span>
-    <span>Más de 13,000 artículos</span>
+    <span>{{ 'navegacion.total' | translate: { articles: ('13,000') } }}</span>
 </div>
 <div class="navigation-searches">
     <a class="link" [routerLink]="['/busqueda-general']" [ngClass]="{'selected-searcher': sectionGeneral}">
-        <img target="_blank" src="assets/img/icons/buscador.png" alt=""> Buscador
+        <img target="_blank" src="assets/img/icons/buscador.png" alt="">{{ 'navegacion.buscador' | translate }}
     </a>
 
     <a class="link" [routerLink]="['/busqueda-palabra-clave']" [ngClass]="{'selected-searcher': sectionKey}">
-        <img target="_blank" src="assets/img/icons/palabra-clave.png" alt=""> Artículos por palabra clave
+        <img target="_blank" src="assets/img/icons/palabra-clave.png" alt="">{{ 'navegacion.clave' | translate }}
     </a>
 
     <a class="link" href="/epidemics/#/home/network" target="blank">
-        <img target="_blank" src="assets/img/icons/red.png" alt=""> Representación del conocimiento
+        <img target="_blank" src="assets/img/icons/red.png" alt="">{{ 'navegacion.conocimiento' | translate }}
     </a>
 
     <a class="link" [routerLink]="['/busqueda-pais']" [ngClass]="{'selected-searcher': sectionCountry}">
-        <img target="_blank" src="assets/img/icons/por-pais.png" alt=""> Artículos por país
+        <img target="_blank" src="assets/img/icons/por-pais.png" alt="">{{ 'navegacion.pais' | translate }}
     </a>
 
     <a class="link" href="http://sparql.amelica.org/knowledgebase/epidemics/datastore" target="_blank">
-        <img target="_blank" src="assets/img/icons/sparcql.png" alt=""> Base de conocimiento en SPARQL
+        <img target="_blank" src="assets/img/icons/sparcql.png" alt="">{{ 'navegacion.sparql' | translate }}
     </a>
 
     <a class="link" [routerLink]="['/acerca-de']" [ngClass]="{'selected-searcher': sectionAbout}">
-        <img target="_blank" src="assets/img/icons/acerca-de.png" alt=""> Acerca de
+        <img target="_blank" src="assets/img/icons/acerca-de.png" alt="">{{ 'header.acerca.epidemics' | translate }}
     </a>
 </div>

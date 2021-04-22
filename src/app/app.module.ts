@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
+// Translation
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // Librerias
 import { MenuModule } from '@syncfusion/ej2-angular-navigations';
@@ -38,6 +42,10 @@ import { NetworkComponent } from './components/network/network.component';
 import { MapComponent } from './components/map/map.component';
 import { MenuMobileComponent } from './components/menu-mobile/menu-mobile.component';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     AcercaDeComponent,
@@ -72,6 +80,13 @@ import { MenuMobileComponent } from './components/menu-mobile/menu-mobile.compon
     MenuModule,
     RouterModule.forRoot(ROUTES, { useHash: true}),
     NgxSpinnerModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true},

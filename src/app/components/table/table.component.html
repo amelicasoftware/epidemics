@@ -2,19 +2,19 @@
     <table>
         <thead>
             <tr>
-                <th scope="col" colspan="3">Título</th>
-                <th scope="col" colspan="2">Autores</th>
+                <th scope="col" colspan="3">{{ 'busqueda.tabla.titulo' | translate }}</th>
+                <th scope="col" colspan="2">{{ 'busqueda.tabla.autor' | translate }}</th>
                 <th scope="col" colspan="2">
-                    Revista
+                    {{ 'busqueda.tabla.revista' | translate }}
                     <!-- <img class="img" (click)="reverse('nombreRevista', reverseR)" [src]="imagenR" align="right" />
                     <span class="tooltip-text journal">Ordenar resultados por revista</span> -->
                 </th>
                 <th scope="col">
-                    Número
+                    {{ 'busqueda.tabla.numero' | translate }}
                     <!-- <img class="img" (click)="reverse('anio', reverseN)" [src]="imagenN" align="right" />
                     <span class="tooltip-text number">Ordenar resultados por número</span> -->
                 </th>
-                <th scope="col">Texto Completo</th>
+                <th scope="col">{{ 'busqueda.tabla.texto' | translate }}</th>
             </tr>
         </thead>
         <tbody>

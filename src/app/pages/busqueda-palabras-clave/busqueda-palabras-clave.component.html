@@ -1,10 +1,10 @@
 <section id="general">
     <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffffff" type="square-loader" [fullScreen]="true">
-        <p class="loading">Cargando resultados de búsqueda...</p>
+        <p class="loading">{{ 'general.spinner' | translate }}</p>
     </ngx-spinner>
 
     <section id="header">
-        <app-header [currentSection]="'> Búsqueda Palabras Clave'"></app-header>
+        <app-header [currentSection]="'busqueda.banner.palabras'"></app-header>
     </section>
 
     <section id="searches">
@@ -14,11 +14,11 @@
     <section id="banner" class="flex">
         <div class="flex searcher-title">
             <img src="assets/img/icons/buscador-institucionmdpi.png" />
-            <p>Búsqueda Palabras Clave</p>
+            <p>{{ 'busqueda.banner.palabras' | translate }}</p>
         </div>
 
         <div class="searcher">
-            <input class="searcher-text" #predefined (keyup.enter)="searchArticlesByKey(predefined.value)" type="text" placeholder="Ingrese la palabra clave a buscar" required />
+            <input class="searcher-text" #predefined (keyup.enter)="searchArticlesByKey(predefined.value)" type="text" placeholder="{{ 'busqueda.banner.buscar.clave' | translate }}" required />
             <input class="searcher-icon" type="image" src="assets/img/icons/buscador-institucionmdpi.png" (click)="searchArticlesByKey(predefined.value)" name="boton-buscar-articulo" alt="Buscar" required />
         </div>
     </section>
@@ -28,7 +28,7 @@
         <div class="filters">
             <div class="text-filters">
                 <img src="assets/img/icons/filtro.png" />
-                <span>Filtros de Búsqueda</span>
+                <span>{{ 'busqueda.filtros.titulo' | translate }}</span>
             </div>
             <app-filters></app-filters>
 
@@ -38,7 +38,7 @@
             <div class="container-sections">
                 <div class="selected sections-aling article-icon">
                     <img src="assets/img/icons/articulos-act.png" />
-                    <span>Artículos de revista</span>
+                    <span>{{ 'busqueda.secciones.principal' | translate }}</span>
                 </div>
                 <div class="filters-icon">
                     <!--  <a><img src="assets/img/icons/filtro.png" /></a> -->
@@ -57,22 +57,22 @@
                     </div>
                 </div>
                 <div class="view-results">
-                    <span>Modo de visualizar resultados</span>
+                    <span>{{ 'busqueda.secciones.modo' | translate }}</span>
                 </div>
                 <div class="sections-aling" (click)="changeView(false)" [ngClass]="{'activate': !view, 'selected': !view, 'select': view}">
                     <img [src]="imgTable" />
-                    <span class="view-table">Tabla</span>
+                    <span class="view-table">{{ 'busqueda.secciones.tabla' | translate }}</span>
                 </div>
                 <div class="sections-aling" (click)="changeView(true)" [ngClass]="{'activate': view, 'selected': view, 'select': !view}">
                     <img [src]="imgList" />
-                    <span>Lista</span>
+                    <span>{{ 'busqueda.secciones.lista' | translate }}</span>
                 </div>
             </div>
             <div>
                 <div class="results" *ngIf="results">
-                    <span>Resultados para: <b>{{ key }}</b> en artículos de revista</span>
-                    <span class="total-results" *ngIf="positionPage !== finalPositionPage">{{positionPage * 10 - 9}} a {{positionPage * 10}} de {{totalResults}} artículos </span>
-                    <span class="total-results" *ngIf="positionPage === finalPositionPage"> {{positionPage * 10 - 9}} a {{totalResults}} de {{totalResults}} artículos </span>
+                    <span>{{ 'busqueda.secciones.resultados' | translate: { text: (key || '') } }}</span>
+                    <span class="total-results" *ngIf="positionPage !== finalPositionPage">{{ 'busqueda.secciones.total' | translate: { value1: (positionPage * 10 - 9), value2: (positionPage * 10), value3: (totalResults) } }}</span>
+                    <span class="total-results" *ngIf="positionPage === finalPositionPage">{{ 'busqueda.secciones.total' | translate: { value1: (positionPage * 10 - 9), value2: (totalResults), value3: (totalResults) } }}</span>
                 </div>
                 <div class="balloons-component">
                     <app-balloons></app-balloons>

@@ -9,25 +9,27 @@
         <div class="links-home">
             <ejs-menu [items]='menuItems'>
                 <ng-template #template let-menuItems="">
-                    <a target='_blank' href="{{menuItems.url}}" class="item-search">{{menuItems.text}}</a>
+                    <a target='_blank' href="{{menuItems.url}}" class="item-search">{{menuItems.text | translate}}</a>
                 </ng-template>
             </ejs-menu>
         </div>
-        
+
         <div class="languages-social-netwoks">
             <div id="menu-mobile" (click)="openNav()">
                 <i class="fa fa-bars"></i>
             </div>
-            <!-- <span>ESP</span>
-            <span>ENG</span> -->
-            <a href="https://www.instagram.com/redalyc_oficial" target="_blank"><img class="instragram" src="assets/img/icons/ig.png"></a>
-            <a href="https://twitter.com/Redalyc" target="_blank"><img class="twitter" src="assets/img/icons/tw.png"></a>
-            <a href="https://www.facebook.com/Redalyc/" target="_blank"><img class="facebook" src="assets/img/icons/face.png"></a>
+            <span class="lang" (click)="changeLanguage('es')">ESP</span>
+            <span class="lang" (click)="changeLanguage('en')">ENG</span>
 
         </div>
     </div>
 
     <div class="current-section">
-        <span><a href="https://www.redalyc.org/" target="_blank">Redalyc</a> > <a [routerLink]="['/home']">Base de conocimiento en epidemias y COVID-19</a> {{ currentSection }}</span>
+        <span><a href="https://www.redalyc.org/" target="_blank">{{ 'header.redalyc' | translate}}</a> > <a [routerLink]="['/home']">{{ 'general.proyecto' | translate }}</a> <span *ngIf='currentSection'> > {{ currentSection | translate}}</span></span>
+        <span class="socials-networks">
+            <a href="https://www.instagram.com/redalyc_oficial" target="_blank"><img class="instragram" src="assets/img/icons/ig.png"></a>
+            <a href="https://twitter.com/Redalyc" target="_blank"><img class="twitter" src="assets/img/icons/tw.png"></a>
+            <a href="https://www.facebook.com/Redalyc/" target="_blank"><img class="facebook" src="assets/img/icons/face.png"></a>
+        </span>
     </div>
 </div>

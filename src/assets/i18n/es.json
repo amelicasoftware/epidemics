@@ -1,0 +1,108 @@
+{
+    "header": {
+        "acerca.redalyc": "Acerca de Redalyc",
+        "mision": "Misión",
+        "consejo": "Consejo asesor",
+        "directorio": "Directorio",
+        "cronologia": "Cronología",
+        "reconocimientos": "Reconocimientos internacionales",
+        "oai": "OAI-PMH",
+        "sitio": "Redalyc en tu sitio web",
+        "uso": "Uso legal",
+        "publicaciones": "Publicaciones",
+        "acceso": "Accesso Abierto Diamante",
+        "valores": "Principios y Valores",
+        "jats": "Tecnología de Publicación Digital (XML JATS)",
+        "marcalyc": "Marcalyc Sistema de Marcación (XML JATS)",
+        "ojs": "Integración OJS",
+        "capacitacion": "Capacitación XML JATS",
+        "generacion": "Generación Automática de ePUB, PDF HTML",
+        "visor": "Visor de artículos",
+        "movil": "Visor móvil de articulos",
+        "indexacion": "Indexación de Revistas",
+        "consolidadas.redalyc": "Índice de Revistas Consolidadas Redalyc",
+        "consolidadas.amelica": "Índice de Revistas en consolidación AmeliCA",
+        "evaluacion": "Criterios de evaluación",
+        "postulacion": "Proceso de postulación",
+        "servicios": "Servicios",
+        "redalyc": "Redalyc",
+        "acerca.epidemics": "Acerca de",
+        "pais": "Búsqueda País"
+    },
+    "navegacion": {
+        "total": "Más de {{ articles }} artículos",
+        "buscador": "Buscador",
+        "clave": "Artículos por palabra clave",
+        "conocimiento": "Representación del conocimiento",
+        "pais": "Artículos por país",
+        "sparql": "Base de conocimiento en SPARQL"
+    },
+    "home": {
+        "buscar": "Buscar",
+        "mensaje": "Por un modelo de publicación sin fines de lucro para conservar la naturaleza académica y abierta de la comunicación cientifíca.",
+        "recientes": "Artículos recientes sobre epidemias y COVID-19",
+        "mas": "Ver más artículos",
+        "cargando": "Cargando Artículos...",
+        "sparql": "Punto de acceso SPARQL con los datos disponibles para acceder a los resultados para mayores análisis: {{ value }}"
+    },
+    "busqueda": {
+        "banner": {
+            "pais": "Seleccionar el país:",
+            "palabras": "Búsqueda por palabra clave",
+            "general": "Búsqueda General",
+            "buscar.general": "Ingrese palabra de búsqueda",
+            "buscar.clave": "Ingrese la palabra clave a buscar"
+        },
+        "secciones": {
+            "principal": "Articulos de revista",
+            "modo": "Modo de visualizar resultados",
+            "tabla": "tabla",
+            "lista": "lista",
+            "resultados": "Resultados para: {{ text }} en artículos de revista",
+            "resultados.pais": "Artículos publicados en revistas de: {{ value }}",
+            "total": "{{ value1 }} a {{ value2 }} de {{ value3 }} artículos"
+        },
+        "filtros": {
+            "titulo": "Filtros de Búsqueda",
+            "Año": "Año",
+            "Idioma": "Idioma",
+            "Disciplina": "Disciplina",
+            "País": "País",
+            "mas": "Ver más",
+            "menos": "Ver menos",
+            "aplicar": "Aplicar Filtros"
+        },
+        "tabla": {
+            "titulo": "Título",
+            "autor": "Autores",
+            "revista": "Revista",
+            "numero": "Número",
+            "texto": "Texto Completo"
+        }
+    },
+    "estatica": {
+        "contexto": "Contexto",
+        "descripcion": "Descripción",
+        "metodologia": "Metodología",
+        "referencias": "Referencias",
+        "parrafo1": "Ante una contingencia mundial de salud, se refrenda la vital función del Acceso Abierto: llevar el conocimiento a todos los rincones del mundo, permitir que la ciencia sea accesible rápida y oportunamente para que su contribución se refleje en la mejora de la calidad de vida humana, en salvar vidas y en el desarrollo de una mejor sociedad para todos. Iniciativas de Acceso Abierto como Redalyc UAEM desde hace 18 años trabajancon ese objetivo. Hoy, la alianza con AmeliCA/Redalyc refrenda su compromiso con el Acceso Abierto y sigue desarrollando tecnología la cual aplica ahora a la diseminación semántica de los artículos publicados en temáticas de interés en epidemiología, pandemias y temas relacionados. Ello permitirá difundir y poner a disposición más de 6 mil artículos en formato de Linked Open Data (LOD) para que sean procesados e interconectados en la nube del conocimiento LOD y ofrecer al usuario lector servicios de navegación y descubrimiento temático para la consulta de los textos completos de este conjunto de datos.",
+        "parrafo2": "Esta masa de información que constituye la Web, en ocasiones se siente como “de una milla de ancho pero con una pulgada de profundidad” ¿Cómo poder construir una experiencia Web más integrada, consistente y profunda? (Allemang & Hendler, 2011).Es en este escenario donde la semántica es capaz de mostrar su poder para comunicar la información con suficiente significado. Así es posible construir aplicaciones inteligentes que aporten un mayor conocimiento identificando en mayor profundidad los contenidos y fomenten el descubrimiento de conocimiento.",
+        "parrafo3": "Frawley, Piatetsky-Shapiro y Matheus (1992) definen descubrimiento de conocimiento como la extracción no trivial de información implícita, previamente desconocida y potencialmente útil, a partir de datos. El reto de extraer conocimiento a partir de datos demanda investigación en estadística, bases de datos, reconocimiento de patrones, aprendizaje de máquinas, visualización de datos, optimización y cómputo de alto rendimiento, para entregar inteligencia de negocio avanzada y soluciones de descubrimiento web (IBM, 2018).",
+        "parrafo4": "AmeliCA/Redalyc 1 ejecutó un algoritmo basado en ontologías, previamente desarrollado llamado OntoOAI OntoOAI (Becerril-García & Aguado-Lopez, 2018), en sus bases de datos para extraer contenido relacionado con epidemias. Los resultados incluyen: una representación ontológica del conocimiento publicado en 13,298 artículos científicos que incluyen conceptos y relaciones, así como sus atributos; un grafo dirigido utilizado como navegador temático de contenido para acceder a los textos completos de los artículos; así como también, un conjunto de datos disponibles en un punto de acceso SPARQL para consultar los resultados encontrados como parte de Linked Open Data.",
+        "parrafo5": "Se ejecutó un algoritmo para extraer contenido basado en un tesauro de conceptos relacionados con pandemias / epidemias. En un inicio se basó en una lista predefinida de sinónimos obtenidos de ",
+        "parrafo6": ". Según los conceptos resultantes y las relaciones entre ellos se estableció un conjunto de iteraciones para obtener y refinar una ontología resultante que muestra el conocimiento publicado en ese conjunto de revistas de AA. Finalmente, la ontología se utilizó para desarrollar la representación visual y el navegador de contenido para obtener acceso a artículos de texto completo. El conjunto de datos resultante también se publicó como un SPARQL endpoint.",
+        "parrafo7": " AmeliCA/Redalyc es una infraestructura de Ciencia Abierta que busca fortalecer la comunicación y publicación científica sin fines de lucro propiedad de la academia. A través del respeto a las lenguas y culturas locales, AmeliCA/Redalyc tiene como objetivo incluir e insertar en la conversación científica mundial a diferentes regiones del mundo para lograr que la difusión del conocimiento sea más participativa, incluyente y sustentable. Actualmente, esta infraestructura brinda servicios a más de 1.400 revistas de Acceso Abierto, evaluadas por pares y de calidad certificada, publicadas por 670 instituciones de 31 países de todo el mundo. A través de Redalyc se proporciona acceso a más de 700.000 artículos de texto completo en diferentes idiomas (principalmente español, inglés, portugués y francés) de 1.8 millones de autores de 150 países, con aproximadamente 10 millones de descargas de artículos por mes alrededor del mundo.",
+        "parrafo8": "<b>Autores:</b> Arianna Becerril-García, Eduardo Aguado-López. <b>Desarrolladores de Software:</b> Alma Rosa Segundo Escobar, Paulo César Ylloldi Costilla, Luis Angel Ángeles Pineda. <b>Diseño:</b> Priscila Dávila Morales. <b>Ingeniería de Datos:</b> Liliana González Morales, Alma Rosa Segundo Escobar. : Arianna Becerril García. Investigación: Cuerpo Académico Consolidado “Comunicación y Difusión de la Ciencia SEP UAEM/77, Facultad de Ciencias Políticas y Sociales, Universidad Autónoma del Estado de México.",
+        "link": "powerthesaurus.org"
+    },
+    "general": {
+        "spinner": "Cargando resultados de búsqueda...",
+        "proyecto": "Base de conocimiento en epidemias y COVID-19"
+    },
+    "footer": {
+        "copyright": "Sistema de Información Científica Redalyc ®",
+        "copyright2": "Red de revistas científicas de Acceso Abierto no comercial propiedad de la academia.",
+        "version": "Redalyc 2021 Versión 5.0 | 2020",
+        "correo": "redalyc@redalyc.org"
+    }
+}

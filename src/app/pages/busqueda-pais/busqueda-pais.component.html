@@ -1,10 +1,10 @@
 <section id="general">
     <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffffff" type="square-loader" [fullScreen]="true">
-        <p class="loading">Cargando resultados de búsqueda...</p>
+        <p class="loading">{{ 'general.spinner' | translate }}</p>
     </ngx-spinner>
 
     <section id="header">
-        <app-header [currentSection]="'> Búsqueda País'"></app-header>
+        <app-header [currentSection]="'header.pais'"></app-header>
     </section>
 
     <section id="searches">
@@ -18,7 +18,7 @@
         </div>
 
         <div class="searcher">
-            <span>Seleccionar el país:</span>
+            <span>{{ 'busqueda.banner.pais' | translate }}</span>
             <select id="list-countries" #predefined (change)="searchArticlesByCountry(predefined.value)" placeholder="Buscar">
                 <option *ngFor="let c of listCountries" value="{{c.clave}}" [selected]="c.name == country" #c.name>{{c.name}}</option> 
             </select>
@@ -30,7 +30,7 @@
         <div class="filters">
             <div class="text-filters">
                 <img src="assets/img/icons/filtro.png" />
-                <span>Filtros de Búsqueda</span>
+                <span>{{ 'busqueda.filtros.titulo' | translate }}</span>
             </div>
             <app-filters></app-filters>
 
@@ -40,7 +40,7 @@
             <div class="container-sections">
                 <div class="selected sections-aling article-icon">
                     <img src="assets/img/icons/articulos-act.png" />
-                    <span>Artículos de revista</span>
+                    <span>{{ 'busqueda.secciones.principal' | translate }}</span>
                 </div>
                 <div class="filters-icon">
                     <!--  <a><img src="assets/img/icons/filtro.png" /></a> -->
@@ -59,22 +59,22 @@
                     </div>
                 </div>
                 <div class="view-results">
-                    <span>Modo de visualizar resultados</span>
+                    <span>{{ 'busqueda.secciones.modo' | translate }}</span>
                 </div>
                 <div class="sections-aling" (click)="changeView(false)" [ngClass]="{'activate': !view, 'selected': !view, 'select': view}">
                     <img [src]="imgTable" />
-                    <span class="view-table">Tabla</span>
+                    <span class="view-table">{{ 'busqueda.secciones.tabla' | translate }}</span>
                 </div>
                 <div class="sections-aling" (click)="changeView(true)" [ngClass]="{'activate': view, 'selected': view, 'select': !view}">
                     <img [src]="imgList" />
-                    <span>Lista</span>
+                    <span>{{ 'busqueda.secciones.lista' | translate }}</span>
                 </div>
             </div>
             <div>
                 <div class="results">
-                    <span>Resultados para: <b>{{ country }}</b> en artículos de revista</span>
-                    <span class="total-results" *ngIf="positionPage !== finalPositionPage">{{positionPage * 10 - 9}} a {{positionPage * 10}} de {{totalResults}} artículos </span>
-                    <span class="total-results" *ngIf="positionPage === finalPositionPage"> {{positionPage * 10 - 9}} a {{totalResults}} de {{totalResults}} artículos </span>
+                    <span>{{ 'busqueda.secciones.resultados.pais' | translate: { value: (country || '') } }}</span>
+                    <span class="total-results" *ngIf="positionPage !== finalPositionPage">{{ 'busqueda.secciones.total' | translate: { value1: (positionPage * 10 - 9), value2: (positionPage * 10), value3: (totalResults || '') } }}</span>
+                    <span class="total-results" *ngIf="positionPage === finalPositionPage">{{ 'busqueda.secciones.total' | translate: { value1: (positionPage * 10 - 9), value2: (totalResults), value3: (totalResults) } }}</span>
                 </div>
                 <div class="balloons-component">
                     <app-balloons></app-balloons>

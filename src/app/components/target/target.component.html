@@ -29,7 +29,7 @@
         <div *ngIf="article.dominio === 'https://www.redalyc.org'">
             <div *ngIf="article.origen === 'PDF'">
                 <div class="visualizations">
-                    <p class="text-complete">Texto Completo: </p>
+                    <p class="text-complete">{{ 'busqueda.tabla.texto' | translate }}: </p>
                     <button class="button-visualizations">
                         <a class="type-format" href="https://redalyc.org/articulo.oa?id={{article.cveArticulo}}" target="_blank">
                             PDF
@@ -51,7 +51,7 @@
 
             <div *ngIf="article.origen === 'XML'">
                 <div class="visualizations">
-                    <p class="text-complete">Texto Completo: </p>
+                    <p class="text-complete">{{ 'busqueda.tabla.texto' | translate }}: </p>
                     <button class="button-visualizations">
                         <a class="type-format" href="https://www.redalyc.org/jatsRepo/{{article.cveRevista}}/{{article.cveArticulo}}/index.html" target="_blank">
                             Visor
