@@ -2,22 +2,22 @@
 <div class="social" id="social">
     <div>
         <div (click)="toSearcher()" id="menu-buscador" class="btn-menu">
-            <a ng-href="#contenedor-banner" id="btn-buscador" class="fab" title="Buscador"></a>
+            <a ng-href="#contenedor-banner" id="btn-buscador" class="fab" title="{{ 'navegacion.buscador' | translate }}"></a>
         </div>
         <div (click)="toCould()" id="menu-nube" class="btn-menu">
-            <a ng-href="#contenedor-nube" id="btn-nube" class="fab" title="Artículos por palabra clave"></a>
+            <a ng-href="#contenedor-nube" id="btn-nube" class="fab" title="{{ 'navegacion.clave' | translate}}"></a>
         </div>
         <div (click)="toNetwork()" id="menu-red" class="btn-menu">
-            <a ng-href="#red-conceptos" id="btn-red" class="fab" title="Representación del conocimiento"></a>
+            <a ng-href="#red-conceptos" id="btn-red" class="fab" title="{{ 'navegacion.conocimiento' | translate}}"></a>
         </div>
         <div (click)="toMap()" id="menu-pais" class="btn-menu">
-            <a ng-href="#contenedor-mapa" id="btn-pais" class="fab" title="Artículos por país"></a>
+            <a ng-href="#contenedor-mapa" id="btn-pais" class="fab" title="{{ 'navegacion.pais' | translate}}"></a>
         </div>
         <div (click)="toSparql()" id="menu-documentos" class="btn-menu">
-            <a ng-href="#contenedor-ultimos-documentos" id="btn-documentos" class="fab" title="Base del conocimiento"></a>
+            <a ng-href="#contenedor-ultimos-documentos" id="btn-documentos" class="fab" title="{{ 'navegacion.sparql' | translate}}"></a>
         </div>
         <div (click)="toAbout()" id="menu-sql" class="btn-menu">
-            <a ng-href="#sparql" id="btn-sql" class="fab" title="Acerca de"></a>
+            <a ng-href="#sparql" id="btn-sql" class="fab" title="{{ 'header.acerca.epidemics' | translate }}"></a>
         </div>
     </div>
 </div>
@@ -27,51 +27,49 @@
 <section id="searcher">
     <div id="container">
         <div id="container-searcher">
-            <div class="title">Base de conocimiento en epidemias y COVID-19</div>
-            <div id="text-search"><span>Buscador</span></div>
+            <div class="title">{{ 'general.proyecto' | translate}}</div>
+            <div id="text-search"><span>{{ 'navegacion.buscador' | translate }}</span></div>
             <div id="search">
-                <input #word (keyup.enter)="searchText(word.value)" id="input-search" type="text" name="input-articulo" value="" placeholder="Buscar" />
+                <input #word (keyup.enter)="searchText(word.value)" id="input-search" type="text" name="input-articulo" value="" placeholder="{{'home.buscar' | translate}}" />
                 <input id="button-search" type="image" src="assets/img/home/buscador.png" (click)="searchText(word.value)" name="boton-buscar-articulo" alt="Buscar" />
             </div>
         </div>
         <div id="contenedor-numeralias">
             <div class="text-description">
-                <p>Más de <span class="number">{{numArticulos}} artículos</span> extraidos de <span class="number">{{numRevistas}} revistas</span> en <span class="number">{{numPaises}} países</span></p>
+                <p [innerHTML]="'navegacion.total' | translate: { articles: (numArticulos), journals: (numRevistas), countries: (numPaises)}"></p>
             </div>
         </div>
         <div id="contenedor-resumen" class="text-description">
-            Por un modelo de publicación sin fines de lucro para conservar la naturaleza académica 
-            <br>
-            y abierta de la comunicación cientifíca.
+            {{'home.mensaje' | translate}}
         </div>
     </div>
     <div id="menu-section">
         <div (click)="toSearcher()" [ngClass]="{'selection': selection == 1}" class="op-menu-section btn-search" id="btn-search">
-            <img src="assets/img/home/busqueda.png"><span>Buscador</span>
+            <img src="assets/img/home/busqueda.png"><span>{{ 'navegacion.buscador' | translate }}</span>
         </div>
         <div (click)="toCould()" [ngClass]="{'selection': selection == 2}" class="op-menu-section btn-tema" id="btn-articles">
-            <img src="assets/img/home/palabra_clave.png"><span>Artículos por palabra clave</span>
+            <img src="assets/img/home/palabra_clave.png"><span>{{ 'navegacion.clave' | translate}}</span>
         </div>
         <div (click)="toNetwork()" [ngClass]="{'selection': selection == 3}" class="op-menu-section btn-representacion" id="btn-representacion">
-            <img src="assets/img/home/red.png"><span>Representación del conocimiento</span>
+            <img src="assets/img/home/red.png"><span>{{ 'navegacion.conocimiento' | translate}}</span>
         </div>
         <div (click)="toMap()" [ngClass]="{'selection': selection == 4}" class="op-menu-section btn-pais" id="btn-pais">
-            <img src="assets/img/home/por_pais.png"><span>Artículos por país</span>
+            <img src="assets/img/home/por_pais.png"><span>{{ 'navegacion.pais' | translate}}</span>
         </div>
         <div (click)="toSparql()" [ngClass]="{'selection': selection == 5}" class="op-menu-section btn-sparql" id="btn-sparql">
-            <img src="assets/img/home/sparql.png"><span>Base del conocimiento SPARQL</span>
+            <img src="assets/img/home/sparql.png"><span>{{ 'navegacion.sparql' | translate}}</span>
         </div>
         <div (click)="toAbout()" class="op-menu-section btn-recientes" id="btn-recientes">
-            <img src="assets/img/home/acerca.png"><span>Acerca de</span>
+            <img src="assets/img/home/acerca.png"><span>{{ 'header.acerca.epidemics' | translate }}</span>
         </div>
     </div>
-</section> 
+</section>
 <section id="last-numbers">
     <div id="container-title">
-        <div class="title-section">Artículos recientes sobre epidemias y COVID-19</div>
+        <div class="title-section">{{'home.recientes' | translate}}</div>
         <div id="buttons-carrusell">
             <div (click)="leftScroll()" class="button-carrusell"><img src="assets/img/home/anterior.png" alt=""></div>
-            <div (click)="rightScroll()"class="button-carrusell"><img src="assets/img/home/siguiente.png" alt=""></div>
+            <div (click)="rightScroll()" class="button-carrusell"><img src="assets/img/home/siguiente.png" alt=""></div>
         </div>
     </div>
     <div id="container-last-articles">
@@ -81,18 +79,18 @@
 <section id="could">
     <div></div>
     <div id="container-cloud">
-        <div style="font-size: 16pt; font-family: 'Barlow-Regular'; margin-bottom: 30px;">Artículos por palabra clave</div>
+        <div style="font-size: 16pt; font-family: 'Barlow-Regular'; margin-bottom: 30px;">{{'navegacion.clave' | translate}}</div>
         <app-word-cloud></app-word-cloud>
     </div>
 </section>
 <section id="network">
-    <div id="title-network">Representación del conocimiento</div>
+    <div id="title-network">{{'navegacion.conocimiento' | translate}}</div>
     <div>
         <app-network></app-network>
     </div>
 </section>
 <section id="map">
-    <div style="width: 90%; font-size: 16pt; font-family: 'Barlow-Regular'; margin: 30px auto; color: white;">Artículos por país</div>
+    <div style="width: 90%; font-size: 16pt; font-family: 'Barlow-Regular'; margin: 30px auto; color: white;">{{'navegacion.pais' | translate}}</div>
     <div>
         <app-map></app-map>
     </div>
@@ -100,9 +98,9 @@
 <section id="sparql">
     <div id="container-content">
         <div id="descripcion-sparql">
-            <p id="titulo-sparql">Base de Conocimiento en SPARQL</p>
+            <p id="titulo-sparql">{{'navegacion.sparql' | translate}}</p>
             <br>
-            <p>Punto de acceso SPARQL con los datos disponibles para acceder a los resultados para mayores análisis: <a style="color: #4762b2;" href="http://sparql.amelica.org/knowledgebase/epidemics/datastore">http://sparql.amelica.org/knowledgebase/epidemics/datastore</a></p>
+            <p [innerHTML]="'home.sparql' | translate: { value: ('http://sparql.amelica.org/knowledgebase/epidemics/datastore')}"></p>
         </div>
         <div id="container-data">
             <div id="container-id">

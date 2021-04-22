@@ -30,7 +30,7 @@
         "pais": "Search by country"
     },
     "navegacion": {
-        "total": "More than {{ articles }} articles",
+        "total": "More than <span class='number'>{{ articles }} articles</span> extracted from <span class='number'>{{ journals }} journals</span> in <span class='number'>{{ countries }} countries</span>",
         "buscador": "Browser",
         "clave": "Articles by keyword",
         "conocimiento": "Knowledge representation",
@@ -43,7 +43,7 @@
         "recientes": "Recent articles about epidemics and COVID-19",
         "mas": "Display more articles",
         "cargando": "Loading Articles...",
-        "sparql": "SPARQL access point with the available data to access the results for better analysis: {{ value }}"
+        "sparql": "SPARQL access point with the available data to access the results for better analysis: <a style='color: #4762b2;' href='http://sparql.amelica.org/knowledgebase/epidemics/datastore'>{{ value }}</a>"
     },
     "busqueda": {
         "banner": {
