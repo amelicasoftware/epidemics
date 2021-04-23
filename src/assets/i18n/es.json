@@ -31,6 +31,7 @@
     },
     "navegacion": {
         "total": "Más de <span class='number'>{{ articles }} artículos</span> extraidos de <span class='number'>{{ journals }} revistas</span> en <span class='number'>{{ countries }} países</span>",
+        "total.busqueda": "Más de <span class='number'>{{ articles }} artículos</span>",
         "buscador": "Buscador",
         "clave": "Artículos por palabra clave",
         "conocimiento": "Representación del conocimiento",

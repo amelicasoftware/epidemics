@@ -6,7 +6,7 @@
     <span class="pipe-title-virus">
         | 
     </span>
-    <span>{{ 'navegacion.total' | translate: { articles: ('13,000') } }}</span>
+    <span [innerHTML]="'navegacion.total.busqueda' | translate: { articles: ('13,000') }"></span>
 </div>
 <div class="navigation-searches">
     <a class="link" [routerLink]="['/busqueda-general']" [ngClass]="{'selected-searcher': sectionGeneral}">
