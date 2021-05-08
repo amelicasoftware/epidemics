@@ -18,7 +18,7 @@
         <p>
             <!-- <a class="titleJournal" href="https://redalyc.org/revista.oa?id={{article.cveRevista}}" target="_blank">{{ article.nombreRevista }}, </a> <a class="titleJournal" href="https://redalyc.org/toc.oa?id={{article.cveRevista}}&numero={{article.cveNumero}}"
                 target="_blank">{{ article.anio }}, {{ article.volumen }} ({{ article.numero }})</a> -->
-            {{ article.nombreRevista }}, {{ article.anio }}, {{ article.volumen }} ({{ article.numero }})
+            {{ article.nombreRevista }}, {{ article.anio }}, {{ article.volumen }} <span *ngIf="article.numero.trim()">({{ article.numero }})</span>
         </p>
 
 
@@ -26,7 +26,7 @@
 
         <br>
 
-        <div *ngIf="article.dominio === 'https://www.redalyc.org'">
+        <div>
             <div *ngIf="article.origen === 'PDF'">
                 <div class="visualizations">
                     <p class="text-complete">{{ 'busqueda.tabla.texto' | translate }}: </p>

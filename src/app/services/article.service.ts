@@ -51,12 +51,28 @@ export class ArticleService {
     this._search$.next(search);
   }
 
+  addQuotes(word: string): string {
+    const firstLetter = word.charAt(0);
+    const lastLetter = word.charAt(word.length - 1);
+    let wordWithQuote = '';
+    !(firstLetter === '\"')
+    ? !(lastLetter === '\"')
+      ? wordWithQuote = '\"' + word + '\"'
+      :  wordWithQuote = '\"' + word
+    : !(lastLetter === '\"')
+      ? wordWithQuote = word + '\"'
+      : wordWithQuote = word;
+    console.log(wordWithQuote);
+    return wordWithQuote;
+  }
+
   getArticles(
     search: string,
     page: number,
     filters: FilterChain
   ): Observable<ArticleResult> {
     search = this.normalize(search);
+    search = this.addQuotes(search);
     console.log('Servicio Articulos:', `${this.url}articulos/epidemics/${search}/${page}/10/relevancia/0/{"anios":"${filters.yearChain}","idiomas":"${filters.languageChain}", "paises":"${filters.countryChain}","areas":"","disciplinas":"${filters.disciplineChain}","autores":"","instituciones":"","origen":"","funete":"","fb":1}'`);
     return this.http.get<ArticleResult>(`${this.url}articulos/epidemics/${search}/${page}/10/relevancia/0/{"anios":"${filters.yearChain}","idiomas":"${filters.languageChain}", "paises":"${filters.countryChain}","areas":"","disciplinas":"${filters.disciplineChain}","autores":"","instituciones":"","origen":"","funete":"","fb":1}'`);
   }
@@ -75,6 +91,7 @@ export class ArticleService {
     filters: FilterChain
   ): Observable<ArticleResult> {
     key = this.normalize(key);
+    key = this.addQuotes(key);
     console.log('Servicio Articulos por Palabra Clave:', `${this.url}articulos/epidemics/palabras/${key}/${page}/10/relevancia/0/{"anios":"${filters.yearChain}","idiomas":"${filters.languageChain}", "paises":"${filters.countryChain}","areas":"","disciplinas":"${filters.disciplineChain}","autores":"","instituciones":"","origen":"","funete":"","fb":1}'`);
     return this.http.get<ArticleResult>(`${this.url}articulos/epidemics/palabras/${key}/${page}/10/relevancia/0/{"anios":"${filters.yearChain}","idiomas":"${filters.languageChain}", "paises":"${filters.countryChain}","areas":"","disciplinas":"${filters.disciplineChain}","autores":"","instituciones":"","origen":"","funete":"","fb":1}'`);
   }

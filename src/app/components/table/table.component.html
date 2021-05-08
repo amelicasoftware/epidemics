@@ -25,7 +25,7 @@
                 <td colspan="2">{{ articulo.autores | authors }}</td>
                 <td colspan="2">{{ articulo.nombreRevista }}</td>
                 <td>{{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }})</td>
-                <td *ngIf="articulo.dominio === 'https://www.redalyc.org' && articulo.origen === 'XML'">
+                <td *ngIf="articulo.origen === 'XML'">
                     <div class="grid">
                         <div>
                             <a class="type-format pdf" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank"><b>Visor</b></a>
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </td>
-                <td *ngIf="articulo.dominio === 'https://www.redalyc.org' && !(articulo.origen === 'XML')">
+                <td *ngIf="!(articulo.origen === 'XML')">
                     <div>
                         <div>
                             <a class="type-format" href="https://redalyc.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank"><b>PDF</b></a>
