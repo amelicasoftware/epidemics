@@ -20,27 +20,27 @@
         <tbody>
             <tr *ngFor="let articulo of articles">
                 <td colspan="3" *ngIf="articulo.origen === 'PDF'"><a class="tittle" href="https://www.redalyc.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank">{{articulo.tituloArticulo | titleArticle }}</a></td>
-                <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="tittle" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{articulo.tituloArticulo | titleArticle }}</a></td>
-                <td colspan="3" *ngIf="articulo.origen === 'ameli'"><a class="tittle" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{articulo.tituloArticulo | titleArticle }}</a></td>
+                <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="tittle" href="https://redalyc.org/journal/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{articulo.tituloArticulo | titleArticle }}</a></td>
+                <td colspan="3" *ngIf="articulo.origen === 'ameli'"><a class="tittle" href="https://redalyc.org/journal/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{articulo.tituloArticulo | titleArticle }}</a></td>
                 <td colspan="2">{{ articulo.autores | authors }}</td>
                 <td colspan="2">{{ articulo.nombreRevista }}</td>
                 <td>{{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }})</td>
                 <td *ngIf="articulo.origen === 'XML'">
                     <div class="grid">
                         <div>
-                            <a class="type-format pdf" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank"><b>Visor</b></a>
+                            <a class="type-format pdf" href="https://redalyc.org/journal/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank"><b>Visor</b></a>
                         </div>
                         <div>
                             <a class="type-format pdf" href="https://redalyc.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank"><b>PDF</b></a>
                         </div>
                         <div>
-                            <a class="type-format" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/html/index.html" target="_blank"><b>HTML-R</b></a>
+                            <a class="type-format" href="https://redalyc.org/journal/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/html/index.html" target="_blank"><b>HTML-R</b></a>
                         </div>
                         <div>
-                            <a class="type-format" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/{{articulo.cveArticulo}}.epub" target="_blank"><b>ePUB-R</b></a>
+                            <a class="type-format" href="https://redalyc.org/journal/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/{{articulo.cveArticulo}}.epub" target="_blank"><b>ePUB-R</b></a>
                         </div>
                         <div>
-                            <a class="type-format" href="https://redalyc.org/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/movil/index.html" target="_blank"><b>MÓVIL-R</b></a>
+                            <a class="type-format" href="https://redalyc.org/journal/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/movil/index.html" target="_blank"><b>MÓVIL-R</b></a>
                         </div>
                     </div>
                 </td>
