@@ -8,7 +8,7 @@
         </div>
 
         <div *ngIf="article.origen === 'XML'">
-            <a class="title" href="https://www.redalyc.org/journal/{{article.cveRevista}}/{{article.cveArticulo}}/index.html" target="_blank">
+            <a class="title" href="https://www.redalyc.org/journal/{{article.cveRevista}}/{{article.cveArticulo}}/" target="_blank">
                 {{ article.tituloArticulo | titleArticle }}
             </a>
         </div>
@@ -53,12 +53,12 @@
                 <div class="visualizations">
                     <p class="text-complete">{{ 'busqueda.tabla.texto' | translate }}: </p>
                     <button class="button-visualizations">
-                        <a class="type-format" href="https://www.redalyc.org/journal/{{article.cveRevista}}/{{article.cveArticulo}}/index.html" target="_blank">
+                        <a class="type-format" href="https://www.redalyc.org/journal/{{article.cveRevista}}/{{article.cveArticulo}}/" target="_blank">
                             Visor
                         </a>
                     </button>
                     <button class="button-visualizations">
-                        <a class="type-format" href="https://redalyc.org/journal/{{article.cveRevista}}/{{article.cveArticulo}}/html/index.html" target="_blank">
+                        <a class="type-format" href="https://redalyc.org/journal/{{article.cveRevista}}/{{article.cveArticulo}}/html/" target="_blank">
                             HTML-R
                         </a>
                     </button>
@@ -68,7 +68,7 @@
                         </a>
                     </button>
                     <button class="button-visualizations">
-                        <a class="type-format" href="https://redalyc.org/journal/{{article.cveRevista}}/{{article.cveArticulo}}/movil/index.html" target="_blank">
+                        <a class="type-format" href="https://redalyc.org/journal/{{article.cveRevista}}/{{article.cveArticulo}}/movil/" target="_blank">
                             MÓVIL-R
                         </a>
                     </button>
