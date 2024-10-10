@@ -2,7 +2,8 @@
 <div class="social" id="social">
     <div>
         <div (click)="toSearcher()" id="menu-buscador" class="btn-menu">
-            <a ng-href="#contenedor-banner" id="btn-buscador" class="fab" title="{{ 'navegacion.buscador' | translate }}"></a>
+            <a ng-href="#contenedor-banner" id="btn-buscador" class="fab"
+                title="{{ 'navegacion.buscador' | translate }}"></a>
         </div>
         <div (click)="toCould()" id="menu-nube" class="btn-menu">
             <a ng-href="#contenedor-nube" id="btn-nube" class="fab" title="{{ 'navegacion.clave' | translate}}"></a>
@@ -14,7 +15,8 @@
             <a ng-href="#contenedor-mapa" id="btn-pais" class="fab" title="{{ 'navegacion.pais' | translate}}"></a>
         </div>
         <div (click)="toSparql()" id="menu-documentos" class="btn-menu">
-            <a ng-href="#contenedor-ultimos-documentos" id="btn-documentos" class="fab" title="{{ 'navegacion.sparql' | translate}}"></a>
+            <a ng-href="#contenedor-ultimos-documentos" id="btn-documentos" class="fab"
+                title="{{ 'navegacion.sparql' | translate}}"></a>
         </div>
         <div (click)="toAbout()" id="menu-sql" class="btn-menu">
             <a ng-href="#sparql" id="btn-sql" class="fab" title="{{ 'header.acerca.epidemics' | translate }}"></a>
@@ -26,41 +28,66 @@
 </div>
 <section id="searcher">
     <div id="container">
-        <div id="container-searcher">
-            <div class="title">{{ 'general.proyecto' | translate}}</div>
-            <div id="text-search"><span>{{ 'navegacion.buscador' | translate }}</span></div>
-            <div id="search">
-                <input #word (keyup.enter)="searchText(word.value)" id="input-search" type="text" name="input-articulo" value="" placeholder="{{'home.buscar' | translate}}" />
-                <input id="button-search" type="image" src="assets/img/home/buscador.png" (click)="searchText(word.value)" name="boton-buscar-articulo" alt="Buscar" />
+        <div id="central-container">
+            <div id="container-searcher">
+                <div class="title">{{ 'general.proyecto' | translate}}</div>
+                <div id="text-search"><span>{{ 'navegacion.buscador' | translate }}</span></div>
+                <div id="search">
+                    <input #word (keyup.enter)="searchText(word.value)" id="input-search" type="text"
+                        name="input-articulo" value="" placeholder="{{'home.buscar' | translate}}" />
+                    <input id="button-search" type="image" src="assets/img/home/buscador.png"
+                        (click)="searchText(word.value)" name="boton-buscar-articulo" alt="Buscar" />
+                </div>
             </div>
-        </div>
-        <div id="contenedor-numeralias">
-            <div class="text-description">
-                <p [innerHTML]="'navegacion.total' | translate: { articles: (numArticulos), journals: (numRevistas), countries: (numPaises)}"></p>
+            <div id="contenedor-numeralias">
+                <!-- <div class="text-description" [innerHTML]="'navegacion.total' | translate: { articles: (numArticulos), journals: (numRevistas), countries: (numPaises)}">
+            </div> -->
+                <div id="new-number">
+                    <p class="parrafo-number">
+                        <span class="numbers">
+                            {{ numArticulos }}
+                        </span>
+                        {{ 'navegacion.texto-num-articulo' | translate }}
+                        {{ 'navegacion.texto-num-articulo2' | translate }}
+                        <span class="numbers">
+                            {{ numRevistas }}
+                        </span>
+                        {{ 'navegacion.texto-num-rev' | translate }}
+                        {{ 'navegacion.texto-num-rev2' | translate }}
+                        <span class="numbers">
+                            {{ numPaises }}
+                        </span>
+                        {{ 'navegacion.texto-num-paises' | translate }}
+                    </p>
+                </div>
             </div>
-        </div>
-        <div id="contenedor-resumen" class="text-description">
-            {{'home.mensaje' | translate}}
+            <div id="contenedor-resumen" class="text-description">
+                {{'home.mensaje' | translate}}
+            </div>
         </div>
     </div>
     <div id="menu-section">
-        <div (click)="toSearcher()" [ngClass]="{'selection': selection == 1}" class="op-menu-section btn-search" id="btn-search">
+        <div (click)="toSearcher()" [ngClass]="{'selection': selection == 1}" class="op-menu-section btn-search"
+            id="btn-search">
             <img src="assets/img/home/busqueda.png"><span>{{ 'navegacion.buscador' | translate }}</span>
         </div>
-        <div (click)="toCould()" [ngClass]="{'selection': selection == 2}" class="op-menu-section btn-tema" id="btn-articles">
+        <div (click)="toCould()" [ngClass]="{'selection': selection == 2}" class="op-menu-section btn-tema"
+            id="btn-articles">
             <img src="assets/img/home/palabra_clave.png"><span>{{ 'navegacion.clave' | translate}}</span>
         </div>
-        <div (click)="toNetwork()" [ngClass]="{'selection': selection == 3}" class="op-menu-section btn-representacion" id="btn-representacion">
+        <div (click)="toNetwork()" [ngClass]="{'selection': selection == 3}" class="op-menu-section btn-representacion"
+            id="btn-representacion">
             <img src="assets/img/home/red.png"><span>{{ 'navegacion.conocimiento' | translate}}</span>
         </div>
         <div (click)="toMap()" [ngClass]="{'selection': selection == 4}" class="op-menu-section btn-pais" id="btn-pais">
             <img src="assets/img/home/por_pais.png"><span>{{ 'navegacion.pais' | translate}}</span>
         </div>
-        <div (click)="toSparql()" [ngClass]="{'selection': selection == 5}" class="op-menu-section btn-sparql" id="btn-sparql">
+        <div (click)="toSparql()" [ngClass]="{'selection': selection == 5}" class="op-menu-section btn-sparql"
+            id="btn-sparql">
             <img src="assets/img/home/sparql.png"><span>{{ 'navegacion.sparql' | translate}}</span>
         </div>
         <div (click)="toAbout()" class="op-menu-section btn-recientes" id="btn-recientes">
-            <img src="assets/img/home/acerca.png"><span>{{ 'header.acerca.genero' | translate }}</span>
+            <img src="assets/img/home/acerca.png"><span>{{ 'header.acerca.epidemics' | translate }}</span>
         </div>
     </div>
 </section>
@@ -79,7 +106,8 @@
 <section id="could">
     <div></div>
     <div id="container-cloud">
-        <div style="font-size: 16pt; font-family: 'Barlow-Regular'; margin-bottom: 30px;">{{'navegacion.clave' | translate}}</div>
+        <div style="font-size: 16pt; font-family: 'Barlow-Regular'; margin-bottom: 30px;">{{'navegacion.clave' |
+            translate}}</div>
         <app-word-cloud></app-word-cloud>
     </div>
 </section>
@@ -90,7 +118,8 @@
     </div>
 </section>
 <section id="map">
-    <div style="width: 90%; font-size: 16pt; font-family: 'Barlow-Regular'; margin: 30px auto; color: white;">{{'navegacion.pais' | translate}}</div>
+    <div style="width: 90%; font-size: 16pt; font-family: 'Barlow-Regular'; margin: 30px auto; color: white;">
+        {{'navegacion.pais' | translate}}</div>
     <div>
         <app-map></app-map>
     </div>
@@ -100,11 +129,14 @@
         <div id="descripcion-sparql">
             <p id="titulo-sparql">{{'navegacion.sparql' | translate}}</p>
             <br>
-            <p [innerHTML]="'home.sparql' | translate: { value: ('http://sparql.amelica.org/knowledgebase/epidemics/datastore')}"></p>
+            <p
+                [innerHTML]="'home.sparql' | translate: { value: ('http://sparql.amelica.org/knowledgebase/epidemics/datastore')}">
+            </p>
         </div>
         <div id="container-data">
             <div id="container-id">
-                <iframe src="http://sparql.amelica.org/knowledgebase/epidemics/datastore" frameborder="0" width="100%" height="100%"></iframe>
+                <iframe src="http://sparql.amelica.org/knowledgebase/epidemics/datastore" frameborder="0" width="100%"
+                    height="100%"></iframe>
             </div>
         </div>
     </div>

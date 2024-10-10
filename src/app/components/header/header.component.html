@@ -1,35 +1,99 @@
 <app-menu-mobile></app-menu-mobile>
 <div class="header">
-    <div class="navigation">
-        <div class="logo-redalyc">
-            <a href="https://www.redalyc.org/" target="_blank">
-                <img class="to-home" id="to-home" src="assets/img/shared/logo-redalyc-fondo-oscuro.png">
-            </a>
-        </div>
-        <div class="links-home">
-            <ejs-menu [items]='menuItems'>
-                <ng-template #template let-menuItems="">
-                    <a target='_blank' href="{{menuItems.url}}" class="item-search">{{menuItems.text | translate}}</a>
-                </ng-template>
-            </ejs-menu>
-        </div>
-
-        <div class="languages-social-netwoks">
-            <div id="menu-mobile" (click)="openNav()">
-                <i class="fa fa-bars"></i>
+    <div>
+        <div class="top-bar" id="hide-on-scroll" [ngClass]="{'hidden': isHidden}">
+            <div class="logo-part">
+                <a href="https://www.redalyc.org/" target="_blank">
+                    <img src="assets/img/shared/logo-redalyc.png" alt="Redalyc Logo" />
+                </a>
             </div>
-            <span class="lang" (click)="changeLanguage('es')">ESP</span>
-            <span class="lang" (click)="changeLanguage('en')">ENG</span>
+            <div class="text-part">
+                <span class="title">{{ "mHeader.title" | translate }}</span>
+                <span>{{ "mHeader.desc1" | translate }}</span>
+                <span>{{ "mHeader.desc2" | translate }}</span>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="img-scroll" *ngIf="isShow">
+                <a href="https://www.redalyc.org/" target="_blank">
+                    <img src="assets/img/shared/logo-redalyc.png" alt="Redalyc Logo" height="40px" />
+                </a>
+            </div>
+            <div class="links-home">
+                <ejs-menu [items]='menuItems'>
+                    <ng-template #template let-menuItems="">
+                        <a target='_blank' href="{{menuItems.url}}" class="item-search">{{menuItems.text |
+                            translate}}</a>
+                    </ng-template>
+                </ejs-menu>
+            </div>
 
+            <div class="languages-social-netwoks">
+                <div id="menu-mobile" (click)="openNav()">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="languages">
+                    <span class="lang" (click)="changeLanguage('es')">ESP</span>
+                    <span class="lang" (click)="changeLanguage('en')">ENG</span>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="current-section">
-        <span><a href="https://www.redalyc.org/" target="_blank">{{ 'header.redalyc' | translate}}</a> > <a [routerLink]="['/home']">{{ 'general.proyecto' | translate }}</a> <span *ngIf='currentSection'> > {{ currentSection | translate}}</span></span>
-        <span class="socials-networks">
-            <a href="https://www.instagram.com/redalyc_oficial" target="_blank"><img class="instragram" src="assets/img/icons/ig.png"></a>
-            <a href="https://twitter.com/Redalyc" target="_blank"><img class="twitter" src="assets/img/icons/tw.png"></a>
-            <a href="https://www.facebook.com/Redalyc/" target="_blank"><img class="facebook" src="assets/img/icons/face.png"></a>
-        </span>
+        <span><a href="https://www.redalyc.org/" target="_blank">{{
+                "header.redalyc" | translate
+                }}</a>
+            > <a [routerLink]="['/home']">{{ "general.proyecto" | translate }}</a>
+            <span *ngIf="currentSection">
+                > {{ currentSection | translate }}</span></span>
+        <div class="socials-and-languages">
+            <div class="socials-networks">
+                <a href="https://www.instagram.com/redalyc_oficial" target="_blank"><img class="instagram"
+                        src="assets/img/icons/ig-logo-dark.png" /></a>
+                <a href="https://twitter.com/Redalyc" target="_blank"><img class="twitter"
+                        src="assets/img/icons/x-logo-dark.png" /></a>
+                <a href="https://www.facebook.com/Redalyc/" target="_blank"><img class="facebook"
+                        src="assets/img/icons/fb-logo-dark.png" /></a>
+            </div>
+            <div class="languages-r">
+                <span class="lang" (click)="changeLanguage('es')">ESP</span>
+                <span class="lang" (click)="changeLanguage('en')">ENG</span>
+            </div>
+        </div>
     </div>
+    
+    <div *ngIf="menuOpen" id="menu-desplegable" [ngClass]="{'menu-open': menuOpen, 'menu-close': !menuOpen}">
+    <div class="btn-close" (click)="closeMenu()">
+      <i class="fa fa-times fa-3x" aria-hidden="true"></i>
+    </div> 
+    <div (click)="toSearcher()" class="btn-menu" (click)="closeMenu()">
+      <img src="assets/img/home/busqueda.png">
+      <a id="btn-buscador" class="fab" title="{{ 'navegacion.buscador' | translate }}">{{ "navegacion.buscador" |
+        translate }}</a>
+    </div>
+    <div (click)="toCould()" class="btn-menu" (click)="closeMenu()">
+      <img src="assets/img/home/palabra_clave.png">
+      <a id="btn-nube" class="fab" title="{{ 'navegacion.clave' | translate }}">{{ "navegacion.clave" | translate }}</a>
+    </div>
+    <div (click)="toNetwork()" class="btn-menu" (click)="closeMenu()">
+      <img src="assets/img/home/red.png">
+      <a id="btn-red" class="fab" title="{{ 'navegacion.conocimiento' | translate }}">{{ "navegacion.conocimiento" |
+        translate }}</a>
+    </div>
+    <div (click)="toMap()" class="btn-menu" (click)="closeMenu()">
+      <img src="assets/img/home/por_pais.png">
+      <a id="btn-pais" class="fab" title="{{ 'navegacion.pais' | translate }}">{{ "navegacion.pais" | translate }}</a>
+    </div>
+    <div (click)="toSparql()" class="btn-menu" (click)="closeMenu()">
+      <img src="assets/img/home/sparql.png">
+      <a id="btn-documentos" class="fab" title="{{ 'navegacion.sparql' | translate }}">{{ "navegacion.sparql" |
+        translate }}</a>
+    </div>
+    <div (click)="toAbout()" class="btn-menu" (click)="closeMenu()">
+      <img src="assets/img/home/acerca.png">
+      <a id="btn-sql" class="fab" title="{{ 'header.acerca.genero' | translate }}">{{ "header.acerca.genero" | translate
+        }}</a>
+    </div>
+  </div>
 </div>

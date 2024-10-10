@@ -36,7 +36,12 @@
         "clave": "Artículos por palabra clave",
         "conocimiento": "Representación del conocimiento",
         "pais": "Artículos por país",
-        "sparql": "Base de conocimiento en SPARQL"
+        "sparql": "Base de conocimiento en SPARQL",
+        "texto-num-articulo": "Artículos",
+        "texto-num-articulo2": "extraídos de",
+        "texto-num-rev": "revistas",
+        "texto-num-rev2": "indexadas de",
+        "texto-num-paises": "países"
     },
     "home": {
         "buscar": "Buscar",
@@ -101,9 +106,14 @@
         "proyecto": "Base de conocimiento en epidemias y COVID-19"
     },
     "footer": {
-        "copyright": "Sistema de Información Científica Redalyc ®",
+       "copyright": "Sistema de Información Científica Redalyc ®",
         "copyright2": "Red de revistas científicas de Acceso Abierto no comercial propiedad de la academia.",
-        "version": "Redalyc 2021 Versión 5.0 | 2020",
+        "version": "Redalyc Versión 5.0 | 2003 - 2024",
         "correo": "redalyc@redalyc.org"
+    },
+    "mHeader": {
+        "title": "Sistema de Información Científica Redalyc",
+        "desc1": "Red de revistas científicas de Acceso Abierto Diamante",
+        "desc2": "Infraestructura abierta no comercial propiedad de la academia"
     }
 }
