@@ -161,119 +161,120 @@ a {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 6700px) {
-    .links-home {
-      display: flex;
-    }
+  .links-home {
+    display: flex;
   }
-  
-  @media only screen and (max-width: 480px) {
-    .socials-and-languages {
-      margin-top: 20px;
-    }
-  
-    #menu-mobile {
-      display: block;
-      cursor: pointer;
-    }
-  
-    #menu-desplegable {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(55, 70, 78, 0.9);
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+}
+
+@media only screen and (max-width: 480px) {
+  .socials-and-languages {
+    margin-top: 20px;
+  }
+
+  #menu-mobile {
+    display: block;
+    cursor: pointer;
+  }
+
+  #menu-desplegable {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(55, 70, 78, 0.9);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open {
+    transform: translateX(0);
+    animation: slideInFromLeft 0.5s ease forwards;
+  }
+
+  .menu-close {
+    transform: translateX(-100%);
+    animation: slideOutToLeft 0.5s ease forwards;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
       transform: translateX(-100%);
-      transition: transform 0.3s ease;
     }
-  
-    .menu-open {
+    100% {
       transform: translateX(0);
-      animation: slideInFromLeft 0.5s ease forwards;
     }
-  
-    .menu-close {
+  }
+
+  @keyframes slideOutToLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
       transform: translateX(-100%);
-      animation: slideOutToLeft 0.5s ease forwards;
-    }
-  
-    @keyframes slideInFromLeft {
-      0% {
-        transform: translateX(-100%);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-  
-    @keyframes slideOutToLeft {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-  
-    .btn-menu {
-      padding: 10px;
-      padding-left: 50px;
-      width: 100%;
-      cursor: pointer;
-      display: flex;
-      align-items: center; 
-      justify-content: flex-start; 
-      text-align: center; 
-    }
-  
-    .btn-menu img {
-      margin-right: 10px; 
-    }
-  
-    .btn-menu a {
-      color: white;
-      font-size: 14px;
-      margin: 0;
-    }
-  
-    .btn-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: transparent;
-      color: white;
-      border: none;
-      cursor: pointer;
-      z-index: 1001;
     }
   }
-  
-  @media only screen and (max-width: 600px) {
-    .links-home {
-      display: none;
-    }
-  
-    .links-home.show-menu {
-      display: block;
-    }
-  
-    #menu-mobile {
-      display: block;
-      cursor: pointer;
-    }
+
+  .btn-menu {
+    padding: 10px;
+    padding-left: 50px;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    text-align: center; 
   }
-  
-  @media only screen and (min-width: 768px) {
+
+  .btn-menu img {
+    margin-right: 10px; 
   }
-  
-  @media only screen and (min-width: 992px) {
+
+  .btn-menu a {
+    color: white;
+    font-size: 14px;
+    margin: 0;
   }
-  
-  @media only screen and (min-width: 1200px) {
+
+  .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
   }
+}
+
+@media only screen and (max-width: 600px) {
+  .links-home {
+    display: none;
+  }
+
+  .links-home.show-menu {
+    display: block;
+  }
+
+  #menu-mobile {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+  
   
