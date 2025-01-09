@@ -108,7 +108,7 @@
     "footer": {
         "copyright": "Redalyc's System of Scientific Information ®",
         "copyright2": "Network of non-commercial academy-owned Open Access Scholarly and Scientific Journals.",
-        "version": "Redalyc Version 5.0 | 2003 - 2024",
+        "version": "Redalyc Version 5.0 | 2003 - {{year}}",
         "correo": "redalyc@redalyc.org"
     },
     "mHeader": {

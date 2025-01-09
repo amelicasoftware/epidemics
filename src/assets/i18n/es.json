@@ -108,7 +108,7 @@
     "footer": {
        "copyright": "Sistema de Información Científica Redalyc ®",
         "copyright2": "Red de revistas científicas de Acceso Abierto no comercial propiedad de la academia.",
-        "version": "Redalyc Versión 5.0 | 2003 - 2024",
+        "version": "Redalyc Versión 5.0 | 2003 - {{year}}",
         "correo": "redalyc@redalyc.org"
     },
     "mHeader": {
